@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../CSS/index_PBL2.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/style_PBL2.css" />
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/index.js"></script>
+    <title>test_PBL2</title>
+</head>
+
+<body>
+    <div id="main">
+        <!--主体main-->
+        <div id="nav_bar">
+            <!--导航-->
+
+            <div id="logo">
+                <!--Logo名-->
+                <h1 class="web_logo">logo</h1>
+            </div><!--Logo名结束-->
+            <!--导航菜单-->
+            <div class="nav_menu_lang">
+                <a href="#">语言</a>
+                <div class="dropdown-content">
+                    <a href="#">English</a>
+                    <a href="#">日本語</a>
+                    <a href="#">C</a>
+                    <a href="#">D</a>
+                </div>
+            </div>
+            <div class="nav_menu"><a href="#">购物车</a></div>
+            <div class="nav_menu"><a href="#">登录</a></div>
+            <!--导航菜单结束-->
+
+        </div><!--导航结束-->
+
+        <div id="search_bar">
+            <div id="area_bar">
+                <div class="area_select">
+                    未知校区
+                    <div class="dropdown-area">
+                        <a href="#">伊都校区</a>
+                        <a href="#">大桥校区</a>
+                        <a href="#">筑紫校区</a>
+                        <a href="#">病院校区</a>
+                        <a href="#">...</a>
+                    </div>
+                </div>
+            </div>
+            <!--搜索-->
+            <div class="search">
+                <div class="search-top">
+                    <form class="search-form">
+                        <input type="text" class="input-text" placeholder="请输入您要搜索的商品关键词" />
+                        <input type="submit" class="input-sub" value="搜索" />
+                    </form>
+                </div>
+                <div style="width:40px;height:40px;z-index:3;position:relative;display:inline;">
+                    <img src="../image_pbl2/icon_pbl2/icon00012.png" height="40" width="35" />
+                </div>
+                <div class="keyword">
+                    <ul>
+                        <li><b>商品种类</b></li>
+                        <li><a target="_blank" href="javascript:void(0)">书籍</a></li>
+                        <li><a target="_blank" href="javascript:void(0)">家具</a></li>
+                        <li><a target="_blank" href="javascript:void(0)">电器</a></li>
+                        <li><a target="_blank" href="javascript:void(0)">电子产品</a></li>
+                        <li><a target="_blank" href="javascript:void(0)">其他</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--搜索结束-->
+        </div>
+        <div id="main_bar">
+            <!---主部分--->
+            <div class="Catalog">
+                <!--商品种类-->
+                <ul>
+                    <li><b style="font-size:150%;color:green;">商品分类</b></li>
+                    <li style="background:url(../image_pbl2/icon_pbl2/icon00008.png);background-size:36px 36px;background-repeat:no-repeat;"><a href="#">书籍</a></li>
+                    <li style="background:url(../image_pbl2/icon_pbl2/icon00013.png);background-size:36px 36px;background-repeat:no-repeat;"><a href="#">家具</a></li>
+                    <li style="background:url(../image_pbl2/icon_pbl2/icon00002.png);background-size:36px 36px;background-repeat:no-repeat;"><a href="#">电器</a></li>
+                    <li style="background:url(../image_pbl2/icon_pbl2/icon00010.png);background-size:36px 36px;background-repeat:no-repeat;"><a href="#">电子用品</a></li>
+                    <li style="background:url(../image_pbl2/icon_pbl2/icon00009.png);background-size:36px 36px;background-repeat:no-repeat;"><a href="#">其他</a></li>
+                </ul>
+            </div><!--商品种类结束-->
+
+            <dir class="main_ann">
+                <!--公告栏-->
+                <div><li>最新消息</li></div>
+                <div class="main_ann-cont">
+                    <li>1999年1月1日</li>
+                    <li>1999年1月2日</li>
+                    <li>1999年1月3日</li>
+                </div>
+                <div><li>公告栏</li></div>
+                <div class="ann">
+                    <img src="../img/test1.png" />
+                </div>
+
+            </dir><!--公告栏结束-->
+            <!--banner轮播图-->
+            <div class="New-focus-banner" id="banner_bar">
+                <!--轮播图-->
+                <div class="banner-box">
+                    <a class="ig" href="javascript:void(0);"><img class="banner-img" src="../images/banner/banner1.jpg" /></a>
+                    <a class="ig" href="javascript:void(0);"><img class="banner-img" src="../images/banner/banner2.jpg" /></a>
+                    <a class="ig" href="javascript:void(0);"><img class="banner-img" src="../images/banner/banner3.jpg" /></a>
+                    <a class="ig" href="javascript:void(0);"><img class="banner-img" src="../images/banner/banner4.jpg" /></a>
+                    <a class="ig" href="javascript:void(0);"><img class="banner-img" src="../images/banner/banner5.jpg" /></a>
+                    <a class="ig" href="javascript:void(0);"><img class="banner-img" src="../images/banner/banner3.jpg" /></a>
+                    <ol id="banner-ol">
+                        <li class="tab"></li>
+                        <li class="tab"></li>
+                        <li class="tab"></li>
+                        <li class="tab"></li>
+                        <li class="tab"></li>
+                        <li class="tab"></li>
+                    </ol>
+                    <!--左右按钮-->
+                    <span class="prev" style="opacity: 0.2; display: none;"></span>
+                    <span class="next" style="opacity: 0.2; display: none;"></span>
+                    <!--左右按钮-->
+                </div>
+                <!--轮播图-->
+            </div>
+            <!--banner轮播图-->
+            <!--&lt;!&ndash;/轮播图jquery&ndash;&gt;-->
+            <script type="text/javascript">
+                $(function () {
+                    var i = 0;
+                    var timer = 0;
+                    $('.ig').eq(0).show().siblings('.ig').hide();
+                    //调用showTime() 轮播函数
+                    showTime();
+                    $("li").hover(function () {
+                        //获取当前i的值，并显示，同时还要清除定时器
+                        i = $(this).index();
+                        Show();
+                        clearInterval(timer);
+                    }, function () {
+                        showTime();
+                    });
+                    function Show() {
+                        //在这里可以用其他jquery的动画
+                        $('.ig').eq(i).fadeIn(300).siblings('.ig').fadeOut(300);
+                        //给.tab创建一个新的Class为其添加一个新的样式，并且要在css代码中设置该样式
+                        $('.tab').eq(i).addClass('banner-ol-cke').siblings('.tab').removeClass('banner-ol-cke');
+                    }
+                    function showTime() {
+                        //定时器
+                        timer = setInterval(function () {
+                            //调用一个Show()函数
+                            Show();
+                            i++;
+                            //当图片是最后一张的后面时，设置图片为第一张
+                            if (i == 6) {
+                                i = 0;
+                            }
+                        }, 2000);
+                    }
+                });
+            </script>
+
+        </div><!--主部分结束-->
+
+        <div id="recom_bar">
+            <!--推送部分-->
+            <div class="bar_cont">今日推荐</div>
+            <div class="bar_lf_slide">
+                <div class="commodity">
+                    <div class="com_pic">
+                        <img id='rcmd1_img'src="../img/1.jpg" />
+                        <span>
+                            <div class="teye"></div>
+                            <li id='rcmd1_area'>病院地区</li>
+                            <div class="price"><li id='rcmd1_price'>$999</li></div>
+                        </span>
+                    </div>
+                    <div class="com_con">
+                        <div class="com_name">1号</div>
+                    </div>
+                </div>
+                <div class="commodity">
+                    <div class="com_pic">
+                        <img id='rcmd2_img' src="../img/2.jpg" />
+                        <span>
+                            <div class="teye"></div>
+                            <li id='rcmd2_area'>大桥地区</li>
+                            <div class="price" ><li id='rcmd2_price'>$999</li></div>
+                        </span>
+                    </div>
+                    <div class="com_con">
+                        <div class="com_name">2号</div>
+                    </div>
+                </div>
+                <div class="commodity">
+                    <div class="com_pic">
+                        <img id='rcmd3_img' src="../img/3.jpg" />
+                        <span>
+                            <div class="teye"></div>
+                            <li id='rcmd3_area'>伊都地区</li>
+                            <div class="price"><li id='rcmd3_price'>$999</li></div>
+                        </span>
+                    </div>
+                    <div class="com_con">
+                        <div class="com_name">3号</div>
+                    </div>
+                </div>
+
+            </div>
+            </div><!--推送结束-->
+
+            <div id="record_bar">
+                <!--浏览记录部分-->
+                <div class="bar_cont">浏览记录</div>
+                <div class="bar_lf_slide">
+                    <div class="commodity">
+                        <div class="com_pic">
+                            <img src="../img/1.jpg" />
+                            <span>
+                                <div class="teye"></div>
+                                <li>病院地区</li>
+                                <div class="price"><li>$999</li></div>
+                            </span>
+                        </div>
+                        <div class="com_con">
+                            <div class="com_name">1号</div>
+                        </div>
+                    </div>
+                    <div class="commodity">
+                        <div class="com_pic">
+                            <img src="../img/2.jpg" />
+                            <span>
+                                <div class="teye"></div>
+                                <li>大桥地区</li>
+                                <div class="price"><li>$999</li></div>
+                            </span>
+                        </div>
+                        <div class="com_con">
+                            <div class="com_name">2号</div>
+                        </div>
+                    </div>
+                    <div class="commodity">
+                        <div class="com_pic">
+                            <img src="../img/3.jpg" />
+                            <span>
+                                <div class="teye"></div>
+                                <li>伊都地区</li>
+                                <div class="price"><li>$999</li></div>
+                            </span>
+                        </div>
+                        <div class="com_con">
+                            <div class="com_name">3号</div>
+                        </div>
+                    </div>
+                    <div class="commodity">
+                        <div class="com_pic">
+                            <img src="../img/3.jpg" />
+                            <span>
+                                <div class="teye"></div>
+                                <li>伊都地区</li>
+                                <div class="price"><li>$999</li></div>
+                            </span>
+                        </div>
+                        <div class="com_con">
+                            <div class="com_name">4号</div>
+                        </div>
+                    </div>
+                </div><!--浏览记录部分结束-->
+
+            </div><!--主体main结束-->
+            <div id="contact">
+                <!--联系方式-->
+                <div class="contact_address">
+                    <li>联系我们</li>
+                    <li>邮箱：xxx@xxx.com</li>
+                    <li>电话：111-1111-1111</li>
+                    <li>支付宝打款：xxxxxx</li>
+                </div>
+            </div><!--联系方式结束-->
+</body>
+</html>
