@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login japanese</title>
+    <link rel="stylesheet" href="../../CSS/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../../CSS/iconfont.css" type="text/css" />
+    <link rel="stylesheet" href="../../CSS/common.css" type="text/css" />
+    <link rel="stylesheet" href="../../CSS/login.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../CSS/index_PBL2.css" />
+    <script src="../../js/Japanese/jquery-3.2.1.min.js"></script>
+    <script src="../../js/Japanese/login.js"></script>
+</head>
+<body>
+    <!--头部-->
+    <div class="header-wrap" style="background-color:#6495ED;margin:0;">
+        <header class="public-head-layout wrapper">
+            <!-- <h1 class="site-logo"><a style="height:30px;"="index.html/"><img src="images/logo.png" alt=""></a></h1> -->
+            <div class="nc-regist-now" style="height:30px;">
+                <span style="width:60px;height:30px">
+                    <!-- class="avatar"<img src="../img/logo.png"style="width:40px;height:40px">-->
+
+                </span>
+                <span class="register" style="color:#ffffff;font-size:20px;">まだ登録してない方はこちらで<a title="" href="register_J.html" class="register" style="color:#ffd800">登録</a>してください</span>
+            </div>
+        </header>
+    </div>
+    <!--头部-->
+    <!--登录板块-->
+    <div class="nc-login-layout" style="height:400px">
+        <div class="left-pic"><img src="../../img/kyushu.jpg" style="width:400px;height:400px"></div>
+        <div class="nc-login" style="background-color: #fffdec; border:2px solid #6495ED;">
+            <div class="arrow"></div>
+            <div id="loginModule" class="nc-login-mode">
+                <ul class="tabs-nav">
+                    <li style="width:100%"><a href="#commonModule" class="tabulous_active" style="font-size:20px;font-weight:bold;">ユーザーログイン<i></i></a></li>
+                    <!-- <li><a href="#mobileModule" class="">手机动态码登录<i></i></a></li> -->
+                    <!--<span class="tabulousclear"></span>-->
+                </ul>
+                <div id="tabs_container" class="tabs-container transition" style="height: 252px;">
+                    <div id="commonModule" class="tabs-content make_transist hideleft showleft" style="position: absolute; top: 0px;">
+                        <div id="showErrorMsgDiv" class="err-msg" style="display: none;">
+                            <p><i class="fa fa-exclamation-circle"></i><span></span></p>
+                        </div>
+                        <form id="loginForm" class="nc-login-form" name="loginForm" method="post" novalidate="novalidate">
+                            <dl>
+                                <dt style="font-size:10px;text-align:center">ユーザー名:</dt>
+                                <dd>
+                                    <input type="text" class="text" id="loginName" name="loginName" autocomplete="off" placeholder="ユーザー名">
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt style="font-size:10px;text-align:center">パスワード:</dt>
+                                <dd>
+                                    <input type="password" class="text" id="memberPwd" name="memberPwd" placeholder="パスワード" autocomplete="off">
+                                </dd>
+                            </dl>
+                            <div class="code-div mt15">
+                                <dl>
+                                    <dt style="font-size:10px;text-align:center">キャプチャ:</dt>
+                                    <dd style="width: 120px;">
+                                        <input id="captcha" class="text w100" type="text" name="captcha" maxlength="4" placeholder="キャプチャ" autocomplete="off">
+                                        <label class="error yzm-error03">
+                                            <i class="fa fa-exclamation-circle iconfont">&#xe693;</i>
+                                        </label>
+                                    </dd>
+                                </dl>
+                                <span>
+                                    <div id="codeimage03" class="codeimg mycode03" style="cursor:pointer;">6668</div>
+                                </span>
+                            </div>
+                            <div class="handle-div">
+                                <span class="auto">
+                                    <input type="checkbox" value="1" class="checkbox" id="autoLogin" name="autoLogin">
+                                    ログイン情報を保持する<em style="display: none;"></em>
+                                </span><a href="https://www.cnrmall.com/findpwd" class="forget">パスワードを忘れた場合</a>
+                            </div>
+                            <div class="submit-div">
+                                <div class="submit subbbb" id="loginSubmit" style="background-color:#6495ED;border-color:#6495ED;">ログイン</div>
+                            </div>
+                        </form>
+                    </div>
+                  
+                </div>
+            </div>
+
+           
+        </div>
+    </div>
+    <!--登录板块-->
+    <!--底部-->
+    <div id="contact" style="float:left">
+        <!--联系方式-->
+        <div class="contact_address">
+            <li>お問合せ</li>
+            <li>メール：xxx@xxx</li>
+            <li>電話番号：xxx-xxxx-xxxx</li>
+            <li>サポート：xxxxxx</li>
+        </div>
+    </div> <!--联系方式结束-->
+
+</body>
+</html>

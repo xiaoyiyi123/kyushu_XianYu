@@ -1,0 +1,253 @@
+/* CSS Document */
+/*页面开始*/
+
+#main_h3 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: auto;
+    /*border:1px solid #F00;box-shadow: inset 0px 0px 15px 1px #ceeaff;*/
+    min-width: 1000px;
+    max-width: 1000px;
+    z-index: -10;
+}
+
+/*头像等基本信息*/
+#h3_head_bar {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    height: 300px;
+    background-color: antiquewhite;
+    border-radius: 0px 0px 10px 10px;
+    border:1px solid #808080;
+}
+
+.h3h_blank{
+    width:100%;
+    height:180px;
+    background-color:#a5a5a5;
+
+}
+.h3h_blank img{
+    margin-left:50px;
+    margin-top:80px;
+    width:200px;
+    height:200px;
+    border-radius:100px;
+    border:3px solid #f6f6f6;
+}
+
+.h3h_blank2 {
+    width: 100%;
+    height: 120px;
+    background-color: #f6f6f6;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.h3h2_frame {
+    float:left;
+    margin-left:300px;
+    width: 400px;
+    height: 120px;
+    /*background-color: #ffd800;*/
+}
+
+.h3h2f_name {
+    float: left;
+    width: 300px;
+    height: 40px;
+    line-height:40px;
+    font-size:20px;
+    /*text-align:center;*/
+}
+.h3h2f_area {
+    float: left;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+}
+.h3h2f_sign{
+    float: left;
+    width: 396px;
+    height: 76px;
+    line-height: 20px;
+    font-size: 15px;
+    border:2px solid #dddddd;
+    border-radius:5px;
+    background-color:#ffffff;
+}
+
+
+
+/*左侧显示出售商品记录*/
+#h3_left_bar {
+    float: left;
+    width: 38%;
+    margin-left: 3%;
+    height: auto;
+    background-color: #f6f6f6;
+    margin-top: 10px;
+    border: 1px solid #a5a5a5;
+    border-radius: 5px 5px 0px 0px;
+}
+.h3l_topbar {
+    float: left;
+    width: 100%;
+    height: 50px;
+    background-color: #dddddd;
+    line-height: 50px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px 5px 0px 0px;
+}
+.h3l_blank {
+    float: left;
+    width: 100%;
+    height: 10px;
+}
+.h3l_itemframe{
+    float:left;
+    width:360px;
+    height:100px;
+    margin-left:10px;
+    margin-top:10px;
+    background-color:#ffffff;
+    border:1px solid #a5a5a5;
+    border-radius:5px;
+}
+.h3li_pic {
+    float: left;
+    width: 100px;
+    height: 100px;
+}
+.h3li_pic img{
+    margin:2px 2px 2px 2px;
+    width: 96px;
+    height: 96px;
+}
+.h3li_detail {
+    float: left;
+    margin: 2px 0px 2px 0px;
+    width: 258px;
+    height: 96px;
+}
+.h3li_name{
+    float:left;
+    width:100%;
+    height:60px;
+    line-height:20px;
+    font-size:13px;
+    border-bottom:1px solid #808080;
+}
+.h3li_name a{
+    text-decoration:none;
+}
+.h3li_status {
+    float: left;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    text-align:center;
+    font-weight:bold;
+    color:#a5a5a5;
+}
+
+
+
+/*右侧显示评论记录*/
+#h3_right_bar {
+    float: right;
+    width: 55%;
+    margin-right: 3%;
+    height: auto;
+    background-color: #f6f6f6;
+    margin-top: 10px;
+    border: 1px solid #a5a5a5;
+    border-radius: 5px 5px 0px 0px;
+}
+.h3r_topbar {
+    float: left;
+    width: 100%;
+    height: 50px;
+    background-color: #dddddd;
+    line-height: 50px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px 5px 0px 0px;
+}
+.h3r_commendframe {
+    float: left;
+    width: 530px;
+    height: 295px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: #ffffff;
+    border:1px solid #a5a5a5;
+    border-radius:5px;
+}
+.h3r_blank {
+    float: left;
+    width: 100%;
+    height: 10px;
+}
+
+.h3rc_frame1 {
+    float: left;
+    width: 100%;
+    height: 50px;
+    border-bottom:1px solid #a5a5a5;
+}
+.h3rcf_head{
+    float:left;
+    width:50px;
+    height:50px;
+    margin-left:100px;
+}
+.h3rcf_head img{
+    margin-top:2px;
+    width: 45px;
+    height: 45px;
+    border-radius:25px;
+}
+.h3rcf_name {
+    float: left;
+    width: 100px;
+    height: 50px;
+    font-size:15px;
+    line-height:50px;
+    margin-left:10px;
+}
+.h3rcf_time {
+    float: left;
+    margin-left:10px;
+    width: 150px;
+    height: 50px;
+    font-size: 15px;
+    line-height: 50px;
+    color:#a5a5a5;
+}
+
+.h3rc_frame2 {
+    float: left;
+    width: 100%;
+    height: 130px;
+}
+.h3rcf_commend {
+    float: left;
+    width: 400px;
+    margin-left:65px;
+    margin-top:5px;
+    height: 120px;
+    border:2px solid #dddddd;
+    border-radius:5px;
+    line-height:20px;
+    font-size:15px;
+}
+.h3rc_frame3 {
+    float: left;
+    width: 100%;
+    height: 115px;
+}

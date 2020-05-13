@@ -1,0 +1,139 @@
+/* CSS Document */
+/*初置开始*/
+/*初置开始*/
+*{ margin:0; padding:0;}
+body{font:12px/1.125 Arial,Helvetica,sans-serif;background:#fff;}
+table{border-collapse:collapse;border-spacing:0;}
+li,ol,dl{list-style:none;}
+fieldset,img{border:0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+q:before,q:after{content:'';}
+a:focus,input,textarea{outline-style:none;}
+input[type="text"],input[type="password"],textarea{outline-style:none;-webkit-appearance:none;}
+textarea{resize:none}
+address,caption,cite,code,dfn,em,i,th,var{font-style:normal;font-weight:normal;}
+legend{color:#000;}
+abbr,acronym{border:0;font-variant:normal;}
+a{text-decoration:none;color: #000;}
+a:hover{text-decoration: none;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{display:inline-block;}
+.clearfix{display:block;}
+.clear{clear:both;height:0;font:0/0 Arial;visibility:hidden;}
+.clear:after{clear:both;line-height:0;height:0;visibility:hidden;
+    content:".";display:block;overflow:hidden;}
+.none{display:none}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre,
+code, form, fieldset, legend, input, button, textarea, p,
+blockquote, th, hr{margin:0;padding:0;font-weight:100;}
+
+.f-clear{clear: both;}
+.div-clear{clear: both;}
+
+img {  border: medium none;  vertical-align: middle;  }
+/*初置结束*/
+
+/*颜色拾取*/
+.color01 .mt,
+.color01 .tab-selected a { border-color: #C81623;}
+.color02 .mt,
+.color02 .tab-selected a { border-color: #F34235;}
+.color03 .mt,
+.color03 .tab-selected a { border-color: #E81D62;}
+.color04 .mt,
+.color04 .tab-selected a { border-color: #FF6B80;}
+.color05 .mt,
+.color05 .tab-selected a { border-color: #9B26AF;}
+.color06 .mt,
+.color06 .tab-selected a { border-color: #3E50B4;}
+.color07 .mt,
+.color07 .tab-selected a { border-color: #2095F2;}
+.color08 .mt,
+.color08 .tab-selected a { border-color: #02A8F3;}
+.color09 .mt,
+.color09 .tab-selected a { border-color: #00BBD3;}
+.color10 .mt,
+.color10 .tab-selected a { border-color: #009587;}
+.color11 .mt,
+.color11 .tab-selected a { border-color: #4BAE4F;}
+.color12 .mt,
+.color12 .tab-selected a { border-color: #8AC249;}
+.color13 .mt,
+.color13 .tab-selected a { border-color: #CCDB38;}
+.color14 .mt,
+.color14 .tab-selected a { border-color: #FEEA3A;}
+.color15 .mt,
+.color15 .tab-selected a { border-color: #FEC006;}
+.color16 .mt,
+.color16 .tab-selected a { border-color: #FE9700;}
+.color17 .mt,
+.color17 .tab-selected a { border-color: #FE5621;}
+.color18 .mt,
+.color18 .tab-selected a { border-color: #785447;}
+.color19 .mt,
+.color19 .tab-selected a { border-color: #9D9D9D;}
+.color20 .mt,
+.color20 .tab-selected a { border-color: #DDDDDD;}
+
+.color01 .mt h2 i,
+.color01 .mc .side .side-inner { background-color: #E38A91;}
+.color02 .mt h2 i,
+.color02 .mc .side .side-inner { background-color: #F9A09A;}
+.color03 .mt h2 i,
+.color03 .mc .side .side-inner { background-color: #F38EB0;}
+.color04 .mt h2 i,
+.color04 .mc .side .side-inner { background-color: #FFB5BF;}
+.color05 .mt h2 i,
+.color05 .mc .side .side-inner { background-color: #CD92D7;}
+.color06 .mt h2 i,
+.color06 .mc .side .side-inner { background-color: #9EA7D9;}
+.color07 .mt h2 i,
+.color07 .mc .side .side-inner { background-color: #8FCAF8;}
+.color08 .mt h2 i,
+.color08 .mc .side .side-inner { background-color: #80D3F9;}
+.color09 .mt h2 i,
+.color09 .mc .side .side-inner { background-color: #7FDDE9;}
+.color10 .mt h2 i,
+.color10 .mc .side .side-inner { background-color: #7FCAC3;}
+.color11 .mt h2 i,
+.color11 .mc .side .side-inner { background-color: #A5D6A7;}
+.color12 .mt h2 i,
+.color12 .mc .side .side-inner { background-color: #C4E0A4;}
+.color13 .mt h2 i,
+.color13 .mc .side .side-inner { background-color: #E5ED9B;}
+.color14 .mt h2 i,
+.color14 .mc .side .side-inner { background-color: #FEF49C;}
+.color15 .mt h2 i,
+.color15 .mc .side .side-inner { background-color: #FEDF82;}
+.color16 .mt h2 i,
+.color16 .mc .side .side-inner { background-color: #FECB7F;}
+.color17 .mt h2 i,
+.color17 .mc .side .side-inner { background-color: #FEAA90;}
+.color18 .mt h2 i,
+.color18 .mc .side .side-inner { background-color: #BBA9A3;}
+.color19 .mt h2 i,
+.color19 .mc .side .side-inner { background-color: #CECECE;}
+.color20 .mt h2 i,
+.color20 .mc .side .side-inner { background-color: #EEEEEE;}
+
+.color01 .tab-selected a { color: #E38A91;}
+.color02 .tab-selected a { color: #F9A09A;}
+.color03 .tab-selected a { color: #F38EB0;}
+.color04 .tab-selected a { color: #FFB5BF;}
+.color05 .tab-selected a { color: #CD92D7;}
+.color06 .tab-selected a { color: #9EA7D9;}
+.color07 .tab-selected a { color: #8FCAF8;}
+.color08 .tab-selected a { color: #80D3F9;}
+.color09 .tab-selected a { color: #7FDDE9;}
+.color10 .tab-selected a { color: #7FCAC3;}
+.color11 .tab-selected a { color: #A5D6A7;}
+.color12 .tab-selected a { color: #C4E0A4;}
+.color13 .tab-selected a { color: #E5ED9B;}
+.color14 .tab-selected a { color: #FEF49C;}
+.color15 .tab-selected a { color: #FEDF82;}
+.color16 .tab-selected a { color: #FECB7F;}
+.color17 .tab-selected a { color: #FEAA90;}
+.color18 .tab-selected a { color: #BBA9A3;}
+.color19 .tab-selected a { color: #CECECE;}
+.color20 .tab-selected a { color: #EEEEEE;}
+/*颜色拾取*/

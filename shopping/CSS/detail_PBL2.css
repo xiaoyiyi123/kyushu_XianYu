@@ -1,0 +1,472 @@
+/* CSS Document */
+
+#main_detail {
+    margin-left:auto;
+    margin-right:auto;
+    width: 100%;
+    height: 1440px;
+    /*border:1px solid #F00;*/
+    min-width: 1000px;
+    max-width: 1200px;
+    z-index: -10;
+    box-shadow: inset 0px 0px 15px 1px #ceeaff;
+}
+
+#blank_bar{
+    width:100%;
+    height:40px;
+}
+
+
+#detail_bar {
+    width: 100%;
+    height: 600px;
+}
+
+
+/*��ƷͼƬչʾ*/
+.detail_image {
+    width: 50%;
+    height: 600px;
+    position:relative;
+    float:left;
+    
+    /*background-color:aquamarine ;
+    box-shadow: inset 0px 0px 15px 1px #ceeaff;*/
+}
+
+.mainImg{
+    width:500px;
+    height:450px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:20px;
+    overflow:hidden;
+}
+.mainImg .magnifybox{
+    width:200px;
+    height:450px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:20px;
+    overflow:hidden;
+}
+.mainImg img {
+    width: 450px;
+    height: 450px;
+    margin:auto;
+}
+.smallImg_bar {
+    width: 450px;
+    height: 92px;
+    /*background-color:chocolate;*/
+    overflow-y:hidden;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:5px;
+}
+.smallImg {
+    width: 450px;
+    height: 120px;
+    position: relative;
+    overflow-x: hidden;
+}
+.smallImg img{
+    width: 80px;
+    height: 80px;
+    margin-left:5px;
+    margin-top:5px;
+}
+.smallImg img:hover{
+    cursor:pointer;
+    box-shadow:0 0 10px #f00;
+}
+
+
+
+/*�ı����ܣ��۸��*/
+.detail_text {
+    width: 50%;
+    height: 600px;
+    /*box-shadow: inset 0px 0px 15px 1px #ceeaff;
+    background-color:antiquewhite;*/
+    float:right;
+
+}
+
+.goodsName {
+    width: 95%;
+    height: auto;
+    /*background-color: crimson;*/
+    margin-top: 40px;
+    overflow: auto;
+    font-size: 20px;
+    line-height:30px;
+    font-weight:bolder;
+    /*font-family:'Adobe Arabic';*/
+    border-bottom:1px solid #808080;
+}
+.goodsPrice {
+    width: 95%;
+    height: 30px;
+    /*background-color: cornflowerblue;
+    text-align: center;*/
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 30px;
+    border-bottom: 1px solid #808080;
+}
+.goodsDetail {
+    width: 95%;
+    height: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+.goodsDetail table{
+    width: 90%;
+    height: auto;
+    border: 0px solid #000000;
+    font-size:20px;
+    margin-right:10%;
+    text-align:center;
+}
+.goodsDetail table tr{
+    border: 0px solid #000000;
+    /*text-align:center;*/
+}
+.goodsDetail table td{
+    border: 2px solid #efefef;
+}
+
+
+/*���빺�ﳵ*/
+#cutHand_bar {
+    width: 90%;
+    height: 60px;
+    margin-top: 20px;
+}
+
+.cut_button {
+    width: 120px;
+    height: 40px;
+    margin-left:10%;
+    text-align:center;
+}
+.cut_button a{
+    width:100%;
+	height:40px;
+	display:block;
+	text-align:center;
+	line-height:40px;
+	color:#FFF;
+	font-size:25px;
+	font-weight:500;
+	text-decoration:none;
+    background-color: #6495ED;
+    border: 1px solid #4e80c3;
+}
+.cut_button a:hover{
+    background-color:#ffd800;
+}
+.cut_button button{
+    width:100%;
+	height:40px;
+	display:block;
+	text-align:center;
+	line-height:40px;
+	color:#FFF;
+	font-size:25px;
+	font-weight:500;
+	text-decoration:none;
+    background-color: #6495ED;
+    border: 1px solid #4e80c3;
+}
+.cut_button button:hover{
+    background-color:#ffd800;
+}
+
+
+/*����+����+���찴ť*/
+#talkAllDetail_bar {
+    width: 95%;
+    height: 700px;
+    /*background-color:floralwhite;*/
+    margin:auto;
+    
+}
+#talkAllDetail_bar h1{
+    background: linear-gradient(to bottom, #6495ED, #caf0ff);
+    font-size:20px;
+    font-weight:500;
+    text-align:center;
+    color:#FFF;
+    border-radius:10px 10px 0 0;
+}
+
+/*���ԣ�����Ʒ��*/
+#messageDetail_bar {
+    width: 58%;
+    height:auto;
+    /*background-color:aqua;*/
+    float:right;
+}
+.mDbar_frame {
+    width: 100%;
+    height: 300px;
+    background-color: #eeeeee;
+    overflow-y: auto;
+}
+
+
+.messageDetail {
+    /*display:inline-block;*/
+    width: 95%;
+    height: auto;
+    background-color:#ffffec;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border: 1px solid blue;
+    border-radius: 10px;
+}
+.mDdetails {
+    width: 100%;
+    height: 30px;
+    line-height:30px;
+    text-align:center;
+    /*background-color:chocolate;position: relative;*/
+    border-bottom: 1px solid blue;
+    background-color: lavender;
+    border-radius: 10px 10px 0px 0px;
+}
+.mDdetails img{
+    width:30px;
+    height:30px;
+    position:relative;
+    float:left;
+    border-radius: 10px 0px 0px 0px;
+    border-right:1px solid #0094ff;
+    background-color:gold;
+
+}
+.mDdetails p{
+    position:relative;
+    /*position:relative;
+     position:absolute;
+     margin-left:40px;*/
+    text-align:center;
+   
+}
+.mDtime {
+    width: 95%;
+    font-size:12px;
+
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    /*background-color:blue;*/
+    color: #808080;
+}
+.mDcontent {
+    width: 95%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 10px solid #ffffec;
+    border-bottom: 10px solid #ffffec;
+    /*background-color:azure;*/
+}
+
+/*������*/
+#message_input {
+    width: 58%;
+    height: 400px;
+    /*background-color:burlywood;*/
+    float: right;
+    margin-top:10px;
+}
+
+.mDinput{
+    width:90%;
+    height:200px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:15px;
+}
+.mDinput textarea{
+    width:100%;
+    height:200px;
+}
+
+.mDinput_button {
+    width: 100px;
+    height: 30px;
+    margin-top:20px;
+    margin-right:15%;
+    float:right;
+}
+.mDinput_button a {
+    width: 100%;
+    height: 30px;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: #ff6a00;
+    border: 1px solid #000000;
+}
+.mDinput_button a:hover{
+    background-color:#ffd800;
+}
+.mDinput_button button {
+    width: 100%;
+    height: 30px;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: #6495ED;
+    border: 1px solid #4e80c3;
+}
+.mDinput_button button:hover{
+    background-color:#ffd800;
+}
+
+
+/*���۲��֣��̼���Ϣ+���ۣ�*/
+#commendDetail_bar {
+    width: 40%;
+    height: auto;
+    /*background-color:aquamarine;*/
+    float:left;
+}
+.cDbar_frame {
+    width: 100%;
+    height: 420px;
+    background-color: #eeeeee;
+    overflow-y: auto;
+}
+
+#merchantPro {
+    width: 90%;
+    height: 100px;
+    background-color:#ffffec;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius:15px;
+    border:1.5px solid #0094ff;
+
+}
+.mPavater{
+    width:100px;
+    height:100px;
+    background-color:#ffd800;
+    margin-top:auto;
+    margin-bottom:auto;
+    float:left;
+    border-radius:15px 0px 0px 15px;
+    border-right:1.5px solid #0094ff;
+}
+.mPavater img{
+    width: 100px;
+    height: 100px;
+    border-radius:15px 0px 0px 15px;
+}
+.mPid {
+    width: auto;
+    height: 40px;
+    background-color: lavender;
+    line-height: 40px;
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 0px 15px 0px 0px;
+    border-bottom: 1.5px solid #0094ff;
+}
+
+.mPbutton_frame {
+    width: 60%;
+    height: 50px;
+    /*background-color: aliceblue;*/
+    margin-top:10px;
+    margin-right:5%;
+    float:right;
+
+}
+.mPchat_button{
+    width:100px;
+    height:30px;
+    float:right;
+}
+.mPchat_button a{
+    width:100%;
+	height:30px;
+	display:block;
+	text-align:center;
+	line-height:30px;
+	color:#FFF;
+	font-size:20px;
+	font-weight:500;
+	text-decoration:none;
+    background-color: #6495ED;
+    border: 1px solid #4e80c3;
+}
+.mPchat_button a:hover {
+    background-color: #ffd800;
+}
+.mPpro_button {
+    width: 100px;
+    height: 30px;
+    float:left;
+}
+.mPpro_button a {
+    width: 100%;
+    height: 30px;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: #6495ED;
+    border: 1px solid #4e80c3;
+}
+.mPpro_button a:hover {
+    background-color: #ffd800;
+}
+.blank_none{
+    width:100%;
+    height:20px;
+}
+
+.smallImg ul{
+    list-style: none;
+}
+
+.smallImg ul li{
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+}
+
+.smallImg ul li img{
+    width: 60px;
+    height: 60px;
+}
+.magnify{
+    display: block;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left:400px;
+}

@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register english</title>
+    <link rel="stylesheet" href="../../CSS/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../../CSS/iconfont.css" type="text/css" />
+    <link rel="stylesheet" href="../../CSS/common.css" type="text/css" />
+    <link rel="stylesheet" href="../../CSS/register.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../CSS/index_PBL2.css" />
+    <script src="../../js/English/jquery-3.2.1.min.js"></script>
+    <script src="../../js/English/register.js"></script>
+</head>
+<body>
+    <!--头部-->
+    <div class="header-wrap" style="background-color:#6495ED;margin:0;">
+        <header class="public-head-layout wrapper" style="height:30px;">
+            <div class="nc-login-now" style="color:#ffffff;font-size:20px; margin-top:25px;">If you have already regiested, plese<a href="login_E.html" title="" class="register"style="color:#ffd800;font-weight:normal">login</a></div>
+        </header>
+    </div>
+    <!--头部-->
+    <!--主板块-注册-->
+    <div class="nc-register-bg" >
+        <div class="nc-register-box" style="background:none">
+            <div class="nc-register-layout"style="background-color: #fffdec; border:2px solid #6495ED;border-radius:15px;">
+                <div class="left">
+                    <div id="registerModule" class="nc-register-mode" >
+                        <ul class="tabs-nav" style="border-bottom:3px solid #6495ED">
+                            <li style="width:100%;"><a href="#mobileModule" style="color:#6495ED;font-weight:bold;font-size:20px;line-height:30px;">Register by your  Kyushu University's mail address<i></i></a></li>
+                        </ul>
+                        <div id="tabs_container" class="tabs-container">
+                            <div id="mobileModule" class="tabs-content">
+                                <form id="mobileFormFirst" class="nc-login-form" name="mobileForm" method="post" novalidate="novalidate"style="width:500px;height:220px;">
+                                    <dl style="width:100%;background-color:#fffdec;border:none">
+                                        <dt style="font-size:18px;text-align:center">Mail</dt>
+                                        <dd class="mob-dd01">
+                                            <input name="mobile" type="text" class="text" id="mobile" placeholder="input your mail address" autocomplete="off" style="width:180px;height:30px;border:1px solid #808080">
+                                            <label for="mobile" class="error mob-error">
+                                                <i class="fa fa-exclamation-circle iconfont">&#10005;</i>
+                                                input your mail
+                                            </label>
+                                            <div style="font-size:18px;float:right;line-height:30px;color:#808080"><!--@s.kyushu-u.ac.jp--></div>
+                                        </dd>
+                                
+                                    </dl>
+                                    <div class="code-div">
+                                        <dl style="background-color:#fffdec;border:none">
+                                            <dt style="font-size:14px;text-align:center">Captcha</dt>
+                                            <dd>
+                                                <input id="captchaMobile" class="text w100" type="text" name="captcha" maxlength="4" placeholder="input Captcha here" autocomplete="off" style="width:180px;height:30px;border:1px solid #808080">
+                                                <label for="mobile" class="error mob-yzm-error" style="z-index:1">
+                                                    <i class="fa fa-exclamation-circle iconfont" style="width:60px;height:30px">&#10005;</i>
+                                                </label>
+                                            </dd>
+                                        </dl>
+                                        <span>
+                                            <div id="codeimageMobile" class="codeimg mycode01" style="cursor:pointer;">Click!</div>
+                                        </span>
+                                    </div>
+                                    <dl class="clause-div" style="background-color:#fffdec;">
+                                        <dd>
+                                            <input type="checkbox" checked="checked" value="1" class="checkbox" id="mobileAgreeClause" name="agreeClause" >
+                                            Agreed with the <a title="阅读并同意" class="agreement" href="javascript:void(0);" nc_type="btnShowClauseDialog">Service Agreement</a>
+                                        </dd>
+                                    </dl>
+                                    <div class="submit-div">
+                                        <!--button 按钮会自动刷新页面 这里不能使用它-->
+                                        <div id="mobileSubmitFirst" class="subbbbb" style="background-color:#6495ED;border-color:#6495ED">Next Step</div>
+                                    </div>
+                                </form>
+                                <form id="mobileFormSecond" class="nc-login-form" name="mobileForm" method="post" novalidate="novalidate" style="background-color:#fffdec">
+                                    <dl class="clause-div m0" style="background-color:#fffdec;font-size:15px;text-align:center">
+                                        <input type="hidden" name="mobile" id="mobileSecond">
+                                        <dd id="mobilemsg"></dd>
+                                    </dl>
+                                    <div class="code-div" nctype="sendAuthCodeAgainModule">
+                                        <dl style="background-color:#fffdec;border:none">
+                                            <dt style="font-size:18px;text-align:center;width:100px;font-weight:400">Captcha</dt>
+                                            <dd>
+                                                <input id="captchaMobileSecond" class="text w100" type="text" name="captcha" maxlength="4" placeholder="Input Captcha" autocomplete="off" size="10" style="width:150px;height:30px;border:1px solid #808080">
+                                                <label class="error  yzm-error02">
+                                                    <i class="fa fa-exclamation-circle iconfont">&#10005;</i>
+                                                </label>
+                                            </dd>
+                                        </dl>
+       
+                                    </div>
+                 
+                                    <dl style="background-color:#fffdec;border:none">
+                                        <dt style="font-size:18px;text-align:center;width:100px;font-weight:400">Username</dt>
+                                        <dd>
+                                            <input name="memberName" type="text" class="text" id="memberName" placeholder="Please use 6-20 Chinese, English, numbers and '-' symbols, and not all numbers" maxlength="20" autocomplete="off" style="width:260px;height:30px;border:1px solid #808080">
+                                            <label for="memberName" class="error error-uname">
+                                                <i class="fa fa-exclamation-circle"></i>
+                                                Please use 6-20 Chinese, English, numbers and "-" symbols, and not all numbers
+                                            </label>
+                                        </dd>
+                                    </dl>
+                                    <dl style="background-color:#fffdec;border:none">
+                                        <dt style="font-size:18px;text-align:center;width:100px;float:left;font-weight:400">Password</dt>
+                                        <dd>
+                                            <input type="password" id="mobileMemberPwd" class="text" name="memberPwd" style="width:260px;height:30px;border:1px solid #808080"placeholder="Password should be between 6-20 digits">
+                                            <label for="mobileMemberPwd" class="error error-upwd">
+                                                <i class="fa fa-exclamation-circle"></i>
+                                                Password should be between 6-20 digits
+                                            </label>
+                                        </dd>
+                                    </dl>
+                                    <dl style="background-color:#fffdec;border:none">
+                                        <dt style="font-size:18px;text-align:center;width:100px;float:left;font-weight:400">Confirm</dt>
+                                        <dd>
+                                            <input type="password" id="mobileRepeatMemberPwd" class="text" name="repeatMemberPwd" style="width:260px;height:30px;border:1px solid #808080"placeholder="Please enter the password again">
+                                            <label for="mobileRepeatMemberPwd" class="error error-rpwd ">
+                                                <i class="fa fa-exclamation-circle"></i>
+                                                Please enter the password again
+                                            </label>
+                                        </dd>
+                                    </dl>
+                                    <div class="submit-div">
+                                        <div id="mobileSubmitSecond" class="submit" style="background-color:#6495ED;border-color:#6495ED">Resiger</div>
+                                    </div>
+                                </form>
+                                <div id="mobileThree">
+                                    <div class="mobileThree001"></div>
+                                </div>
+                            </div>
+                            <!---->
+                        </div>
+                    </div>
+                    <div id="dialogClause" style="display:none;">
+                        <!--<h1>会员注册协议</h1>-->
+                        <div id="clauseContent" style="padding: 20px;">
+                            <p>
+                                特别提醒用户认真阅读本《用户服务协议》整个网上交易平台的正常运行，尽力避免服务中断或将引起与本网站的任何争议，
+                                均应提交深圳仲裁委员会按照该会届时有效的仲裁规则进行仲裁。相关争议应单独仲裁，不得与任何其它方的争议在任
+                                &nbsp;何仲裁中合并处理，该仲裁裁决是终局，对各方均有约束力。如果所涉及的争议不适于仲裁解决，
+                                用户同意一切争议由人民法院管辖。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--右侧-->
+                <div class="right" >
+                    <div class="reister-after" >
+                        <h4 style="color:#808080;text-align:center;font-size:15px">After register you can</h4>
+                        <ol>
+                            <li class="ico01"><i class="iconfont" style="color: #2b669a">&#165;</i>Add goods into Favorite List</li>
+                            <li class="ico02"><i class="iconfont" style="color:orange">&#9997;</i>Comment to the goods</li>
+                            <li class="ico03"><i class="iconfont" style="color: coral">&#9813;</i>Chat with other users</li>
+                            <li class="ico06"><i class="iconfont" style="color: greenyellow">&#9993;</i>Upload your goods</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--主板块-注册-->
+    <!--底部-->
+    <div id="contact" style="float:left">
+        <!--联系方式-->
+        <div class="contact_address">
+            <li>联系我们</li>
+            <li>邮箱：xxx@xxx.com</li>
+            <li>电话：111-1111-1111</li>
+            <li>支付宝打款：xxxxxx</li>
+        </div>
+    </div> <!--联系方式结束-->
+    <!--copyright-->
+
+    <!--底部-->
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>个人主页-MyPage-个人信息</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../CSS/userHomepage_PBL2.css" />
+    <link rel="stylesheet" type="text/css" href="../../CSS/userHomepage_inform_PBL2.css" />
+    <link rel="stylesheet" type="text/css" href="../../CSS/index_PBL2.css" />
+    <script type="text/javascript" src="../../js/Chinese/jquery-3.2.1.min.js"></script>
+    <script src="../../js/Chinese/inform.js"></script>
+</head>
+
+<body>
+    <div id="main_uH">
+        <!--主体main-->
+        <div id="nav_bar2">
+            <!--导航-->
+            <div id="logo">
+                <!--Logo名-->
+                <h1 class="web_logo"><a href="index_PBL2.html">logo</a></h1>
+            </div><!--Logo名结束-->
+            <!--导航菜单-->
+            <!-- <div class="nav_menu_lang">
+                <a href="#">语言</a>
+                <div class="dropdown-content">
+                    <a href="#">English</a>
+                    <a href="#">日本語</a>
+                    <a href="#">C</a>
+                    <a href="#">D</a>
+                </div>
+            </div> -->
+            <div class="nav_menu"><a href="userHomepage_cart_PBL2.html">收藏夹</a></div>
+            <div id="user_data_frame">
+                <div class="user_data">
+                    
+                    <a href="#" id='login'>登录</a>
+                    <div class="dropdown-content3">
+                        <a href="#" id='logout'>退出登录</a>
+                    </div>
+                    
+                </div>
+            </div>
+            <!--导航菜单结束-->
+
+        </div><!--导航结束-->
+
+        <div class="blank_top_uH"></div>
+        <div id="main_function_bar">
+            <div class=" mF_leftFrame">
+                <div class="mF_functionSelect" style="border-left:0px;background-color:#ffffff;">全部功能</div>
+                <div class="mF_functionSelect"style="background-color: #d9f1fd"><a href="#">账号信息</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_chartLog_PBL2.html">聊天记录</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_cart_PBL2.html">收藏夹</a></div>
+                <div class="mF_functionSelect" ><a href="userHomepage_history_PBL2.html">浏览记录[暂定]</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_friend_PBL2.html">好友[暂定]</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_target_PBL2.html">关注用户[暂定]</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_myGoodsList_PBL2.html">我的商品</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_upload_PBL2.html">上传商品信息</a></div>
+            </div>
+            <div class="mF_rightFrame">
+                <div class="uH_detail_bar">
+                    <div id="uH_inform">
+                        <div class="uH_upHead">
+                            <div class="uH_headFrame" id="0">
+                                当前头像
+                                <img src="../image_pbl2/icon_pbl2/noavatar_small.gif" />
+                            </div>
+                            <div class="uH_headFrame" style="width:140px">
+                                <div class="button" id="click_uploadHead"><a href="face.html">上传新头像</a></div>
+                            </div>
+                            <div class="uH_headFrame" style="display:none" id="newHead">
+                                新头像
+                                <img src="../image_pbl2/icon_pbl2/noavatar_small.gif" />
+                            </div>
+                            <div class="uH_headFrame" style="width:140px;display:none"id="click_deleteNewHead">
+                                <div class="button"><a href="#">删除</a></div>
+                            </div>
+                        </div>
+                        <script>
+                            $(function(){
+                                 $("#click_uploadHead").click(function(){
+                                     $('#newHead').css("display", "block");
+                                     $('#click_deleteNewHead').css("display", "block");
+                                 })
+                                 $("#click_deleteNewHead").click(function(){
+                                     $('#newHead').css("display", "none");
+                                     $('#click_deleteNewHead').css("display", "none");
+                                 })
+                            })
+                        </script>
+                        <div class="uH_frameISnecessary" id="username">
+                            <div class="uH_fIsTitle">用户名</div>
+                            <div class="uH_fIsUnchange">默认用户名1</div>
+                        </div>
+                        <div class="uH_frameISnecessary" id="email">
+                            <div class="uH_fIsTitle">注册邮箱</div>
+                            <div class="uH_fIsUnchange">xxxx@s.kyushu-u.ac.jp</div>
+                        </div>
+                        <div class="uH_frameISnecessary" id="gender">
+                            <div class="uH_fIsTitle">性别</div>
+                            <div class="uH_fIsSelect">
+                                <select>
+                                    <!-- <option value="g0">保密</option> -->
+                                    <option value="c1">男</option>
+                                    <option value="c0">女</option>
+                                    <option value="c2">不公开</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="uH_frameISnecessary" id="campus">
+                            <div class="uH_fIsTitle">常驻校区</div>
+                            <div class="uH_fIsSelect">
+                                <select style="width:150px">
+                                    <option value="0">其他</option>
+                                    <option value="1">伊都校区</option>
+                                    <option value="2">大桥校区</option>
+                                    <option value="3">筑紫校区</option>
+                                    <option value="4">病院校区</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- <div class="uH_frameISnecessary">
+                            <div class="uH_fIsTitle">昵称</div>
+                            <div class="uH_fIsInput">
+                                <input type="text" name="nickname" value="机器人92081">
+                            </div>
+                        </div> -->
+                        <div class="uH_frameISnecessary" id="contactway">
+                            <div class="uH_fIsTitle">联系方式</div>
+                            <div class="uH_fIsInput">
+                                <input type="text" name="contact" value="xxxx@s.kyushu-u.ac.jp">
+                            </div>
+                        </div>
+                        <div class="uH_frameISnecessary" id="introduction" style="height:200px">
+                            <div class="uH_fIsTitle">个人简介</div>
+                            <div class="uH_fIsTextarea"><textarea id="personal">默认内容</textarea></div>
+                        </div>
+                        <div class="uH_frameISnecessary">
+                            <div class="uH_fIsTitle" style=" width:55%"><div class="button" id="confirm_button"><a href="#">确认修改</a></div></div>
+                            <div class="uH_fIsTitle"><div class="button"><a href="#">取消修改</a></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact" style="width:1120px;float:right;margin-top:20px">
+                    <!--联系方式-->
+                    <div class="contact_address">
+                        <li>联系我们</li>
+                        <li>邮箱：xxx@xxx.com</li>
+                        <li>电话：111-1111-1111</li>
+                        <li>支付宝打款：xxxxxx</li>
+                    </div>
+                </div> <!--联系方式结束-->
+            </div>
+        </div>
+
+    </div >
+</body >
+
+</html >

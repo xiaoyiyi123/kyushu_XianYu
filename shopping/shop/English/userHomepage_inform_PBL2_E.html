@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>个人主页-MyPage-个人信息</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../CSS/userHomepage_PBL2.css" />
+    <link rel="stylesheet" type="text/css" href="../../CSS/userHomepage_inform_PBL2.css" />
+    <link rel="stylesheet" type="text/css" href="../../CSS/index_PBL2.css" />
+    <script type="text/javascript" src="../../js/English/jquery-3.2.1.min.js"></script>
+    <script src="../../js/English/inform.js"></script>
+</head>
+
+<body>
+    <div id="main_uH">
+        <!--主体main-->
+        <div id="nav_bar2">
+            <!--导航-->
+            <div id="logo">
+                <!--Logo名-->
+                <h1 class="web_logo"><a href="index_PBL2_E.html">logo</a></h1>
+            </div><!--Logo名结束-->
+            <!--导航菜单-->
+            <!-- <div class="nav_menu_lang">
+                <a href="#">Langauge</a>
+                <div class="dropdown-content">
+                    <a href="../../shop/Chinese/userHomepage_inform_PBL2.html">中文</a>
+                    <a href="../../shop/Japanese/userHomepage_inform_PBL2_J.html">日本語</a>
+                </div>
+            </div> -->
+            <div class="nav_menu"><a href="userHomepage_cart_PBL2_E.html">Favorite</a></div>
+            <div id="user_data_frame">
+                <div class="user_data">
+                    
+                    <a href="#" id='login'>Login</a>
+                    <div class="dropdown-content3">
+                        <a href="#" id='logout'>Logout</a>
+                    </div>
+                    
+                </div>
+            </div>
+            <!--导航菜单结束-->
+
+        </div><!--导航结束-->
+
+        <div class="blank_top_uH"></div>
+        <div id="main_function_bar">
+            <div class=" mF_leftFrame">
+                <div class="mF_functionSelect" style="border-left:0px;background-color:#ffffff;">Function List</div>
+                <div class="mF_functionSelect" style="font-size:16px;background-color: #d9f1fd"><a href="userHomepage_inform_PBL2_E.html">Personal Information</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_chartLog_PBL2_E.html">Chat Record</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_cart_PBL2_E.html">Favorite List</a></div>
+                <div class="mF_functionSelect" style="font-size:16px"><a href="userHomepage_history_PBL2_E.html">Browsing History</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_myGoodsList_PBL2_E.html">My Goods</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_upload_PBL2_E.html">Upload Goods</a></div>
+            </div>
+            <div class="mF_rightFrame">
+                <div class="uH_detail_bar">
+                    <div id="uH_inform">
+                        <div class="uH_upHead">
+                            <div class="uH_headFrame" id="0">
+                                Current avatar
+                                <img src="../../image_pbl2/icon_pbl2/noavatar_small.gif" />
+                            </div>
+                            <div class="uH_headFrame" style="width:140px">
+                                <div class="button" id="click_uploadHead"><a href="face.html">Upload avatar</a></div>
+                            </div>
+                            <div class="uH_headFrame" style="display:none" id="newHead">
+                                New avatar
+                                <img src="../../image_pbl2/icon_pbl2/noavatar_small.gif" />
+                            </div>
+                            <div class="uH_headFrame" style="width:140px;display:none"id="click_deleteNewHead">
+                                <div class="button"><a href="#">Delete</a></div>
+                            </div>
+                        </div>
+                        <script>
+                            $(function(){
+                                 $("#click_uploadHead").click(function(){
+                                     $('#newHead').css("display", "block");
+                                     $('#click_deleteNewHead').css("display", "block");
+                                 })
+                                 $("#click_deleteNewHead").click(function(){
+                                     $('#newHead').css("display", "none");
+                                     $('#click_deleteNewHead').css("display", "none");
+                                 })
+                            })
+                        </script>
+                        <div class="uH_frameISnecessary" id="username">
+                            <div class="uH_fIsTitle">User Name</div>
+                            <div class="uH_fIsUnchange">default</div>
+                        </div>
+                        <div class="uH_frameISnecessary" id="email">
+                            <div class="uH_fIsTitle">Email</div>
+                            <div class="uH_fIsUnchange">xxxx@s.kyushu-u.ac.jp</div>
+                        </div>
+                        <div class="uH_frameISnecessary" id="gender">
+                            <div class="uH_fIsTitle">Gender</div>
+                            <div class="uH_fIsSelect">
+                                <select>
+                                    <!-- <option value="g0">保密</option> -->
+                                    <option value="c1">Male</option>
+                                    <option value="c0">Female</option>
+                                    <option value="c2">Private</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="uH_frameISnecessary" id="campus">
+                            <div class="uH_fIsTitle">Campus</div>
+                            <div class="uH_fIsSelect">
+                                <select style="width:150px">
+                                    <option value="0">Others</option>
+                                    <option value="1">Ito</option>
+                                    <option value="2">Ohashi</option>
+                                    <option value="3">Chikushi</option>
+                                    <option value="4">Hospital</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- <div class="uH_frameISnecessary">
+                            <div class="uH_fIsTitle">昵称</div>
+                            <div class="uH_fIsInput">
+                                <input type="text" name="nickname" value="机器人92081">
+                            </div>
+                        </div> -->
+                        <div class="uH_frameISnecessary" id="contactway">
+                            <div class="uH_fIsTitle">Contact</div>
+                            <div class="uH_fIsInput">
+                                <input type="text" name="contact" value="xxxx@s.kyushu-u.ac.jp">
+                            </div>
+                        </div>
+                        <div class="uH_frameISnecessary" id="introduction" style="height:200px">
+                            <div class="uH_fIsTitle">Introduction</div>
+                            <div class="uH_fIsTextarea"><textarea id="personal">Defact</textarea></div>
+                        </div>
+                        <div class="uH_frameISnecessary">
+                            <div class="uH_fIsTitle" style=" width:55%"><div class="button" id="confirm_button"><a href="#">Confirm</a></div></div>
+                            <div class="uH_fIsTitle"><div class="button"><a href="#">Cancle</a></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact" style="width:1120px;float:right;margin-top:20px">
+                    <!--联系方式-->
+                    <div class="contact_address">
+                        <li>Contact</li>
+                        <li>Email：xxx@xxx.com</li>
+                        <li>Phone：111-1111-1111</li>
+                        <li>Sipport：xxxxxx</li>
+                    </div>
+                </div> <!--联系方式结束-->
+            </div>
+        </div>
+
+    </div >
+</body >
+
+</html >

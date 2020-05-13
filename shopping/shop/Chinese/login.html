@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>现在登录-login</title>
+    <link rel="stylesheet" href="../../CSS/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../../CSS/iconfont.css" type="text/css" />
+    <link rel="stylesheet" href="../../CSS/common.css" type="text/css" />
+    <link rel="stylesheet" href="../../CSS/login.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../CSS/index_PBL2.css" />
+    <script src="../../js/Chinese/jquery-3.2.1.min.js"></script>
+    <script src="../../js/Chinese/login.js"></script>
+</head>
+<body>
+    <!--头部-->
+    <div class="header-wrap" style="background-color:#6495ED;margin:0;">
+        <header class="public-head-layout wrapper">
+            <!-- <h1 class="site-logo"><a style="height:30px;"="index.html/"><img src="images/logo.png" alt=""></a></h1> -->
+            <div class="nc-regist-now" style="height:30px;">
+                <span style="width:60px;height:30px">
+                    <!-- class="avatar"<img src="../img/logo.png"style="width:40px;height:40px">-->
+
+                </span>
+                <span class="register" style="color:#ffffff;font-size:20px;">已注册的用户请登录，或<a title="" href="register.html" class="register" style="color:#ffd800">注册新用户</a></span>
+            </div>
+        </header>
+    </div>
+    <!--头部-->
+    <!--登录板块-->
+    <div class="nc-login-layout" style="height:400px">
+        <div class="left-pic"><img src="../../img/kyushu.jpg" style="width:400px;height:400px"></div>
+        <div class="nc-login" style="background-color: #fffdec; border:2px solid #6495ED;">
+            <div class="arrow"></div>
+            <div id="loginModule" class="nc-login-mode">
+                <ul class="tabs-nav">
+                    <li style="width:100%"><a href="#commonModule" class="tabulous_active" style="font-size:20px;font-weight:bold;">用户登录<i></i></a></li>
+                    <!-- <li><a href="#mobileModule" class="">手机动态码登录<i></i></a></li> -->
+                    <!--<span class="tabulousclear"></span>-->
+                </ul>
+                <div id="tabs_container" class="tabs-container transition" style="height: 252px;">
+                    <div id="commonModule" class="tabs-content make_transist hideleft showleft" style="position: absolute; top: 0px;">
+                        <div id="showErrorMsgDiv" class="err-msg" style="display: none;">
+                            <p><i class="fa fa-exclamation-circle"></i><span></span></p>
+                        </div>
+                        <form id="loginForm" class="nc-login-form" name="loginForm" method="post" novalidate="novalidate">
+                            <dl>
+                                <dt>账&nbsp;&nbsp;&nbsp;号：</dt>
+                                <dd>
+                                    <input type="text" class="text" id="loginName" name="loginName" autocomplete="off" placeholder="输入用户名/邮箱">
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>密&nbsp;&nbsp;&nbsp;码：</dt>
+                                <dd>
+                                    <input type="password" class="text" id="memberPwd" name="memberPwd" placeholder="输入账户密码" autocomplete="off">
+                                </dd>
+                            </dl>
+                            <div class="code-div mt15">
+                                <dl>
+                                    <dt>验证码：</dt>
+                                    <dd style="width: 120px;">
+                                        <input id="captcha" class="text w100" type="text" name="captcha" maxlength="4" placeholder="输入验证码" autocomplete="off">
+                                        <label class="error yzm-error03">
+                                            <i class="fa fa-exclamation-circle iconfont">&#xe693;</i>
+                                        </label>
+                                    </dd>
+                                </dl>
+                                <span>
+                                    <div id="codeimage03" class="codeimg mycode03" style="cursor:pointer;">6668</div>
+                                </span>
+                            </div>
+                            <div class="handle-div">
+                                <span class="auto">
+                                    <input type="checkbox" value="1" class="checkbox" id="autoLogin" name="autoLogin">
+                                    七天自动登录<em style="display: none;">请勿在公用电脑上使用</em>
+                                </span><a href="#" class="forget">忘记密码</a>
+                            </div>
+                            <div class="submit-div">
+                                <div class="submit subbbb" id="loginSubmit" style="background-color:#6495ED;border-color:#6495ED;">登录</div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--<div id="mobileModule" class="tabs-content hideleft make_transist" style="position: absolute; top: 0px;">-->
+                    <!--<form id="mobileForm" class="nc-login-form" name="mobileForm" method="post" novalidate="novalidate">-->
+                    <!--<dl>-->
+                    <!--<dt>手机号：</dt>-->
+                    <!--<dd>-->
+                    <!--<input type="text" class="text" id="mobile" name="mobile" placeholder="可填写已注册的手机号接收短信" autocomplete="off">-->
+                    <!--</dd>-->
+                    <!--</dl>-->
+                    <!--<div class="code-div">-->
+                    <!--<dl>-->
+                    <!--<dt>验证码：</dt>-->
+                    <!--<dd>-->
+                    <!--<input id="captchaMobile" class="text w100" type="text" name="captcha" maxlength="4" placeholder="输入验证码" autocomplete="off" size="10">-->
+                    <!--</dd>-->
+                    <!--</dl>-->
+                    <!--<span><img id="codeimageMobile" src="https://www.cnrmall.com/captcha/getcaptcha?t=0.6082889855813882" class="codeimg" alt=""><a href="JavaScript:void(0);" nc_type="changeCaptcha" onclick="javascript:document.getElementById('codeimageMobile').src='https://www.cnrmall.com/captcha/getcaptcha?t='+Math.random()" class="code-pic">看不清，更换一张</a></span></div>-->
+                    <!--<div class="tiptext"> 正确输入上方验证码后，点击<a href="###" id="sendSmsCode"><i class="fa fa-mobile"></i>发送短信动态码</a>，查收短信将系统发送的“6位短信动态码”输入到下方验证后登录。 </div>-->
+                    <!--<dl>-->
+                    <!--<dt>动态码：</dt>-->
+                    <!--<dd>-->
+                    <!--<input type="text" class="text" id="authCode" name="authCode" placeholder="输入6位手机动态码" autocomplete="off" size="15">-->
+                    <!--</dd>-->
+                    <!--</dl>-->
+                    <!--<div class="submit-div">-->
+                    <!--<button id="mobileSubmit" class="submit">登录</button>-->
+                    <!--</div>-->
+                    <!--</form>-->
+                    <!--</div>-->
+                </div>
+            </div>
+
+            <!-- <div class="nc-login-api" id="demo-form-site">
+                <h4>使用合作网站账号登录：</h4>
+                <a href="javascript:void(0);" title="微信账号登录" class="wx" id="weixinLogin">
+                    <i class="iconfont icon01">&#xe6a9;</i>微信
+                </a>
+            </div> -->
+        </div>
+    </div>
+    <!--登录板块-->
+    <!--底部-->
+    <div id="contact" style="float:left">
+        <!--联系方式-->
+        <div class="contact_address">
+            <li>联系我们</li>
+            <li>邮箱：xxx@xxx.com</li>
+            <li>电话：111-1111-1111</li>
+            <li>支付宝打款：xxxxxx</li>
+        </div>
+    </div> <!--联系方式结束-->
+    <!-- <div id="footer">
+        <div class="wrapper">
+            <p><a href="index.html">首页</a>
+                | <a target="_blank" href="javascript:void(0)">招商合作</a>           | <a target="_blank" href="javascript:void(0)">关于央广购物</a>           | <a target="_blank" href="https://web.cnrmall.com/article/info/175304">联系我们</a>           | <a target="_blank" href="http://scm.cnrmall.com/veninfo/venlogin/index.jsp">成为供应商</a>           | <a target="_blank" href="https://web.cnrmall.com/article/info/532349">招贤纳士</a>
+            </p>
+            <p><i></i>京公网安备：11011502002190&nbsp;&nbsp;<a target="_blank" href="javascript:void(0)">京ICP备10038858号</a>&nbsp;&nbsp;<a target="_blank" href="javascript:;">食品流通许可证编号：SP1101151210063489</a>&nbsp;&nbsp;<a target="_blank" href="javascript:;">信息网络传播视听节目许可证 0102002号</a></p>
+            <p>Copyright<em style="font-family:Arial,Verdana; margin:0 4px">©</em>2010-2017 cnrmall.com All Rights Reserved&nbsp;&nbsp;&nbsp;&nbsp;服务热线：4008-518-518</p>
+            <ul class="footer-img">
+                <li><a href="javacript:void(0)" target="_blank"></a></li>
+                <li><a href="javacript:void(0)" target="_blank"></a></li>
+                <li><a  href="javacript:void(0)" target="_blank"></a></li>
+                <li><a  href="javacript:void(0)" target="_blank"></a></li>
+            </ul>
+        </div>
+    </div> -->
+    <!--底部-->
+</body>
+</html>

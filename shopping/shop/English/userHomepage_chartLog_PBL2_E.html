@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>MyPage-chatlog english</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../CSS/userHomepage_PBL2.css" />
+    <link rel="stylesheet" type="text/css" href="../../CSS/index_PBL2.css" />
+    <link href="../../CSS/chat.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/English/jquery-3.2.1.min.js"></script>
+    <!-- <script src="../js/index_new.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+          crossorigin="anonymous">
+    <!-- <script type="text/javascript" src="../js/jquery.js"></script> -->
+    <script src="../../js/English/chat_new.js"></script>
+</head>
+
+<body>
+    <div id="main_uH">
+        <!--主体main-->
+        <div id="nav_bar2">
+            <!--导航-->
+            <div id="logo">
+                <!--Logo名-->
+                <h1 class="web_logo"><a href="index_PBL2_E.html">logo</a></h1>
+            </div><!--Logo名结束-->
+            <!--导航菜单-->
+            <!-- <div class="nav_menu_lang" style="width:auto">
+                <a href="#">Language</a>
+                <div class="dropdown-content">
+                    <a href="../../shop/Chinese/userHomepage_chartLog_PBL2.html">中文</a>
+                    <a href="../../shop/Japanese/userHomepage_chartLog_PBL2_J.html">日本語</a>
+                </div>
+            </div> -->
+            <div class="nav_menu"><a href="userHomepage_cart_PBL2_E.html">Favorite</a></div>
+            <div id="user_data_frame">
+                <div class="user_data">
+                    <img class="user_head" src="../../image_pbl2/icon_pbl2/noavatar_small.gif" />
+                    <a href="#" id='login'>Login</a>
+                    <div class="dropdown-content3">
+                        <a href="#">Logout</a>
+                    </div>
+                    
+                </div>
+            </div>
+            <!--导航菜单结束-->
+
+        </div><!--导航结束-->
+
+        <div class="blank_top_uH"></div>
+        <div id="main_function_bar">
+            <div class=" mF_leftFrame">
+                <div class="mF_functionSelect" style="border-left:0px;background-color:#ffffff;">Function List</div>
+                <div class="mF_functionSelect" style="font-size:16px"><a href="userHomepage_inform_PBL2_E.html">Personal Information</a></div>
+                <div class="mF_functionSelect" style="background-color: #d9f1fd"><a href="userHomepage_chartLog_PBL2_E.html">Chat Record</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_cart_PBL2_E.html">Favorite List</a></div>
+                <div class="mF_functionSelect" style="font-size:16px"><a href="userHomepage_history_PBL2_E.html">Browsing History</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_myGoodsList_PBL2_E.html">My Goods</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_upload_PBL2_E.html">Upload Goods</a></div>
+                <!--<div class="mF_functionSelect"><a href="userHomepage_friend_PBL2.html">Friends[beta]</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_target_PBL2.html">Following[beta]</a></div>-->
+            </div>
+            <div class="mF_rightFrame">
+                <div class="uH_detail_bar" style="height:500px">
+                    <div class="chatbox" style="width:100%;height:100%;margin-top:70px">
+                        <div class="chatleft">
+                            <div class="top">
+                                <i class="fas fa-bars" style="font-size: 1.4em"></i>
+                                <input type="text" placeholder="search" style="width: 140px; height: 36px; margin-left: 25px;">
+                                <button class="searchbtn"></style><i class="fas fa-search"></i></button>
+                            </div>
+                            <div class="center">
+                                <ul class='friends'>
+
+                                    <!-- <li style="background:#EDE9F5;">
+                    <img style="border-radius: 20px; vertical-align: middle;" src="http://placehold.it/40x40">
+                    <span style="margin-left: 10px; ">Barack Obama</span>
+                </li>
+                <li id='friend'>
+                    <img style="border-radius: 20px; vertical-align: middle;" src="http://placehold.it/40x40">
+                    <span style="margin-left: 10px;">Barack Obama</span>
+                </li> -->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="chatright">
+                            <div class="top">
+                                <img style="border-radius: 20px; vertical-align: middle;" src="http://placehold.it/40x40">
+                                <span id='opposite' style="margin-left: 20px;">Welcome!</span>
+                                <i class="fas fa-ellipsis-v" style="font-size: 1.4em; position: absolute; right: 20px; color: gray;"></i>
+                            </div>
+                            <div class="center">
+                                <ul id='add_text'>
+                                    <!-- <li class="msgleft">
+                    <img style="border-radius: 20px; vertical-align: top;" src="http://placehold.it/40x40">
+                    <p class="msgcard">This message on the left!</p>
+                </li>
+                <li class="msgright" >
+
+                    <img style="border-radius: 20px; vertical-align: top;float:right;" src="http://placehold.it/40x40">
+                    <p class="msgcard" style="float:right;background:#ceeaff">This message on the right!</p>
+
+                </li>
+                <li class="msgleft">
+                    <img style="border-radius: 20px; vertical-align: top;" src="http://placehold.it/40x40">
+                    <p class="msgcard">This is a long message! This is a long message! This is a long left message!</p>
+                </li>
+                <li class="msgright">
+                    <img style="border-radius: 20px; vertical-align: top; float:right;" src="http://placehold.it/40x40">
+                    <p class="msgcard" style="float:right;background:#ceeaff">This message on the right!</p>
+
+
+                </li>
+                <li class="msgleft">
+                    <img style="border-radius: 20px; vertical-align: top;" src="http://placehold.it/40x40">
+                    <p class="msgcard">This is a long message! This is a long message! This is a long left message!</p>
+                </li>
+                <li class="msgright">
+                    <img style="border-radius: 20px; vertical-align: top; float:right;" src="http://placehold.it/40x40">
+                    <p class="msgcard" style="float:right;background:#ceeaff;">This is a long message! This is a long message! This is a long left message!</p>
+                </li> -->
+                                </ul>
+                            </div>
+                            <div class="footer">
+                                <textarea maxlength="800" rows="5" cols="40" style="width: 75%; resize: none; border: none; float:left;margin-top:20px;" placeholder="Please enter message here..." id='textarea'></textarea>
+                                <button class="sendbtn">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact" style="width:1120px;float:right;margin-top:20px">
+                    <!--联系方式-->
+                    <div class="contact_address">
+                        <li>Contact us</li>
+                        <li>E-mail：xxx@xxx.com</li>
+                        <li>TEL：111-1111-1111</li>
+                        <li>Support us：xxxxxx</li>
+
+                    </div>
+                </div> <!--联系方式结束-->
+            </div>
+        </div>
+
+    </div >
+</body >
+
+</html >

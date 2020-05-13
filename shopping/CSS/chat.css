@@ -1,0 +1,268 @@
+/*
+	Author: Wang https://blog.csdn.net/q475254344
+	Last Modified: 2018/5/15
+*/
+
+#logo {
+    width: 15%;
+    height: 30px;
+    float: left;
+
+}
+
+.web_logo {
+    margin-top: 0px;
+    text-align: center;
+    color: #FFF;
+    font-size: 20px;
+}
+
+/*导航栏*/
+#nav_bar {
+    margin-left: 100px;
+    margin-right: auto;
+    opacity: 0.9;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 30px;
+    background: #6495ED;
+    max-width: 1300px;
+
+}
+.nav_menu {
+    float: right;
+    height: 30px;
+    width: 80px;
+    /*border:1px solid #CC9;*/
+}
+.nav_menu a{
+	width:100%;
+	height:30px;
+	display:block;
+	text-align:center;
+	line-height:30px;
+	color:#FFF;
+	font-size:20px;
+	font-weight:500;
+	text-decoration:none;
+}
+.nav_menu a:hover{
+	cursor:pointer;
+	background:lightgreen;
+}
+.nav_menu_lang {
+    float: right;
+    height: 30px;
+    width: 80px;
+    /*border:1px solid #CC9;*/
+}
+.nav_menu_lang a {
+    width: 100%;
+    height: 30px;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+}
+.nav_menu_lang a:hover{
+	cursor:pointer;
+	background:lightgreen;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width:80px;
+
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropdown-content a{
+    height: 30px;
+    color: #4169E1;
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover{
+	background:#F07818;
+}
+.nav_menu_lang:hover .dropdown-content{
+    display: block;
+}
+
+
+li {
+    list-style: none;
+}
+input {
+    border-radius: 5px;
+}
+.leftbar ul {
+    padding: 0px;
+}
+.leftbar li {
+    padding: 10px;
+}
+.leftbar {
+    background-color: #212e3e;
+    width: 50px;
+    height: 100%;
+    color:grey;
+    padding: 0px;
+    text-align: center;
+    position: absolute;
+}
+body {
+    padding: 0px;
+    margin: 0px;
+}
+li {
+    list-style: none;
+}
+input {
+    border-radius: 5px;
+}
+.leftbar ul {
+    padding: 0px;
+}
+.leftbar li {
+    padding: 10px;
+}
+.leftbar {
+    background-color: #212e3e;
+    width: 50px;
+    height: 100%;
+    color:grey;
+    padding: 0px;
+    text-align: center;
+    position: absolute;
+}
+.container {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    margin: 0;
+}
+.chatbox {
+
+    margin: auto;
+    height: 70%;
+    width: 70%;
+    transform: translateY(-10%);
+    box-shadow: 0 0 0 0;
+    display: flex;
+}
+.chatleft {
+    background-color: #ffffff;
+    width: 25%;
+    left: 0;
+    height: 100%;
+}
+.chatleft .top {
+    margin-top: 20px;
+    height: 10%;
+    color: grey;
+    background-color: #F7F9F9;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+.searchbtn {
+    height: 36px;
+    width: 36px;
+    border-radius: 18px;
+    background-color: #1f94bf;
+    color: #ECF0F1;
+    margin-left: 10px;
+}
+.searchbtn:hover {
+    cursor: pointer;
+}
+.chatleft .center {
+    margin-top: 20px;
+    overflow-y: scroll;
+    height: 90%;
+}
+.chatleft .center ul{
+    padding-left: 10px;
+
+}
+.chatleft .center li{
+    margin: 10px;
+    width: 200px;
+    height: 50px;
+}
+.chatright {
+    background-color: #ffffff;
+    width: 75%;
+    height: 100%;
+}
+.chatright .top {
+    margin-top: 20px;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+.chatright .center {
+    margin-top: 20px;
+    background-color: #edf5f8;
+    height: 65%;
+    overflow-y: scroll;
+}
+.chatright .center ul {
+    padding: 10px;
+}
+.chatright .center li {
+    margin: 10px;
+    width: 100%;
+}
+.chatright .center p{
+    display: inline-block;
+}
+
+
+.msgcard {
+    margin: 0 10px 0 10px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 60%;
+}
+.msgleft {
+    float: left;
+}
+
+.msgright {
+    float: right;
+    /* display: block; */
+}
+
+.chatright .footer {
+    margin-top: 40px;
+    height: 20%;
+    background-color: #FBFCFC;
+    text-align: right;
+}
+
+.chatright .footer .textarea{
+    width: 75%;
+    resize: none;
+    border: none;
+    float:left;
+    margin-top:20px;
+}
+.sendbtn {
+    height: 40px;
+    width: 80px;
+    border-radius: 10px;
+    background-color: #58D68D;
+    color: white;
+    font-weight: bold;
+    margin:10px 20px 0 0;
+}

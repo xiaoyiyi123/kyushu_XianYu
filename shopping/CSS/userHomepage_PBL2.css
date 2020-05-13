@@ -1,0 +1,214 @@
+/* CSS Document */
+/*页面开始*/
+
+#main_uH {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: auto;
+    /*border:1px solid #F00;box-shadow: inset 0px 0px 15px 1px #ceeaff;*/
+    min-width: 1200px;
+    max-width: 1200px;
+    z-index: -10;
+}
+
+.blank_top_uH {
+    width: 100%;
+    height: 30px;
+}
+
+
+
+
+/*主界面部分*/
+
+#main_function_bar {
+    width: 95%;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:20px;
+    position: relative;
+}
+
+/*左边功能栏导航*/
+.mF_leftFrame {
+    width: 180px;
+    height: 600px;
+    float:left;
+}
+.mF_functionSelect {
+    width: 95%;
+    float: right;
+    height: 40px;
+    /*background-color:#b6ff00;*/
+    border-left: 1px solid #6495ED;
+    border-bottom: 1px solid #6495ED;
+    line-height: 40px;
+    font-size: 20px;
+    color: #ff6a00;
+    background-color: #fffdec;
+}
+.mF_functionSelect a{
+    margin-left:10px;
+    color:#000000;
+    text-decoration:none;
+}
+.mF_functionSelect a:hover{
+    color:#ff6a00;
+}
+
+
+/*右边具体功能部分*/
+.mF_rightFrame {
+    width: 960px;
+    height: auto;
+    min-height:500px;
+    float: left;
+    background-color: #d9f1fd;
+}
+
+/*收藏夹or浏览记录展示商品信息用*/
+
+.uH_detail_bar {
+    width: 96%;
+    height: auto;
+    min-height: 500px;
+    background-color: #ffffff;
+    margin: auto;
+    margin-top: 2%;
+}
+
+.uHd_goodFrame{
+    width:95%;
+    height:150px;
+    margin-top:10px;
+    margin-left:auto;
+    margin-right:auto;
+    border:1px solid #808080;
+    font-size:40px;
+    line-height:150px;
+    text-align:center;
+    color:#808080;
+    font-weight:bolder;
+}
+.uHd_goodPic {
+    width: 150px;
+    height: 150px;
+    float:left;
+    border-right:1px solid #808080;
+}
+.uHd_goodPic img{
+    width:140px;
+    height:140px;
+    margin:5px 5px 5px 5px;
+}
+
+.uHd_detailFrame {
+    width: 720px;
+    height: 150px;
+    float: left;
+    margin-left:2px;
+}
+
+.uHd_dataFrame {
+    width: 100%;
+    height: 49px;
+    float: left;
+    border-bottom:1px solid #808080;
+}
+.uHd_price {
+    width: 100px;
+    height: 50px;
+    float: left;
+    /*background-color: darkgrey;*/
+    color: #ff6a00;
+    font-weight: 900;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+
+}
+.uHd_area {
+    width: 120px;
+    height: 50px;
+    float: left;
+    margin-left: 10px;
+    line-height: 50px;
+    font-size: 20px;
+    /*background-color: antiquewhite;*/
+    text-align: center;
+    color: #808080;
+    font-weight: normal;
+}
+.uHd_sellerID {
+    width: auto;
+    height: 50px;
+    float: right;
+    margin-right: 10px;
+    line-height: 50px;
+    font-size: 15px;
+    color: #808080;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+
+
+.uHd_name {
+    width: 100%;
+    height: 49px;
+    float: left;
+    line-height: 25px;
+    font-size: 15px;
+    font-weight: normal;
+    color: #000000;
+    border-bottom: 1px solid #808080;
+    background-color: #fbffe3;
+}
+
+.uHd_buttonFrame {
+    width: 100%;
+    height: 40px;
+    float: left;
+    margin-top:10px;
+
+}
+.uHd_button {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: normal;
+    background-color: aliceblue;
+    float: left;
+    margin-left: 20px;
+    border: 1px solid #7d8adf;
+}
+.uHd_button a{
+    text-decoration:none;
+}
+.uHd_button button{
+    text-decoration:none;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: normal;
+    background-color: aliceblue;
+    float: left;
+    border:none;
+}
+
+.uHd_data {
+    width: 220px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    text-align: center;
+    color: #808080;
+    font-weight: normal;
+    float: right;
+}

@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>searchResult japanese</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../CSS/searchResult_PBL2.css" />
+    <link rel="stylesheet" type="text/css" href="../../CSS/index_PBL2.css" />
+    <script type="text/javascript" src="../../js/Japanese/jquery-3.2.1.min.js"></script>
+    <script src="../../js/Japanese/search.js"></script>
+</head>
+
+<body>
+    <div id="main_sR">
+        <!--主体main-->
+        <div id="nav_bar">
+            <!--导航-->
+
+            <div id="logo">
+                <!--Logo名-->
+                <h1 class="web_logo"><a href="index_PBL2_J.html">logo</a></h1>
+            </div><!--Logo名结束-->
+            <!--导航菜单-->
+            <!-- <div class="nav_menu_lang">
+                <a href="#">言語</a>
+                <div class="dropdown-content">
+                    <a href="../English/searchResult_PBL2_E.html">English</a>
+                    <a href="../Chinese/searchResult_PBL2.html">中文</a>
+                </div>
+            </div> -->
+            <div class="nav_menu" id='2' style="width:auto"><a href="userHomepage_cart_PBL2_J.html">マイリスト</a></div>
+            <div class="nav_menu" id='1'><a href="login_J.html">ログイン</a></div>
+            <!--导航菜单结束-->
+
+        </div><!--导航结束-->
+
+        <div id="search_bar">
+            <div id="area_bar">
+                <div class="area_select">
+                    キャンパス選択
+                    <div class="dropdown-area">
+                        <a href="#">伊都キャンパス</a>
+                        <a href="#">大橋キャンパス</a>
+                        <a href="#">筑紫キャンパス</a>
+                        <a href="#">病院キャンパス</a>
+                        <a href="#">別府キャンパス</a>
+                    </div>
+                </div>
+            </div>
+            <!--搜索-->
+            <div class="search">
+                <div class="search-top">
+                    <form class="search-form">
+                        <input type="text" class="input-text" placeholder="キーワードを入力してください" />
+                        <input type="submit" class="input-sub" value="検索" />
+                    </form>
+                </div>
+                <div style="width:40px;height:40px;z-index:3;position:relative;display:inline;">
+                    <img src="../../image_pbl2/icon_pbl2/icon00012.png" height="40" width="35" />
+                </div>
+                <div class="keyword">
+                    <ul>
+                        <li><b>カテゴリー</b></li>
+                        <li><a target="_blank" href="javascript:void(0)">本</a></li>
+                        <li><a target="_blank" href="javascript:void(0)">家具</a></li>
+                        <li><a target="_blank" href="javascript:void(0)">電気製品</a></li>
+                        <li><a target="_blank" href="javascript:void(0)">娯楽</a></li>
+                        <li><a target="_blank" href="javascript:void(0)">その他</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--搜索结束-->
+        </div>
+
+        <div id="selectTAG_bar">
+            选择品牌，价格范围，具体参数，选择校区？
+        </div>
+        <div id="resultSort_bar">
+            <div class="rS_sortCondition">
+                <div class="rS_sC"><a href="#">価格の安い順</a></div>
+                <div class="rS_sC"><a href="#">価格の高い順</a></div>
+                <div class="rS_inputFrame">
+                    <div class="rS_inputPrice">
+                        <input type="text" placeholder="価格下限" /> - <input type="text" placeholder="価格上限" />
+                    </div>
+                    <div class="rS_buttonFrame"><div class="rS_button"><a href="#">確定</a></div></div>
+                </div>
+                <div class="rS_areaSelectFrame">
+                    <div class="rS_area_select">
+                        キャンパス選択
+                        <div class="rS_dropdown-area">
+                            <a href="#">伊都キャンパス</a>
+                            <a href="#">大橋キャンパス</a>
+                            <a href="#">筑紫キャンパス</a>
+                            <a href="#">病院キャンパス</a>
+                            <a href="#">別府キャンパス</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="searchResult_bar">
+            <!-- <div class="resultDetail_frame">
+                <div class="rD_image"><a href="#"><img src="../image_pbl2/1.jpg" /></a></div>
+                <div class="rD_price">￥3,880</div>
+                <div class="rD_area">日亚校区</div>
+                <div class="rD_name">
+                    <a href="#">
+                        Lexar High-Performance 633x microSDXC UHS-Iカード 256GB (転送速度 95MB/s、SDアダプタ付) [並行輸入品]
+                    </a>
+                </div>
+                <div class="rD_saler"><a href="#">卖家id:用户名1</a></div>
+                <div class="rD_blank"></div>
+            </div> -->
+            <!-- <div class="resultDetail_frame">
+                <div class="rD_image"><a href="#"><img src="../image_pbl2/1.jpg" /></a></div>
+                <div class="rD_price">￥3,880</div>
+                <div class="rD_area">日亚校区</div>
+                <div class="rD_name">
+                    <a href="#">
+                        Lexar High-Performance 633x microSDXC UHS-Iカード 256GB (転送速度 95MB/s、SDアダプタ付) [並行輸入品]
+                    </a>
+                </div>
+                <div class="rD_saler"><a href="#">卖家id:用户名1</a></div>
+                <div class="rD_blank"></div>
+            </div>
+            <div class="resultDetail_frame">
+                <div class="rD_image"><a href="#"><img src="../image_pbl2/1.jpg" /></a></div>
+                <div class="rD_price">￥3,880</div>
+                <div class="rD_area">日亚校区</div>
+                <div class="rD_name">
+                    <a href="#">
+                        Lexar High-Performance 633x microSDXC UHS-Iカード 256GB (転送速度 95MB/s、SDアダプタ付) [並行輸入品]
+                    </a>
+                </div>
+                <div class="rD_saler"><a href="#">卖家id:用户名1</a></div>
+                <div class="rD_blank"></div>
+            </div>
+            <div class="resultDetail_frame">
+                <div class="rD_image"><a href="#"><img src="../image_pbl2/1.jpg" /></a></div>
+                <div class="rD_price">￥3,880</div>
+                <div class="rD_area">日亚校区</div>
+                <div class="rD_name">
+                    <a href="#">
+                        Lexar High-Performance 633x
+                    </a>
+                </div>
+                <div class="rD_saler"><a href="#">卖家id:用户名1</a></div>
+                <div class="rD_blank"></div>
+            </div>
+            <div class="resultDetail_frame">
+                <div class="rD_image"><a href="#"><img src="../image_pbl2/1.jpg" /></a></div>
+                <div class="rD_price">￥3,880</div>
+                <div class="rD_area">日亚校区</div>
+                <div class="rD_name">
+                    <a href="#">
+                        Lexar High-Performance 633x microSDXC UHS-Iカード 256GB (転送速度 95MB/s、SDアダプタ付) [並行輸入品]
+                    </a>
+                </div>
+                <div class="rD_saler"><a href="#">卖家id:用户名1</a></div>
+                <div class="rD_blank"></div>
+            </div>
+            <div class="resultDetail_frame">
+                <div class="rD_image"><a href="#"><img src="../image_pbl2/1.jpg" /></a></div>
+                <div class="rD_price">￥3,880</div>
+                <div class="rD_area">日亚校区</div>
+                <div class="rD_name">
+                    <a href="#">
+                        Lexar High-Performance 633x microSDXC UHS-Iカード 256GB (転送速度 95MB/s、SDアダプタ付) [並行輸入品]
+                    </a>
+                </div>
+                <div class="rD_saler"><a href="#">卖家id:用户名1</a></div>
+                <div class="rD_blank"></div>
+            </div>
+            <div class="resultDetail_frame">
+                <div class="rD_image"><a href="#"><img src="../image_pbl2/1.jpg" /></a></div>
+                <div class="rD_price">￥3,880</div>
+                <div class="rD_area">日亚校区</div>
+                <div class="rD_name">
+                    <a href="#">
+                        Lexar High-Performance 633x microSDXC UHS-Iカード 256GB (転送速度 95MB/s、SDアダプタ付) [並行輸入品]
+                    </a>
+                </div>
+                <div class="rD_saler"><a href="#">卖家id:用户名1</a></div>
+                <div class="rD_blank"></div>
+            </div>
+            <div class="resultDetail_frame">
+                <div class="rD_image"><a href="#"><img src="../image_pbl2/1.jpg" /></a></div>
+                <div class="rD_price">￥3,880</div>
+                <div class="rD_area">日亚校区</div>
+                <div class="rD_name">
+                    <a href="#">
+                       (転送速度 95MB/s、SDアダプタ付) [並行輸入品]
+                    </a>
+                </div>
+                <div class="rD_saler"><a href="#">卖家id:用户名1</a></div>
+                <div class="rD_blank"></div>
+            </div> -->
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                var dSizeH = 420;//每个商品元素div所占高度
+                //var dSizeW = 270;
+                var OnePageNumber = 7;//该页面展示的商品总数
+                var cliWidth = document.body.clientWidth;
+                var NumH = 0;
+                //根据浏览器宽度调整每行3个或是4个商品
+                if (cliWidth >= 1145) { NumH = parseInt(OnePageNumber/4)+1; }
+                else { NumH = parseInt(OnePageNumber / 3) + 1; }
+                var divH = NumH * dSizeH + 10;
+                $('#searchResult_bar').css("height", divH + "px");
+                $(window).resize(function () {
+                    cliWidth = document.body.clientWidth;
+                    if (cliWidth >= 1145) { NumH = parseInt(OnePageNumber/4)+1; }
+                    else { NumH = parseInt(OnePageNumber / 3) + 1; }
+                    var divH = NumH * dSizeH + 10;
+                    $('#searchResult_bar').css("height", divH + "px");
+                });
+            });
+        </script>
+        <div id="pageSelect_bar">
+            <div class="pS_frame">
+                <div class="pS_prePage"><a href="#">前へ</a></div>
+                <div class="pS_pageNum"><a href="#">1</a></div>
+                <div class="pS_pageNum"><a href="#">2</a></div>
+                <div class="pS_pageNum"><a href="#">3</a></div>
+                <div class="pS_pageNumb">...</div>
+                <div class="pS_pageNum"><a href="#">98</a></div>
+                <div class="pS_pageNum"><a href="#">99</a></div>
+                <div class="pS_pageNum"><a href="#">100</a></div>
+                <div class="pS_nextPage"><a href="#">次へ</a></div>
+            </div>
+            <div class="pS_frame2">
+                <input type="text" placeholder="2" />ページへ
+                <div class="pS_frame2_button"><a href="#">確定</a></div>
+            </div>
+        </div>
+        <div id="contact">
+                <!--联系方式-->
+            <div class="contact_address">
+                <li>お問合せ</li>
+                <li>メール：xxx@xxx</li>
+                <li>電話番号：xxx-xxxx-xxxx</li>
+                <li>サポート：xxxxxx</li>
+            </div>
+        </div> <!--联系方式结束-->
+    </div >
+</body >
+
+</html >
