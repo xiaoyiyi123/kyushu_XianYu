@@ -7,7 +7,7 @@ header("Access-Control-Allow-Origin:*");
 //从数据库读取数据并保存城json文件
 
 $servername = "192.168.10.149";
-$username = "pbl";
+$username = "pbl3";
 $password = "123456";
 $mysqlname = "shopping"; 
 $parameter=$_POST["parameter"];

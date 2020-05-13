@@ -3,7 +3,7 @@ header('Content-Type:application/json; charset=utf-8');
 header("Access-Control-Allow-OriGIN:*");
 $parameter=$_POST['parameter'];
   $dbserver="192.168.10.149";
-  $dbuser="pbl";
+  $dbuser="pbl3";
   $dbpwd="123456";
   $database="shopping";
   $conn=new mysqli($dbserver,$dbuser,$dbpwd,$database);

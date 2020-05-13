@@ -1,6 +1,6 @@
 <?php
 $dbserver="192.168.10.149";
-$dbuser="pbl";
+$dbuser="pbl3";
 $dbpwd="123456";
 $database="shopping";
 $usename=$_COOKIE["my_cookie"];

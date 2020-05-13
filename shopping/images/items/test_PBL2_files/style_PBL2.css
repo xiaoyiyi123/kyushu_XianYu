@@ -66,38 +66,3 @@ background-size: 20px 20px;
     background-size: 20px 20px;
     background-repeat: no-repeat;
 }
-
-
-.button_left {
-    width: 45px;
-    height: 48px;
-    float: left;
-    position: relative;
-    margin-left: 5%;
-    margin-top: 100px;
-}
-.button_left  button{
-    border:none;
-    width: 45px;
-    height: 48px;
-    background: url(../image_pbl2/icon_pbl2/buttun002.png);
-    background-size: 45px 48px;
-    background-repeat: no-repeat;
-}
-
-.button_right {
-    width: 45px;
-    height: 48px;
-    float: right;
-    position: relative;
-    margin-right: 5%;
-    margin-top: 100px;
-}
-.button_right button {
-    border:none;
-    width: 45px;
-    height: 48px;
-    background: url(../image_pbl2/icon_pbl2/buttun001.png);
-    background-size: 45px 48px;
-    background-repeat: no-repeat;
-}

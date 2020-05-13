@@ -3,7 +3,7 @@ header('Content-Type:application/json; charset=utf-8');
 header("Access-Control-Allow-OriGIN:*");
 $parameter=$_POST['parameter'];
 $dbserver="192.168.10.149";
-$dbuser="pbl";
+$dbuser="pbl3";
 $dbpwd="123456";
 $database="shopping";
 $usename=$_POST['usename'];
@@ -21,12 +21,12 @@ if($parameter==0){
         $temp=$result->fetch_assoc();
         //$new=array('Id'=>$temp["Item_Id"],'Name'=>$temp["Item_Name"],'Price'=>$temp["Item_Price"],'Picture'=>$temp["Item_Picture"],'User'=>$temp["User_Name"],'Campus'=>$temp["Campus"]);
         $newitem=$temp["Item_Id"];
-        $sql2="SELECT * from Items where Item_id='$newitem'";
+        $sql2="SELECT * from Items where Item_Id='$newitem'";
         $result2 = mysqli_query($conn,$sql2);
         $temp2=$result2->fetch_assoc();
         $new=array('Id'=>$temp2["Item_Id"],'Name'=>$temp2["Item_Name"],'Price'=>$temp2["Item_Price"],'Picture'=>$temp2["Item_Picture"],'User'=>$temp2["User_Name"],'Campus'=>$temp2["Campus"],'Date'=>$temp["Date"]);
     
-        $sql3="SELECT Date from Collections where Item_id='$newitem'";
+        $sql3="SELECT Date from Collections where Item_Id='$newitem'";
         $result3 = mysqli_query($conn,$sql3);
         $temp3=$result3->fetch_assoc();
         $date= $temp3["Date"];

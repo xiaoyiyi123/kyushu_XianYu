@@ -2,7 +2,7 @@
 header('Content-Type:application/json; charset=utf-8');
 header("Access-Control-Allow-OriGIN:*");
 $dbserver="192.168.10.149";
-$dbuser="pbl";
+$dbuser="pbl3";
 $dbpwd="123456";
 $database="shopping";
 $usename=$_POST['username'];

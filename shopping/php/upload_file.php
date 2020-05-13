@@ -1,7 +1,7 @@
 <?php
 $dbms='mysql';
 $mysql_server_name='192.168.10.149';
-$mysql_username='pbl';
+$mysql_username='pbl3';
 $mysql_password='123456';
 $mysql_database='shopping';
 $dsn="$dbms:host=$mysql_server_name;dbname=$mysql_database";

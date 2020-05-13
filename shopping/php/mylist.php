@@ -4,7 +4,7 @@ header("Access-Control-Allow-OriGIN:*");
 $parameter=$_POST['parameter'];
 $id=$_POST['id'];
 $dbserver="192.168.10.149";
-$dbuser="pbl";
+$dbuser="pbl3";
 $dbpwd="123456";
 $database="shopping";
 $conn=new mysqli($dbserver,$dbuser,$dbpwd,$database);
