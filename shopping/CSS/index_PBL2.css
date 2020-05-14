@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 body,ul,li{padding:0; margin:0;}
@@ -11,16 +11,16 @@ div {
 
 
 #main_index {
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     height: auto;
     /*border:1px solid #F00;background-color:#f3fff4;*/
     min-width: 1000px;
-    max-width: 1200px;
+    /*max-width: 1200px;*/
     min-height: 800px;
     z-index: -10;
-    
+    background-color:rgb(73,125,189);
     /*box-shadow: inset 0px 0px 15px 1px #ceeaff;*/
 }
 
@@ -51,7 +51,7 @@ div {
     width: 100%;
     height: 30px;
     background: #6495ED;
-    max-width: 1200px;
+    /*max-width: 1200px;*/
 }
 .nav_menu {
     float: right;
@@ -588,6 +588,7 @@ div {
     border-radius: 8px;
     width: 200px;
     height: 200px;
+    /*alt:"../img/error_image.png";*/
 }
 .com_pic:hover {
     /*border:1px solid #666;*/
@@ -754,6 +755,26 @@ div {
 }
 
 
+/*募集部分*/
+#need_bar {
+    /*
+    background-image: url(../img/5.jpg);
+    background-position: center;
+    */
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 280px;
+    position: relative;
+    margin-top: 5px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    border-radius: 10px;
+    border: 2px;
+    scroll-behavior: smooth;
+    box-shadow: inset 0px 0px 5px 1px #ceeaff;
+}
+
 /*滚动条*/
 #recom_bar::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
@@ -783,6 +804,24 @@ div {
 }
 
 #record_bar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, rgb(122,153,217)), color-stop(0.72, rgb(73,125,189)), color-stop(0.86, rgb(28,58,148)));
+}
+
+
+#need_bar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+    border-radius: 5px;
+}
+
+#need_bar::-webkit-scrollbar {
+    display: none;
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+#need_bar::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, rgb(122,153,217)), color-stop(0.72, rgb(73,125,189)), color-stop(0.86, rgb(28,58,148)));
 }
@@ -892,3 +931,4 @@ div {
     background-size: 45px 48px;
     background-repeat: no-repeat;
  }
+
