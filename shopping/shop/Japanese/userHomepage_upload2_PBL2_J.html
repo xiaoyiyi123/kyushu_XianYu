@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../../CSS/index_PBL2.css" />
     <link rel="stylesheet" href="../../CSS/upload.css " type="text/css" />
     <script type="text/javascript" src="../../js/Japanese/jquery-3.2.1.min.js"></script>
-    <script src="../../js/Japanese/upload.js"></script>
+    <script src="../../js/Japanese/collect.js"></script>
     <!-- <script src="../js/index.js"></script> -->
 </head>
 
@@ -23,16 +23,7 @@
                 <!--Logo名-->
                 <h1 class="web_logo"><a href="index_PBL2_J.html">logo</a></h1>
             </div><!--Logo名结束-->
-            <!--导航菜单-->
-            <!-- <div class="nav_menu_lang">
-                <a href="#">语言</a>
-                <div class="dropdown-content">
-                    <a href="#">English</a>
-                    <a href="#">日本語</a>
-                    <a href="#">C</a>
-                    <a href="#">D</a>
-                </div>
-            </div> -->
+         
             <div class="nav_menu"><a href="userHomepage_cart_PBL2_J.html">マイリスト</a></div>
             <div id="user_data_frame">
                 <div class="user_data">
@@ -64,55 +55,35 @@
             </div>
             <div class="mF_rightFrame">
                 <div class="uH_detail_bar">
-                    <form action="../../php/upload_file.php" method="post" enctype="multipart/form-data">
+                    <form>
                         <div class="main_upload">
                             <div class="shangpinming">
                                 <div class="left1">
                                     <div class="wenzi1">募集品名</div>
                                 </div>
                                 <div class="right1">
-                                    <input type="text" name="goods" class="blank1" style="font-size:16px">
+                                    <input type="text" id="goodName" name="goods" class="blank1" style="font-size:16px">
                                 </div>
                             </div>
-                            <!--<div class="shangpinyuanjia">
-                                <div class="left2">
-                                    <div class="wenzi2">新品価格</div>
-                                </div>
-                                <div class="right2">
-
-                                    <input type="number" name="price1" class="blank2" style="font-size:16px">
-                                    <div class="yuan1">円</div>
-                                </div>
-                            </div>-->
+                           
                             <div class="jiage">
                                 <div class="left3">
                                     <div class="wenzi3">予算</div>
 
                                 </div>
                                 <div class="right3">
-                                    <input type="number" name="price2" class="blank3" style="font-size:16px;width:100px">
+                                    <input type="number" id = "budget" name="price2" class="blank3" style="font-size:16px;width:100px">
                                     <div class="yuan2">円</div>
                                 </div>
                             </div>
-                            <!--
-                               <div class="xinjiuchengdu">
-                                <div class="left7">
-                                    <div class="wenzi7">商品状態</div>
-
-                                </div>
-                                <div class="right7">
-                                    <input type="number" name="state" class="blank7" style="font-size:16px">
-                                    <div class="baifenhao">%</div>
-                                </div>
-                            </div> 
-                            -->
+                          
 
                             <div class="miaoshu">
                                 <div class="left4">
                                     <div class="wenzi4">備考</div>
                                 </div>
                                 <div class="right4">
-                                    <textarea type="text" name="descrebe" class="blank4" style="font-size:16px"></textarea>
+                                    <textarea type="text" id = "note" name="descrebe" class="blank4" style="font-size:16px"></textarea>
                                 </div>
                             </div>
 
@@ -122,13 +93,13 @@
                                 </div>
                                 <div class="right5">
                                     <div class="blank5">
-                                        <select name=school style="height:30px;width:200px;font-size:16px">
-                                            <option value="1">伊都キャンパス</option>
-                                            <option value="5">箱崎キャンパス</option>
-                                            <option value="3">筑紫キャンパス</option>
-                                            <option value="2">大橋キャンパス</option>
-                                            <option value="4">病院キャンパス</option>
-                                            <option value="6">その他</option>
+                                        <select id="place" name=school style="height:30px;width:200px;font-size:16px">
+                                            <option id="place1" value="1">伊都キャンパス</option>
+                                            <option id="place2" value="5">箱崎キャンパス</option>
+                                            <option id="place3" value="3">筑紫キャンパス</option>
+                                            <option id="place4" value="2">大橋キャンパス</option>
+                                            <option id="place5" value="4">病院キャンパス</option>
+                                            <option id="place6" value="6">その他</option>
                                         </select>
                                     </div>
                                 </div>
@@ -139,35 +110,19 @@
                                 </div>
                                 <div class="right5">
                                     <div class="blank5" >
-                                        <select name="category" style="height:30px;width:100px;font-size:16px">
-                                            <option value="1">本</option>
-                                            <option value="2">家具</option>
-                                            <option value="3">電気製品</option>
-                                            <option value="4">娯楽</option>
-                                            <option value="5">その他</option>
+                                        <select id="category" name="category" style="height:30px;width:100px;font-size:16px">
+                                            <option id="category1" value="1">本</option>
+                                            <option id="category2" value="2">家具</option>
+                                            <option id="category3" value="3">電気製品</option>
+                                            <option id="category4" value="4">娯楽</option>
+                                            <option id="category5" value="5">その他</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                            <!--<div class="tupian">
-                                <div class="left6">
-                                    <div class="wenzi6">商品画像</div>
-                                </div>
-                                <div class="right6">
-                                    <label for="file">ファイル名</label>
-                                    <input type="file" name="file1" id="file"><br>
-                                    <label for="file">ファイル名</label>
-                                    <input type="file" name="file2" id="file"><br>
-                                    <label for="file">ファイル名</label>
-                                    <input type="file" name="file3" id="file"><br>
-                                    <label for="file">ファイル名</label>
-                                    <input type="file" name="file4" id="file"><br>
-                                        
-                                </div>
-                            </div>-->
-                           
+                        
                             <div class="final">
-                                <input type="submit" name="submit" value="提交" οnclick="window.location.href='userHomepage_inform_PBL2_J.html'">
+                                <input type="button" id = "btn" name="button" value="提交" >
                             </div>
                         </div>
                     </form>
