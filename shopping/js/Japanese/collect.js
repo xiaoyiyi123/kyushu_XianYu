@@ -58,7 +58,7 @@ function get_cookie(){
     }
   }
 
-/**
+  /**
  * author: Wang Yiyi
  * 给userHOmepage_upload2_PBL2_J.html的
  * 第65行添加id=goodName
@@ -67,39 +67,38 @@ function get_cookie(){
  * 第117行添加id=category,下面的下拉列表依此添加id=category1,2,3,4,5
  * 
  *  */ 
+  $("#btn").click(function(){
 
-$(function(){
-    $("#btn").click(function(){
-
-        var gn = document.getElementById("goodName");
-        console.log(gn);
-        var goodName = $("#goodName").val();	
-        var budget = $("#budget").val();	
-        var note = $("#note").val();	
-        var campus = $("#place option:selected").val();
-        var category = $("#category option:selected").val(); 
-      
-        console.log(goodName,budget,note,campus,category);
-        $.ajax({
-            type:"POST",
-            url:"../../php/collect.php",
-            data:{
-                goodName: goodName,
-                budget: budget,
-                note: note,
-                campus: campus,
-                category: category
-            },
-            success: function(msg){
-                console.log(msg);
-            },
-            error: function () {
-                console.log('error');
-            }
-        })
+       
+    var userName = get_cookie();
+    console.log(userName);
+    var goodName = $("#goodName").val();	
+    var budget = $("#budget").val();	
+    var note = $("#note").val();	
+    var campus = $("#place option:selected").val();
+    var category = $("#category option:selected").val(); 
+  
+    console.log(goodName,budget,note,campus,category,userName);
+    $.ajax({
+        type:"POST",
+        url:"../../php/collect.php",
+        data:{
+            userName:userName,
+            goodName: goodName,
+            budget: budget,
+            note: note,
+            campus: campus,
+            category: category
+        },
+        success: function(msg){
+            console.log(msg);
+        },
+        error: function () {
+            console.log('error');
+        }
     })
-    
-});
+})
+
 
     
 
