@@ -1,7 +1,7 @@
 <?php
 header('Content-Type:application/json; charset=utf-8');
 header("Access-Control-Allow-OriGIN:*");
-$dbserver="127.0.0.1";
+$dbserver="54.250.5.253";
 $dbuser="pbl3";
 $dbpwd="123456";
 $database="shopping";

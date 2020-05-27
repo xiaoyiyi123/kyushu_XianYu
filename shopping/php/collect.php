@@ -5,7 +5,7 @@ header("Access-Control-Allow-Origin:*");
 
 
 
-$servername = "127.0.0.1";
+$servername = "54.250.5.253";
 $username = "pbl3";
 $password = "123456";
 $mysqlname = "shopping"; 

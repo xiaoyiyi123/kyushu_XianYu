@@ -1,6 +1,6 @@
 <?php
 $dbms='mysql';
-$mysql_server_name='127.0.0.1';
+$mysql_server_name='54.250.5.253';
 $mysql_username='pbl3';
 $mysql_password='123456';
 $mysql_database='shopping';
