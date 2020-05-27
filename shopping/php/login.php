@@ -6,7 +6,7 @@ error_reporting(0);
 $un=$_POST['u_name'];
 $pwd=$_POST['u_pwd'];
 $dbms='mysql';
-$mysql_server_name='192.168.10.149';
+$mysql_server_name='127.0.0.1';
 $mysql_username='pbl3';
 $mysql_password='123456';
 $mysql_database='shopping';

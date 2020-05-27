@@ -6,7 +6,7 @@ header("Access-Control-Allow-Origin:*");
 //实现从主页跳转到对应商品的详情页面
 //从数据库读取数据并保存城json文件
 
-$servername = "192.168.10.149";
+$servername = "127.0.0.1";
 $username = "pbl3";
 $password = "123456";
 $mysqlname = "shopping"; 

@@ -1,11 +1,11 @@
 <?php
 $dbms='mysql';
-$mysql_server_name='192.168.10.149';
+$mysql_server_name='127.0.0.1';
 $mysql_username='pbl3';
 $mysql_password='123456';
 $mysql_database='shopping';
 $dsn="$dbms:host=$mysql_server_name;dbname=$mysql_database";
-$db = mysqli_connect('192.168.10.149','pbl','123456','shopping');
+$db = mysqli_connect('127.0.0.1','pbl','123456','shopping');
 print_r($con->connect_error);
 $sql="SELECT * FROM Items";
 $result = mysqli_query($db,$sql);
