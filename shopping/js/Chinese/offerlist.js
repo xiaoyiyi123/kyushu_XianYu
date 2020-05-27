@@ -56,9 +56,9 @@ $(document).ready(function(){
                         '<div class="uHd_button" id="delete_button">'+
                             '<a href="javascript:delete_button('+msg.Content[i].purchase_Id+')">删除</a>'+
                         '</div>'+
-                        '<div class="uHd_data">'+
-                        msg.Content[i].Date+
-                        '</div>'+
+                        // '<div class="uHd_data">'+
+                        // msg.Content[i].Date+
+                        // '</div>'+
                     '</div>'+
                 '</div>'+
             '</div>');
