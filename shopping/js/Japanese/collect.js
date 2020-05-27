@@ -35,6 +35,38 @@ $(function (){
             window.open("../../shop/Japanese/login_J.html");
         });
     }
+
+
+    $("#btn").click(function(){
+
+       
+        var userName = get_cookie();
+        var goodName = $("#goodName").val();	
+        var budget = $("#budget").val();	
+        var note = $("#note").val();	
+        var campus = $("#place option:selected").val();
+        var category = $("#category option:selected").val(); 
+        console.log('111');
+        console.log(goodName,budget,note,campus,category,userName);
+        $.ajax({
+            type:"POST",
+            url:"../../php/collect.php",
+            data:{
+                userName:userName,
+                goodName: goodName,
+                budget: budget,
+                note: note,
+                campus: campus,
+                category: category
+            },
+            success: function(msg){
+                console.log(msg);
+            },
+            error: function () {
+                console.log('error');
+            }
+        })
+    })
 })
 
 function get_cookie(){
@@ -67,37 +99,7 @@ function get_cookie(){
  * 第117行添加id=category,下面的下拉列表依此添加id=category1,2,3,4,5
  * 
  *  */ 
-  $("#btn").click(function(){
 
-       
-    var userName = get_cookie();
-    console.log(userName);
-    var goodName = $("#goodName").val();	
-    var budget = $("#budget").val();	
-    var note = $("#note").val();	
-    var campus = $("#place option:selected").val();
-    var category = $("#category option:selected").val(); 
-  
-    console.log(goodName,budget,note,campus,category,userName);
-    $.ajax({
-        type:"POST",
-        url:"../../php/collect.php",
-        data:{
-            userName:userName,
-            goodName: goodName,
-            budget: budget,
-            note: note,
-            campus: campus,
-            category: category
-        },
-        success: function(msg){
-            console.log(msg);
-        },
-        error: function () {
-            console.log('error');
-        }
-    })
-})
 
 
     
