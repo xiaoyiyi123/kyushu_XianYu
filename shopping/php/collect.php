@@ -4,7 +4,11 @@ header("Content-type:JSON;charset=utf-8");
 header("Access-Control-Allow-Origin:*");
 
 
+<<<<<<< HEAD
 $servername = "127.0.0.1";
+=======
+$servername = "54.250.5.253:3306";
+>>>>>>> 805abd98795abd50ea024b8228955c3b68f48735
 $username = "pbl3";
 $password = "123456";
 $mysqlname = "shopping"; 
