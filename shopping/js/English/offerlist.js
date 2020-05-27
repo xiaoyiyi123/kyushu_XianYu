@@ -43,7 +43,7 @@ $(document).ready(function(){
                 '<div class="uHd_detailFrame">'+
                     '<div class="uHd_dataFrame">'+
                         '<div class="uHd_price">￥'+msg.Content[i].budget+'</div>'+
-                        '<div class="uHd_area" style="width:auto">Name:'+sold[msg.Content[i].goods]+'</div>'+
+                        '<div class="uHd_area" style="width:auto">Name:'+msg.Content[i].goods+'</div>'+
                         '<div class="uHd_sellerID" style="text-decoration:none;margin-right:20px;"></div>'+
                     '</div>'+
                     '<div class="uHd_name">'+
