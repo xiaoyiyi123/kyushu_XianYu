@@ -26,7 +26,7 @@ $(document).ready(function(){
         });
     }
     $.ajax({
-        url:"../../php/offerlist.php",
+        url:"../../php/wantedlist.php",
         type:"POST",
         data:{"parameter":0},
         success: function(msg){
@@ -37,24 +37,24 @@ $(document).ready(function(){
             // }
             for(var i =0;i<msg.Num;i++){
                 $(".uH_detail_bar").append('<div class="uHd_goodFrame">'+
-                '<div class="uHd_goodPic">'+
-                    '<img img src="'+msg.Content[i].Picture+'" />'+
-                '</div>'+
+                // '<div class="uHd_goodPic">'+
+                //     '<img img src="'+msg.Content[i].Picture+'" />'+
+                // '</div>'+
                 '<div class="uHd_detailFrame">'+
                     '<div class="uHd_dataFrame">'+
-                        '<div class="uHd_price">￥'+msg.Content[i].Price+'</div>'+
-                        // '<div class="uHd_area" style="width:auto">商品状态:'+sold[msg.Content[i].Sold]+'</div>'+
+                        '<div class="uHd_price">￥'+msg.Content[i].budget+'</div>'+
+                        '<div class="uHd_area" style="width:auto">Name:'+sold[msg.Content[i].goods]+'</div>'+
                         '<div class="uHd_sellerID" style="text-decoration:none;margin-right:20px;"></div>'+
                     '</div>'+
                     '<div class="uHd_name">'+
-                        msg.Content[i].Name+
+                        msg.Content[i].note+
                     '</div>'+
                     '<div class="uHd_buttonFrame">'+
-                        '<div class="uHd_button">'+
-                            '<a href="./detail_PBL2.html?id='+msg.Content[i].Id+'">Detail</a>'+
-                        '</div>'+
+                        // '<div class="uHd_button">'+
+                        //     '<a href="./detail_PBL2.html?id='+msg.Content[i].Id+'">Detail</a>'+
+                        // '</div>'+
                         '<div class="uHd_button" id="delete_button">'+
-                            '<a href="javascript:delete_button('+msg.Content[i].Id+')">Delete</a>'+
+                            '<a href="javascript:delete_button('+msg.Content[i].purchase_Id+')">Delete</a>'+
                         '</div>'+
                         '<div class="uHd_data">'+
                         msg.Content[i].Date+
@@ -70,7 +70,7 @@ $(document).ready(function(){
     $("#delete_button").click(function(){
         console.log("in");
         $.ajax({
-            url:"../../php/offerlist.php",
+            url:"../../php/wantedlist.php",
             type:"POST",
             data:
             {
@@ -89,7 +89,7 @@ $(document).ready(function(){
 function delete_button(id){
     console.log(id);
         $.ajax({
-            url:"../../php/mylist.php",
+            url:"../../php/wantedlist.php",
             type:"POST",
             data:
             {
@@ -101,7 +101,7 @@ function delete_button(id){
             },
             error: function () {console.log('error');}
         });
-        window.location.href="../../shop/English/userHomepage_myOfferList_PBL2.html"
+        window.location.href="../../shop/English/userHomepage_myGoodsList2_PBL2.html"
         alert('Deleted!');
 }
 function get_cookie(){
