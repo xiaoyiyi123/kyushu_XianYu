@@ -16,11 +16,11 @@ div {
     width: 100%;
     height: auto;
     /*border:1px solid #F00;background-color:#f3fff4;*/
-    min-width: 1000px;
+    min-width: 1080px;
     /*max-width: 1200px;*/
     min-height: 800px;
     z-index: -10;
-    background-color:rgb(73,125,189);
+    background-color:rgb(134, 161, 216);
     /*box-shadow: inset 0px 0px 15px 1px #ceeaff;*/
 }
 
@@ -57,7 +57,7 @@ div {
     float: right;
     font-size: 18px;
     line-height: 30px;
-    width: 80px;
+    width: 100px;
     text-align:center;
     /*border:1px solid #CC9;*/
 }
@@ -159,7 +159,7 @@ div {
     width: 100%;
     height: 30px;
     background: #6495ED;
-    max-width: 1200px;
+    /*max-width: 1200px;*/
 }
 #user_data_frame {
     width: 120px;
@@ -393,6 +393,7 @@ div {
     width: 100%;
     height: 400px;
     z-index: -10;
+    margin-top:20px;
     /*box-shadow: inset 0px 0px 15px 1px #ceeaff;*/
 }
 /*目录*/
@@ -528,16 +529,17 @@ div {
     background-image: url(../img/8.jpg);
     background-position: center;
     */
+    border-radius: 10px 10px 10px 10px;
+    background-color: #faf7e4;
+    border: 2px solid rgb(134, 161, 216);
+    box-shadow: inset 0px 0px 5px 5px rgb(134, 161, 216);
     margin-left: auto;
     margin-right: auto;
     position: relative;
     margin-top: 5px;
     overflow-x: scroll;
     overflow-y: hidden;
-    border-radius: 10px 10px 10px 10px;
-    border: 2px;
     scroll-behavior: smooth;
-    box-shadow: inset 0px 0px 5px 1px #ceeaff;
 }
 
 .commodity {
@@ -661,7 +663,12 @@ div {
     /*
     background-image: url(../img/5.jpg);
     background-position: center;
-    */
+     */
+    border-radius: 10px;
+    background-color: #faf7e4;
+    border: 2px solid rgb(134, 161, 216);
+    box-shadow: inset 0px 0px 5px 5px rgb(134, 161, 216);
+
     margin-left: auto;
     margin-right: auto;
     width: 80%;
@@ -670,10 +677,7 @@ div {
     margin-top: 5px;
     overflow-x: scroll;
     overflow-y: hidden;
-    border-radius: 10px;
-    border: 2px;
     scroll-behavior: smooth;
-    box-shadow:inset 0px 0px 5px 1px #ceeaff;
 }
 .bar_lf_slide {
 
@@ -684,7 +688,7 @@ div {
 }
 
 .bar_cont {
-    width: 90%;
+    width: 95%;
     height: 30px;
     text-align: center;
     line-height: 30px;
@@ -694,11 +698,15 @@ div {
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    background-color: cornflowerblue;
+
+    border-width: 0 0 2px 0;
+    border-style: solid;
+    border-color: #F0F0F0;
+    /*background-color: cornflowerblue;
     background: linear-gradient(to bottom, #6495ED, #caf0ff);
-    /*background: radial-gradient(#6495ED 80%, #FFF 20%);*/
-    /*border: solid cornflowerblue;*/
-    border-radius: 15px 15px 0px 0px;
+    background: radial-gradient(#6495ED 80%, #FFF 20%);*/
+    /*border: solid cornflowerblue;
+    border-radius: 15px 15px 0px 0px;*/
 }
 /*
 .bar_cont span{
@@ -729,11 +737,12 @@ div {
 #contact {
     width: 100%;
     height: 200px;
-    background: #DCDCDC;
+    background: #394568;
     margin-left:auto;
     margin-right:auto;
-    /*float:inherit;*/
     margin-top:20px;
+    /*float:inherit;*/
+    
 }
 .contact_address {
     width: 300px;
@@ -761,6 +770,10 @@ div {
     background-image: url(../img/5.jpg);
     background-position: center;
     */
+    border-radius: 10px 10px 10px 10px;
+    background-color: #faf7e4;
+    border: 2px solid rgb(134, 161, 216);
+    box-shadow: inset 0px 0px 5px 5px rgb(134, 161, 216);
     margin-left: auto;
     margin-right: auto;
     width: 80%;
@@ -769,10 +782,7 @@ div {
     margin-top: 5px;
     overflow-x: scroll;
     overflow-y: hidden;
-    border-radius: 10px;
-    border: 2px;
     scroll-behavior: smooth;
-    box-shadow: inset 0px 0px 5px 1px #ceeaff;
 }
 
 /*滚动条*/
@@ -901,8 +911,9 @@ div {
     height: 48px;
     float: left;
     position: relative;
-    margin-left: 5%;
+    margin-left: 1%;
     margin-top: 100px;
+    z-index: 5;
 }
 
 .button_left button {
@@ -919,8 +930,10 @@ div {
     height: 48px;
     float: right;
     position: relative;
-    margin-right: 5%;
+    margin-right: 1%;
     margin-top: 100px;
+
+    z-index: 5;
 }
 
 .button_right button {
