@@ -1,30 +1,28 @@
 /* CSS Document */
 /*页面开始*/
+body {background-color: rgb(134, 161, 216);}
 
 #main_uH {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
     height: auto;
-    /*border:1px solid #F00;box-shadow: inset 0px 0px 15px 1px #ceeaff;*/
+    /*border:1px solid #F00;box-shadow: inset 0px 0px 15px 1px #ceeaff; max-width: 1200px;*/
     min-width: 1200px;
-    max-width: 1200px;
+    min-height:600px;
     z-index: -10;
+    
 }
-
 .blank_top_uH {
     width: 100%;
     height: 30px;
 }
 
-
-
-
 /*主界面部分*/
 
 #main_function_bar {
     width: 95%;
-    height: 600px;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
     margin-top:20px;
@@ -36,22 +34,25 @@
     width: 180px;
     height: 600px;
     float:left;
+    
+
 }
 .mF_functionSelect {
     width: 95%;
     float: right;
     height: 40px;
     /*background-color:#b6ff00;*/
-    border-left: 1px solid #6495ED;
+    border-left: 2px solid #6495ED;
     border-bottom: 1px solid #6495ED;
     line-height: 40px;
     font-size: 20px;
-    color: #ff6a00;
+    color: #ffffff;
     background-color: #fffdec;
+    box-shadow: 0px 0px 10px 5px #ffffff;
 }
 .mF_functionSelect a{
     margin-left:10px;
-    color:#000000;
+    color:#354c76;
     text-decoration:none;
 }
 .mF_functionSelect a:hover{
@@ -63,9 +64,12 @@
 .mF_rightFrame {
     width: 960px;
     height: auto;
-    min-height:500px;
+    min-height: 500px;
     float: left;
-    background-color: #d9f1fd;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 5px #ffffff;
+    /*box-shadow: inset 0px 0px 10px 5px #d9f1fd;*/
 }
 
 /*收藏夹or浏览记录展示商品信息用*/
