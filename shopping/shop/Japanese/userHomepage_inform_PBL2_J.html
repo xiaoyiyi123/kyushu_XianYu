@@ -67,9 +67,13 @@
                                 <img src="../../img/head.jpg" />
                             </div>
                             <div class="uH_headFrame" style="width:140px">
-                                <div class="button" id="click_uploadHead"><a href="face.html">アップロード</a></div>
+                                <!--<div class="button" id="click_uploadHead"><a href="face.html">アップロード</a></div>-->
+                                <form action="../../php/face.php" method="post" enctype="multipart/form-data">
+                                    <input type="file" name="file" id="file" style="margin-top:100px;font-weight:600;color:#2d39a3;"><br>
+                                    <input type="submit" name="submit" value="アップロード" style="margin-top:5px;font-weight:600;color:#ffffff;width:100px;height:22px;background-color:#2d39a3;border:1px solid #000000;">
+                                </form>
                             </div>
-                            <div class="uH_headFrame" style="display:none" id="newHead">
+                            <div class="uH_headFrame" style="float:right;display:none" id="newHead">
                                 新画像
                                 <img src="../image_pbl2/icon_pbl2/noavatar_small.gif" />
                             </div>
