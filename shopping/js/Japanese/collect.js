@@ -25,29 +25,46 @@ $(function (){
             console.log(get_cookie());
             if(get_cookie()==null){
                 alert("ログアウト成功しました");
-                window.open("../../shop/Japanese/login_J.html");
+                window.location.href="../../shop/Japanese/login_J.html";
             }
             
         });
     }
     if(get_user==null){
         $("a","#1","#nav_bar").click(function(){
-            window.open("../../shop/Japanese/login_J.html");
+            window.location.href="../../shop/Japanese/login_J.html";
         });
     }
 
+    //图片加载并显示
+    var uPicture = document.getElementById('upload');
+    var img = document.createElement('img');
+    var file = document.getElementById('file');
+    var picture = "";
+    file.onchange = function(){
+        console.log("111111111");
+        var fileReader = new FileReader();
+        fileReader.readAsDataURL(this.files[0]);
+        fileReader.onload = function (){
+            img.src = fileReader.result;
+            img.style.width = "140px";
+            img.style.height = "140px";
+            uPicture.appendChild(img);
+            picture = fileReader.result;
+        }
+    }
 
     $("#btn").click(function(){
 
-       
+       console.log("picture"+picture);
         var userName = get_cookie();
         var goodName = $("#goodName").val();	
         var budget = $("#budget").val();	
         var note = $("#note").val();	
         var campus = $("#place option:selected").val();
-        var category = $("#category option:selected").val(); 
+        var category = $("#category option:selected").val();
         console.log('111');
-        console.log(goodName,budget,note,campus,category,userName);
+        console.log(goodName,budget,note,campus,category,userName,picture);
         $.ajax({
             type:"POST",
             url:"../../php/collect.php",
@@ -57,9 +74,11 @@ $(function (){
                 budget: budget,
                 note: note,
                 campus: campus,
-                category: category
+                category: category,
+                picture: picture
             },
             success: function(msg){
+                alert("成功！");
                 console.log(msg);
             },
             error: function () {
