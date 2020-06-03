@@ -23,7 +23,7 @@
                 <!--Logo名-->
                 <h1 class="web_logo"><a href="index_PBL2_J.html">logo</a></h1>
             </div><!--Logo名结束-->
-         
+
             <div class="nav_menu"><a href="userHomepage_cart_PBL2_J.html">マイリスト</a></div>
             <div id="user_data_frame">
                 <div class="user_data">
@@ -33,7 +33,7 @@
                     <div class="dropdown-content3">
                         <a href="#" id="logout">ログアウト</a>
                     </div>
-                    
+
                 </div>
             </div>
             <!--导航菜单结束-->
@@ -43,7 +43,7 @@
         <div class="blank_top_uH"></div>
         <div id="main_function_bar">
             <div class=" mF_leftFrame">
-                <div class="mF_functionSelect" style="border-left:0px;background-color:#ffffff;">機能リスト</div>
+                <div class="mF_functionSelect" style="border-left:0px;background-color:rgb(134, 161, 216);box-shadow:none;">機能リスト</div>
                 <div class="mF_functionSelect"><a href="userHomepage_inform_PBL2_J.html">個人情報</a></div>
                 <div class="mF_functionSelect"><a href="userHomepage_chartLog_PBL2_J.html">チャット</a></div>
                 <div class="mF_functionSelect"><a href="userHomepage_cart_PBL2_J.html">マイリスト</a></div>
@@ -51,7 +51,7 @@
                 <div class="mF_functionSelect"><a href="userHomepage_myGoodsList_PBL2_J.html">商品リスト</a></div>
                 <div class="mF_functionSelect"><a href="userHomepage_upload_PBL2_J.html">商品アップロード</a></div>
                 <div class="mF_functionSelect"><a href="userHomepage_myGoodsList2_PBL2_J.html">募集リスト</a></div>
-                <div class="mF_functionSelect" style="background-color: #d9f1fd"><a href="#">募集要望</a></div>
+                <div class="mF_functionSelect" style="background-color: #feb17b"><a href="#">募集要望</a></div>
             </div>
             <div class="mF_rightFrame">
                 <div class="uH_detail_bar">
@@ -65,25 +65,25 @@
                                     <input type="text" id="goodName" name="goods" class="blank1" style="font-size:16px">
                                 </div>
                             </div>
-                           
+
                             <div class="jiage">
                                 <div class="left3">
                                     <div class="wenzi3">予算</div>
 
                                 </div>
                                 <div class="right3">
-                                    <input type="number" id = "budget" name="price2" class="blank3" style="font-size:16px;width:100px">
+                                    <input type="number" id="budget" name="price2" class="blank3" style="font-size:16px;width:100px">
                                     <div class="yuan2">円</div>
                                 </div>
                             </div>
-                          
+
 
                             <div class="miaoshu">
                                 <div class="left4">
                                     <div class="wenzi4">備考</div>
                                 </div>
                                 <div class="right4">
-                                    <textarea type="text" id = "note" name="descrebe" class="blank4" style="font-size:16px"></textarea>
+                                    <textarea type="text" id="note" name="descrebe" class="blank4" style="font-size:16px"></textarea>
                                 </div>
                             </div>
 
@@ -109,7 +109,7 @@
                                     <div class="wenzi5">分類</div>
                                 </div>
                                 <div class="right5">
-                                    <div class="blank5" >
+                                    <div class="blank5">
                                         <select id="category" name="category" style="height:30px;width:100px;font-size:16px">
                                             <option id="category1" value="1">本</option>
                                             <option id="category2" value="2">家具</option>
@@ -120,28 +120,38 @@
                                     </div>
                                 </div>
                             </div>
-                        
-                            <div class="final">
-                                <input type="button" id = "btn" name="button" value="提交" >
+                            <div class="tupian">
+                                <div class="left6">
+                                    <div class="wenzi6">参考画像</div>
+                                </div>
+                                <div class="right6">
+                                    <label for="file">ファイル名</label>
+                                    <input type="file" name="file1" id="file"><br>
+                                    <div class="uHd_goodPic" style="border:none;">
+                                        <img img src="../../img/1.jpg" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </form>
+                        <div class="final">
+                            <input type="button" id="btn" name="button" value="アップロード">
+                        </div>
                 </div>
+                </form>
+            </div>
 
-            </div>
-                <div id="contact" style="width:1120px;float:right;margin-top:20px">
-                    <!--联系方式-->
-                    <div class="contact_address">
-                        <li>お問合せ</li>
-                        <li>メール：xxx@xxx</li>
-                        <li>電話番号：xxx-xxxx-xxxx</li>
-                        <li>サポート：xxxxxx</li>
-                    </div>
-                </div> <!--联系方式结束-->
-            </div>
         </div>
 
-    </div >
-</body >
+    </div>
+    <div id="contact" style="float:right;margin-top:20px">
+        <!--联系方式-->
+        <div class="contact_address">
+            <li>お問合せ</li>
+            <li>メール：xxx@xxx</li>
+            <li>電話番号：xxx-xxxx-xxxx</li>
+            <li>サポート：xxxxxx</li>
+        </div>
+    </div> <!--联系方式结束-->
+</body>
 
 </html >

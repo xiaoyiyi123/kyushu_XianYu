@@ -1,15 +1,16 @@
 /* CSS Document */
 
 #main_detail {
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     height: 1440px;
-    /*border:1px solid #F00;*/
-    min-width: 1000px;
+    /*border:1px solid #F00;
     max-width: 1200px;
+    box-shadow: inset 0px 0px 15px 1px #ceeaff;*/
+    min-width: 1080px;
     z-index: -10;
-    box-shadow: inset 0px 0px 15px 1px #ceeaff;
+    background: rgb(134, 161, 216);
 }
 
 #blank_bar{
@@ -19,17 +20,24 @@
 
 
 #detail_bar {
-    width: 100%;
+    width: 98%;
     height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    background-color: #fffdec;
+    border: 2px solid rgb(134, 161, 216);
+    box-shadow: inset 0px 0px 5px 5px rgb(134, 161, 216);
 }
 
 
 /*��ƷͼƬչʾ*/
 .detail_image {
-    width: 50%;
+    width: 45%;
     height: 600px;
     position:relative;
     float:left;
+    margin-left:20px;
     
     /*background-color:aquamarine ;
     box-shadow: inset 0px 0px 15px 1px #ceeaff;*/
@@ -87,34 +95,42 @@
 /*�ı����ܣ��۸��*/
 .detail_text {
     width: 50%;
-    height: 600px;
+    height: 500px;
+    margin-top: 30px;
     /*box-shadow: inset 0px 0px 15px 1px #ceeaff;
     background-color:antiquewhite;*/
-    float:right;
-
+    float: left;
+    background-color: #FFF;
+    border: 2px solid #fffdec;
+    box-shadow: inset 0px 0px 5px 5px #fffdec;
 }
-
 .goodsName {
     width: 95%;
     height: auto;
     /*background-color: crimson;*/
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
     overflow: auto;
     font-size: 20px;
-    line-height:30px;
-    font-weight:bolder;
-    /*font-family:'Adobe Arabic';*/
-    border-bottom:1px solid #808080;
+    line-height: 30px;
+    
+    /*font-family:'Adobe Arabic';
+        font-weight: bolder;*/
+    border-bottom: 2px solid #ff6a00;
 }
 .goodsPrice {
     width: 95%;
     height: 30px;
+    color: #ff6a00;
+    font-weight: bolder;
     /*background-color: cornflowerblue;
-    text-align: center;*/
-    margin-top: 10px;
+    text-align: center;
+    border-bottom: 2px solid rgb(134, 161, 216);*/
+    margin: auto;
     font-size: 20px;
     line-height: 30px;
-    border-bottom: 1px solid #808080;
+    
 }
 .goodsDetail {
     width: 95%;
@@ -128,15 +144,17 @@
     height: auto;
     border: 0px solid #000000;
     font-size:20px;
-    margin-right:10%;
+    margin:auto;
     text-align:center;
 }
-.goodsDetail table tr{
+/*.goodsDetail table tr{
     border: 0px solid #000000;
-    /*text-align:center;*/
-}
+    text-align:center;
+}*/
 .goodsDetail table td{
-    border: 2px solid #efefef;
+    border: 2px solid rgb(134, 161, 216);
+    background-color:#FFF;
+    color:#000000;
 }
 
 
@@ -189,22 +207,33 @@
 
 /*����+����+���찴ť*/
 #talkAllDetail_bar {
-    width: 95%;
+    width: 98%;
     height: 700px;
-    /*background-color:floralwhite;*/
-    margin:auto;
+    /*
+    border-radius: 5px;
+    background-color: #fffdec;
+    border: 2px solid rgb(134, 161, 216);
+    box-shadow: inset 0px 0px 5px 5px rgb(134, 161, 216);*/
+    margin: auto;
     
 }
 #talkAllDetail_bar h1{
-    background: linear-gradient(to bottom, #6495ED, #caf0ff);
+    /*background: linear-gradient(to bottom, #6495ED, #caf0ff);
+    */ 
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
     font-size:20px;
+    height:30px;
     font-weight:500;
     text-align:center;
     color:#FFF;
-    border-radius:10px 10px 0 0;
+    border-width: 0 0 2px 0;
+    border-style: solid;
+    border-color: #FFF;
 }
 
-/*���ԣ�����Ʒ��*/
+/*����+����+���찴ť*/
 #messageDetail_bar {
     width: 58%;
     height:auto;
@@ -214,7 +243,8 @@
 .mDbar_frame {
     width: 100%;
     height: 300px;
-    background-color: #eeeeee;
+    background-color: #394568;
+    box-shadow: 0px 0px 5px 5px #394568;
     overflow-y: auto;
 }
 
@@ -223,30 +253,30 @@
     /*display:inline-block;*/
     width: 95%;
     height: auto;
-    background-color:#ffffec;
+    background-color:#FFF;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
-    border: 1px solid blue;
-    border-radius: 10px;
+    border: 2px solid #4e80c3;
+    border-radius: 5px;
 }
 .mDdetails {
     width: 100%;
     height: 30px;
     line-height:30px;
-    text-align:center;
-    /*background-color:chocolate;position: relative;*/
-    border-bottom: 1px solid blue;
-    background-color: lavender;
-    border-radius: 10px 10px 0px 0px;
+    margin-left:auto;
+    margin-right:auto;
+    color:#ff6a00;
+    /*background-color:chocolate;position: relative;text-align:center;*/
+    border-bottom: 2px solid #ff6a00;
+    background-color: #fffdec;
 }
 .mDdetails img{
     width:30px;
     height:30px;
     position:relative;
     float:left;
-    border-radius: 10px 0px 0px 0px;
-    border-right:1px solid #0094ff;
+    border-radius: 5px;
     background-color:gold;
 
 }
@@ -261,7 +291,6 @@
 .mDtime {
     width: 95%;
     font-size:12px;
-
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -271,10 +300,11 @@
 .mDcontent {
     width: 95%;
     height: auto;
+    color:#808080;
     margin-left: auto;
     margin-right: auto;
-    border-top: 10px solid #ffffec;
-    border-bottom: 10px solid #ffffec;
+    border-top: 5px solid #FFF;
+    border-bottom: 5px solid #FFF;
     /*background-color:azure;*/
 }
 
@@ -300,7 +330,7 @@
 }
 
 .mDinput_button {
-    width: 100px;
+    width: 200px;
     height: 30px;
     margin-top:20px;
     margin-right:15%;
@@ -323,7 +353,7 @@
     background-color:#ffd800;
 }
 .mDinput_button button {
-    width: 100%;
+    width: auto;
     height: 30px;
     display: block;
     text-align: center;
@@ -355,14 +385,14 @@
 }
 
 #merchantPro {
-    width: 90%;
+    width: 95%;
     height: 100px;
-    background-color:#ffffec;
-    margin-left:auto;
-    margin-right:auto;
-    border-radius:15px;
-    border:1.5px solid #0094ff;
-
+    background-color: #ffffec;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0px;
+    border: 1.5px solid #ffffec;
+    box-shadow:0px 0px 5px 5px #fffdec;
 }
 .mPavater{
     width:100px;
@@ -371,28 +401,29 @@
     margin-top:auto;
     margin-bottom:auto;
     float:left;
-    border-radius:15px 0px 0px 15px;
-    border-right:1.5px solid #0094ff;
+    border-radius:5px 5px 5px 5px;
+    /*border-right:1.5px solid #0094ff;*/
 }
 .mPavater img{
     width: 100px;
     height: 100px;
-    border-radius:15px 0px 0px 15px;
+    border-radius:5px 5px 5px 5px;
 }
 .mPid {
     width: auto;
     height: 40px;
-    background-color: lavender;
+    background-color: #FFF;
     line-height: 40px;
-    color: #000000;
+    color: #ff6a00;
     font-size: 20px;
     text-align: center;
-    border-radius: 0px 15px 0px 0px;
-    border-bottom: 1.5px solid #0094ff;
+    border-radius: 5px;
+    border: 1.5px solid #ffffec;
+    box-shadow: 0px 0px 5px 5px #fffdec;
 }
 
 .mPbutton_frame {
-    width: 60%;
+    width: 65%;
     height: 50px;
     /*background-color: aliceblue;*/
     margin-top:10px;
@@ -401,7 +432,7 @@
 
 }
 .mPchat_button{
-    width:100px;
+    width:120px;
     height:30px;
     float:right;
 }
@@ -422,7 +453,7 @@
     background-color: #ffd800;
 }
 .mPpro_button {
-    width: 100px;
+    width: 120px;
     height: 30px;
     float:left;
 }

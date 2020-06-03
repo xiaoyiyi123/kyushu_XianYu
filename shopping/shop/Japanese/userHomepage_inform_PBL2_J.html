@@ -33,12 +33,12 @@
             <div class="nav_menu"><a href="userHomepage_cart_PBL2_J.html">マイリスト</a></div>
             <div id="user_data_frame">
                 <div class="user_data">
-                    
+
                     <a href="#" id='login'>ログイン</a>
                     <div class="dropdown-content3">
                         <a href="#" id='logout'>ログアウト</a>
                     </div>
-                    
+
                 </div>
             </div>
             <!--导航菜单结束-->
@@ -48,8 +48,8 @@
         <div class="blank_top_uH"></div>
         <div id="main_function_bar">
             <div class=" mF_leftFrame">
-                <div class="mF_functionSelect" style="border-left:0px;background-color:#ffffff;">機能リスト</div>
-                <div class="mF_functionSelect" style="background-color: #d9f1fd"><a href="#">個人情報</a></div>
+                <div class="mF_functionSelect" style="border-left:0px;background-color:rgb(134, 161, 216);box-shadow:none;">機能リスト</div>
+                <div class="mF_functionSelect" style="background-color: #feb17b"><a href="#">個人情報</a></div>
                 <div class="mF_functionSelect"><a href="userHomepage_chartLog_PBL2_J.html">チャット</a></div>
                 <div class="mF_functionSelect"><a href="userHomepage_cart_PBL2_J.html">マイリスト</a></div>
                 <div class="mF_functionSelect"><a href="userHomepage_history_PBL2_J.html">閲覧履歴</a></div>
@@ -67,26 +67,30 @@
                                 <img src="../../img/head.jpg" />
                             </div>
                             <div class="uH_headFrame" style="width:140px">
-                                <div class="button" id="click_uploadHead"><a href="face.html">アップロード</a></div>
+                                <!--<div class="button" id="click_uploadHead"><a href="face.html">アップロード</a></div>-->
+                                <form action="../../php/face.php" method="post" enctype="multipart/form-data">
+                                    <input type="file" name="file" id="file" style="margin-top:100px;font-weight:600;color:#2d39a3;"><br>
+                                    <input type="submit" name="submit" value="アップロード" style="margin-top:5px;font-weight:600;color:#ffffff;width:100px;height:22px;background-color:#2d39a3;border:1px solid #000000;">
+                                </form>
                             </div>
-                            <div class="uH_headFrame" style="display:none" id="newHead">
+                            <div class="uH_headFrame" style="float:right;display:none" id="newHead">
                                 新画像
                                 <img src="../image_pbl2/icon_pbl2/noavatar_small.gif" />
                             </div>
-                            <div class="uH_headFrame" style="width:140px;display:none"id="click_deleteNewHead">
+                            <div class="uH_headFrame" style="width:140px;display:none" id="click_deleteNewHead">
                                 <div class="button"><a href="#">キャンセル</a></div>
                             </div>
                         </div>
                         <script>
-                            $(function(){
-                                 $("#click_uploadHead").click(function(){
-                                     $('#newHead').css("display", "block");
-                                     $('#click_deleteNewHead').css("display", "block");
-                                 })
-                                 $("#click_deleteNewHead").click(function(){
-                                     $('#newHead').css("display", "none");
-                                     $('#click_deleteNewHead').css("display", "none");
-                                 })
+                            $(function () {
+                                $("#click_uploadHead").click(function () {
+                                    $('#newHead').css("display", "block");
+                                    $('#click_deleteNewHead').css("display", "block");
+                                })
+                                $("#click_deleteNewHead").click(function () {
+                                    $('#newHead').css("display", "none");
+                                    $('#click_deleteNewHead').css("display", "none");
+                                })
                             })
                         </script>
                         <div class="uH_frameISnecessary" id="username">
@@ -143,20 +147,20 @@
                         </div>
                     </div>
                 </div>
-                <div id="contact" style="width:1120px;float:right;margin-top:20px">
-                    <!--联系方式-->
-                    <div class="contact_address">
-                        <li>お問合せ</li>
-                        <li>メール：xxx@xxx</li>
-                        <li>電話番号：xxx-xxxx-xxxx</li>
-                        <li>サポート：xxxxxx</li>i>
-                        <li>支付宝打款：xxxxxx</li>
-                    </div>
-                </div> <!--联系方式结束-->
+
             </div>
         </div>
 
-    </div >
-</body >
+    </div>
+    <div id="contact" style="float:right;margin-top:20px">
+        <!--联系方式-->
+        <div class="contact_address">
+            <li>お問合せ</li>
+            <li>メール：xxx@xxx</li>
+            <li>電話番号：xxx-xxxx-xxxx</li>
+            <li>サポート：xxxxxx</li>
+        </div>
+    </div> <!--联系方式结束-->
+</body>
 
 </html >
