@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 var camp= {
     '0': '未知キャンパス',
     '1': '伊都キャンパス',
@@ -8,7 +6,6 @@ var camp= {
     '4': '病院キャンパス',
     '5': '別府キャンパス'
 }
->>>>>>> 40cc3686b1de24684360b0261665222c409d9006
 $(document).ready(function(){
     var get_user=get_cookie();
     if(get_user!=null){
@@ -51,16 +48,6 @@ $(document).ready(function(){
                 // '<div class="uHd_goodPic">'+
                 //     '<img img src="'+msg.Content[i].Picture+'" />'+
                 // '</div>'+
-<<<<<<< HEAD
-                '<div class="uHd_detailFrame">'+
-                    '<div class="uHd_dataFrame">'+
-                        '<div class="uHd_price">￥'+msg.Content[i].budget+'</div>'+
-                        //'<div class="uHd_area" style="width:auto">商品名:'+sold[msg.Content[i].goods]+'</div>'+
-                        '<div class="uHd_sellerID" style="text-decoration:none;margin-right:20px;"></div>'+
-                    '</div>'+
-                    '<div class="uHd_name">'+
-                        msg.Content[i].note+
-=======
                 '<div class="uHd_detailFrame" >'+
                     '<div class="uHd_dataFrame">'+
                         '<div class="uHd_price">￥'+msg.Content[i].budget+'</div>'+
@@ -68,29 +55,20 @@ $(document).ready(function(){
                         '<div class="uHd_sellerID" style="text-decoration:none;margin-right:20px;"></div>'+
                     '</div>'+
                     '<div class="uHd_name">'+msg.Content[i].note+
->>>>>>> 40cc3686b1de24684360b0261665222c409d9006
                     '</div>'+
                     '<div class="uHd_buttonFrame">'+
                         // '<div class="uHd_button">'+
                         //     '<a href="./detail_PBL2.html?id='+msg.Content[i].Id+'">Detail</a>'+
                         // '</div>'+
                         '<div class="uHd_button" id="delete_button">'+
-<<<<<<< HEAD
-                            '<a href="javascript:delete_button('+msg.Content[i].purchase_Id+')">删除</a>'+
-                        '</div>'+
-                        '<div class="uHd_data">'+
-                        msg.Content[i].Date+
-                        '</div>'+
-=======
                             '<a href="javascript:delete_button('+msg.Content[i].purchase_Id+')">删除aa</a>'+
                         '</div>'+
                         '<div class="uHd_button" >'+
-                            '<a href="javascript:edit_button()">詳細編集</a>'+
+                            '<a href="javascript:edit_button('+i+')">詳細編集</a>'+
                         '</div>'+
                         // '<div class="uHd_data">'+
                         // msg.Content[i].Date+
                         // '</div>'+
->>>>>>> 40cc3686b1de24684360b0261665222c409d9006
                     '</div>'+
                 '</div>'+
             '</div>');
@@ -99,26 +77,7 @@ $(document).ready(function(){
         },
         error: function () {console.log('error');}
     });
-<<<<<<< HEAD
-    $("#delete_button").click(function(){
-        console.log("in");
-        $.ajax({
-            url:"../../php/wantedlist.php",
-            type:"POST",
-            data:
-            {
-                "parameter":1,
-                "id":this.id
-            },
-            success: function(msg){
-                console.log(msg);
-            },
-            error: function () {console.log('error');}
-        });
-    });
-=======
     
->>>>>>> 40cc3686b1de24684360b0261665222c409d9006
 
 });
 
@@ -137,16 +96,24 @@ function delete_button(id){
             },
             error: function () {console.log('error');}
         });
-<<<<<<< HEAD
-        window.location.href="../../shop/Chinese/userHomepage_myGoodsList2_PBL2.html"
-        alert('Deleted!');
-}
-=======
         window.location.href="../../shop/Japanese/userHomepage_myGoodsList2_PBL2_J.html"
         alert('Deleted!');
 }
-function edit_button(){
-    console.log("edit");
+function edit_button(i){
+    
+    var result;
+    $.ajax({
+        async: false,
+        url:"../../php/wantedlist.php",
+        type:"POST",
+        data:{"parameter":0},
+        success: function(msg){
+        result = msg.Content[i];
+        
+        },
+        error: function () {console.log('error');}
+    });
+    console.log(result);
     var float_frame = document.createElement('div');
     float_frame.className = "float_frame";
     float_frame.style.width="300px";
@@ -176,6 +143,7 @@ function edit_button(){
     close.style.backgroundColor="#ffffff";
     close.style.border = "1px solid #6495ED";
     close.style.fontSize = "12px";
+    close.style.lineHeight = "10px";
     close.innerHTML='X'
 
     var float_form = document.createElement('form');
@@ -183,13 +151,13 @@ function edit_button(){
     float_form.style.left = '50px';
     float_form.style.top = '40px';
     float_form.style.lineHeight = '25px';
-    float_form.innerHTML = '募集品名:<input type="text" name="good">\
+    float_form.innerHTML = '募集品名:<input type="text" name="good" value="'+result.goods+'">\
     <br>\
-    予算:<input type="text" name="budget">\
+    予算:<input type="text" name="budget" value='+result.budget+'>\
     <br>\
-    備考:<input type="text" name="note">\
+    備考:<input type="text" name="note" value='+result.note+'>\
     <br>\
-    取引希望場所:<select name="place">\
+    取引希望場所:<select name="place" id="float_place">\
     <option value="0">'+camp['0']+'</option>\
     <option value="1">'+camp['1']+'</option>\
     <option value="2">'+camp['2']+'</option>\
@@ -198,17 +166,22 @@ function edit_button(){
     <option value="5">'+camp['5']+'</option>\
     </select>\
     <br>\
-    分類:<input type="text" name="category">\
+    分類:<input type="text" name="category" value='+result.category+'>\
     <br>\
     募集状態:<select name="status">\
     <option>募集中</option>\
     <option>募集終了</option>\
     </select>\
     <input type = "submit" style="position:absolute;left:60px;top:170px" value="アップロード">';
+    
+    
     document.body.appendChild(float_frame);
     float_frame.appendChild(move);
     move.appendChild(close);
     float_frame.appendChild(float_form);
+    $("#float_place").each(function(){
+        $(this).find("option").eq(result.place).prop("selected",true);
+    });
     move.addEventListener('mousedown',function(e){
         x = event.pageX - parseInt(float_frame.style.left);
         y = event.pageY - parseInt(float_frame.style.top);
@@ -231,7 +204,6 @@ function move_frame(e){
     target.style.left = event.pageX - x + 'px';
     target.style.top = event.pageY  - y+ 'px';
 }
->>>>>>> 40cc3686b1de24684360b0261665222c409d9006
 function get_cookie(){
     var c_start=document.cookie.indexOf("my_cookie=");
     if(c_start == -1){
