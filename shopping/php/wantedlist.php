@@ -16,7 +16,7 @@ if($parameter==0){
     $nums=$result->num_rows;
     for($i=0;$i<$nums;$i++){
         $row=$result->fetch_assoc();
-        array_push($arr,array('purchase_Id'=>$row["purchase_Id"],'goods'=>$row["goods"],'budget'=>$row["budget"],'note'=>$row["note"]));
+        array_push($arr,array('purchase_Id'=>$row["purchase_Id"],'goods'=>$row["goods"],'budget'=>$row["budget"],'note'=>$row["note"],'category'=>$row["category"],'place'=>$row["place"]));
     }
     $msg=array
     ( 
