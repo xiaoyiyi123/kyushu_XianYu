@@ -81,7 +81,7 @@ $(function (){
     // var vcodess2=document.getElementById('codeimageMobile02');
     // vcodess2.innerHTML=str0;
     user = mobile + "@s.kyushu-u.ac.jp";
-    var yuyan = 0; //ja = 0, ch = 1, en =2
+    var language = 0; //ja = 0, ch = 1, en =2
     $.ajax({
         url:"../../php/register.php",
         type:"post",
@@ -92,9 +92,9 @@ $(function (){
         success: function (msg) {
             var types = msg;
             console.log(msg);
-            if(data.status==1){
-                alert("用户可用")
-                
+            if(msg==1){
+                // alert("用户可用")
+                console.log("pass");
             }else{
                 alert("用户已被注册")
                 window.location.href="../../shop/Japanese/register_J.html";
@@ -111,7 +111,7 @@ $(function (){
         data:{
             "code":str0,
             "username":user,
-            "language":yuyan
+            "language":language
         },
         success:function (b){
             console.log(b);
