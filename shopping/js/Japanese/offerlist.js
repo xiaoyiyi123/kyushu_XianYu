@@ -44,34 +44,31 @@ $(document).ready(function(){
             //     '1':'已出售'
             // }
             for(var i =0;i<msg.Num;i++){
-                $(".uH_detail_bar").append('<div class="uHd_goodFrame">'+
-                // '<div class="uHd_goodPic">'+
-                //     '<img img src="'+msg.Content[i].Picture+'" />'+
-                // '</div>'+
-                '<div class="uHd_detailFrame" >'+
-                    '<div class="uHd_dataFrame">'+
-                        '<div class="uHd_price">￥'+msg.Content[i].budget+'</div>'+
-                        '<div class="uHd_area" style="width:auto">商品名:'+msg.Content[i].goods+'</div>'+
-                        '<div class="uHd_sellerID" style="text-decoration:none;margin-right:20px;"></div>'+
-                    '</div>'+
-                    '<div class="uHd_name">'+msg.Content[i].note+
-                    '</div>'+
-                    '<div class="uHd_buttonFrame">'+
-                        // '<div class="uHd_button">'+
-                        //     '<a href="./detail_PBL2.html?id='+msg.Content[i].Id+'">Detail</a>'+
-                        // '</div>'+
-                        '<div class="uHd_button" id="delete_button">'+
-                            '<a href="javascript:delete_button('+msg.Content[i].purchase_Id+')">删除aa</a>'+
+                $(".uH_detail_bar").append(
+                '<div class="uHd_goodFrame">'+
+                    '<div class="uHd_detailFrame" >'+
+                        '<div class="uHd_dataFrame">'+
+                            '<div class="uHd_price">￥'+msg.Content[i].budget+'</div>'+
+                            '<div class="uHd_area" style="width:auto">商品名:'+msg.Content[i].goods+'</div>'+
+                            '<div class="uHd_sellerID" style="text-decoration:none;margin-right:20px;"></div>'+
                         '</div>'+
-                        '<div class="uHd_button" >'+
-                            '<a href="javascript:edit_button('+i+')">詳細編集</a>'+
+                        '<div class="uHd_name">'+msg.Content[i].note+'</div>'+
+                        '<div class="uHd_buttonFrame">'+
+                            // '<div class="uHd_button">'+
+                            //     '<a href="./detail_PBL2.html?id='+msg.Content[i].Id+'">Detail</a>'+
+                            // '</div>'+
+                            '<div class="uHd_button" id="delete_button">'+
+                                '<a href="javascript:delete_button('+msg.Content[i].purchase_Id+')">削除</a>'+
+                            '</div>'+
+                            '<div class="uHd_button" >'+
+                                '<a href="javascript:edit_button('+i+','+msg.Content[i].purchase_Id+')">詳細編集</a>'+
+                            '</div>'+
+                            // '<div class="uHd_data">'+
+                            // msg.Content[i].Date+
+                            // '</div>'+
                         '</div>'+
-                        // '<div class="uHd_data">'+
-                        // msg.Content[i].Date+
-                        // '</div>'+
                     '</div>'+
-                '</div>'+
-            '</div>');
+                '</div>');
             }
             
         },
@@ -99,7 +96,7 @@ function delete_button(id){
         window.location.href="../../shop/Japanese/userHomepage_myGoodsList2_PBL2_J.html"
         alert('Deleted!');
 }
-function edit_button(i){
+function edit_button(i,id){
     
     var result;
     $.ajax({
@@ -147,11 +144,14 @@ function edit_button(i){
     close.innerHTML='X'
 
     var float_form = document.createElement('form');
+    float_form.action = '../../php/collect_modify.php';
+    float_form.method = 'GET';
     float_form.style.position = 'absolute';
     float_form.style.left = '50px';
     float_form.style.top = '40px';
     float_form.style.lineHeight = '25px';
-    float_form.innerHTML = '募集品名:<input type="text" name="good" value="'+result.goods+'">\
+    float_form.innerHTML = '<input type="hidden" name="id" value = "'+id+'">\
+    募集品名:<input type="text" name="good" value="'+result.goods+'">\
     <br>\
     予算:<input type="text" name="budget" value='+result.budget+'>\
     <br>\
