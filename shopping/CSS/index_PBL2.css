@@ -35,11 +35,21 @@ div {
     text-align: center;
     color: #FFF;
     font-size: 20px;
+    width: 160px;
+    height:30px;
+    /*background: url(../../img/logo_site1.png);
+    background-size: 30px 30px;
+    background-repeat: no-repeat;*/
 }
-.web_logo a{
+
+.web_logo a {
     text-decoration: none;
     color: #FFF;
     font-size: 20px;
+    font-family:'Segoe Marker';
+ }
+.web_logo:hover{
+    background-color:#ffd800;
 }
 
 
