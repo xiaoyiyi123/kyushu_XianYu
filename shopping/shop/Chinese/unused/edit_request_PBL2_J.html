@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Edit request japanese</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../CSS/userHomepage_PBL2.css" />
+    <link rel="stylesheet" type="text/css" href="../../CSS/index_PBL2.css" />
+    <link rel="stylesheet" href="../../CSS/upload.css " type="text/css" />
+    <script type="text/javascript" src="../../js/Japanese/jquery-3.2.1.min.js"></script>
+    <script src="../../js/Japanese/collect.js"></script>
+    <!-- <script src="../js/index.js"></script> -->
+</head>
+
+<body>
+    <div id="main_uH">
+        <!--主体main-->
+        <div id="nav_bar2">
+            <!--导航-->
+            <div id="logo">
+                <!--Logo名-->
+                <h1 class="web_logo"><a href="index_PBL2_J.html">logo</a></h1>
+            </div><!--Logo名结束-->
+         
+            <div class="nav_menu"><a href="userHomepage_cart_PBL2_J.html">マイリスト</a></div>
+            <div id="user_data_frame">
+                <div class="user_data">
+                    <!-- <img class="user_head" src="../image_pbl2/icon_pbl2/noavatar_small.gif" /> -->
+                    <div class="nav_menu" id='1'><a href="#" id='login'>ログイン</a></div>
+                    <!-- <a href="#" id='login'>登录</a> -->
+                    <div class="dropdown-content3">
+                        <a href="#" id="logout">ログアウト</a>
+                    </div>
+                    
+                </div>
+            </div>
+            <!--导航菜单结束-->
+
+        </div><!--导航结束-->
+
+        <div class="blank_top_uH"></div>
+        <div id="main_function_bar">
+            <!--<div class=" mF_leftFrame">
+                <div class="mF_functionSelect" style="border-left:0px;background-color:#ffffff;">機能リスト</div>
+                <div class="mF_functionSelect"><a href="userHomepage_inform_PBL2_J.html">個人情報</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_chartLog_PBL2_J.html">チャット</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_cart_PBL2_J.html">マイリスト</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_history_PBL2_J.html">閲覧履歴</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_myGoodsList_PBL2_J.html">商品リスト</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_upload_PBL2_J.html">商品アップロード</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_myGoodsList2_PBL2_J.html">募集リスト</a></div>
+                <div class="mF_functionSelect" style="background-color: #d9f1fd"><a href="#">募集要望</a></div>
+            </div>-->
+            <div class="mF_rightFrame">
+                <div class="uH_detail_bar">
+                    <form>
+                        <div class="main_upload">
+                            <div class="shangpinming">
+                                <div class="left1">
+                                    <div class="wenzi1">募集品名</div>
+                                </div>
+                                <div class="right1">
+                                    <input type="text" id="goodName" name="goods" class="blank1" style="font-size:16px">
+                                </div>
+                            </div>
+                           
+                            <div class="jiage">
+                                <div class="left3">
+                                    <div class="wenzi3">予算</div>
+
+                                </div>
+                                <div class="right3">
+                                    <input type="number" id = "budget" name="price2" class="blank3" style="font-size:16px;width:100px">
+                                    <div class="yuan2">円</div>
+                                </div>
+                            </div>
+                          
+
+                            <div class="miaoshu">
+                                <div class="left4">
+                                    <div class="wenzi4">備考</div>
+                                </div>
+                                <div class="right4">
+                                    <textarea type="text" id = "note" name="descrebe" class="blank4" style="font-size:16px"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="jiaoyididian">
+                                <div class="left5">
+                                    <div class="wenzi5">取引希望場所</div>
+                                </div>
+                                <div class="right5">
+                                    <div class="blank5">
+                                        <select id="place" name=school style="height:30px;width:200px;font-size:16px">
+                                            <option id="place1" value="1">伊都キャンパス</option>
+                                            <option id="place2" value="5">箱崎キャンパス</option>
+                                            <option id="place3" value="3">筑紫キャンパス</option>
+                                            <option id="place4" value="2">大橋キャンパス</option>
+                                            <option id="place5" value="4">病院キャンパス</option>
+                                            <option id="place6" value="6">その他</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jiaoyididian">
+                                <div class="left5">
+                                    <div class="wenzi5">分類</div>
+                                </div>
+                                <div class="right5">
+                                    <div class="blank5" >
+                                        <select id="category" name="category" style="height:30px;width:100px;font-size:16px">
+                                            <option id="category1" value="1">本</option>
+                                            <option id="category2" value="2">家具</option>
+                                            <option id="category3" value="3">電気製品</option>
+                                            <option id="category4" value="4">娯楽</option>
+                                            <option id="category5" value="5">その他</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tupian">
+                                <div class="left6">
+                                    <div class="wenzi6">参考画像</div>
+                                </div>
+                                <div class="right6">
+                                    <label for="file">ファイル名</label>
+                                    <input type="file" name="file1" id="file"><br>
+                                    <div class="uHd_goodPic" style="border:none;">
+                                        <img img src="../../img/1.jpg" />
+                                     </div>
+                                </div>
+                            </div>
+                            <div class="final">
+                                <input type="button" id = "btn" name="button" value="変更確認" >
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+                <div id="contact" style="width:1120px;float:right;margin-top:20px">
+                    <!--联系方式-->
+                    <div class="contact_address">
+                        <li>お問合せ</li>
+                        <li>メール：xxx@xxx</li>
+                        <li>電話番号：xxx-xxxx-xxxx</li>
+                        <li>サポート：xxxxxx</li>
+                    </div>
+                </div> <!--联系方式结束-->
+            </div>
+        </div>
+
+    </div >
+</body >
+
+</html >
