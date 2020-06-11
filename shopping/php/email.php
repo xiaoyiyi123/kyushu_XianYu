@@ -2,8 +2,23 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+// header('Content-Type:application/json; charset=utf-8');
+// header("Access-Control-Allow-OriGIN:*");
+$dbserver="54.250.5.253";
+$dbuser="pbl3";
+$dbpwd="123456";
+$database="shopping";
 $a = $_POST['code'];
 $email = $_POST['username'];
+$language = $_POST['language'];
+$conn=new mysqli($dbserver,$dbuser,$dbpwd,$database);
+if ($conn->connect_error)
+    die("defeat: " . $conn->connect_error);
+$sql="SELECT * from Users where `Email`='$email'";
+$result = mysqli_query($conn,$sql);
+$num=$result->num_rows;
+if($num==0)
+{
 // Load Composer's autoloader
 require 'vendor/autoload.php';
 
@@ -34,14 +49,35 @@ try {
     //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 
     // Content
-    $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = '登録確認';
-    $mail->Body    = "下記のコードを送りました。ーーー$a";
+    $mail->isHTML(true);
+    if($language==0)
+    {                                      // Set email format to HTML
+        $mail->Subject = '登録確認';
+        $mail->Body    = "下記のコードを送りました。ーーー$a";
+    }
+    elseif($language==1)
+    {
+        $mail->Subject = '注册确认';
+        $mail->Body    = "验证码已发送ーーー$a";
+    }
+    else
+    {
+        $mail->Subject = 'Registration confirmation';
+        $mail->Body    = "We have sent the code below to youーーー$a";
+    }
     //$mail->AltBody = '下記のコードを送りました。ーーー"."$a';
 
     $mail->send();
     echo 'Message has been sent';
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    $b=1;
+    exit(json_encode($b));
+}
+}
+else
+{
+    $b=0;
+    exit(json_encode($b));
 }
 ?>

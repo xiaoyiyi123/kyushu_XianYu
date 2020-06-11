@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>MyPage-Upload2 Chinese</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../CSS/userHomepage_PBL2.css" />
+    <link rel="stylesheet" type="text/css" href="../../CSS/index_PBL2.css" />
+    <link rel="stylesheet" href="../../CSS/upload.css " type="text/css" />
+    <link rel="shortcut icon" href="../../img/logo_site1.png">
+    <script type="text/javascript" src="../../js/Chinese/jquery-3.2.1.min.js"></script>
+    <script src="../../js/Chinese/upload.js"></script>
+    <!-- <script src="../js/index.js"></script> -->
+</head>
+
+<body>
+    <div id="main_uH">
+        <!--主体main-->
+        <div id="nav_bar2">
+            <!--导航-->
+            <div id="logo">
+                <!--Logo名-->
+                <div class="web_logo">
+                    <a href="index_PBL2.html">
+                        <img src="../../img/logo_site1.png" style="width:30px;height:30px;float:left;margin-left:10px;" alt="logo" />
+                        <img src="../../img/logo_site_j.png" style="width:45px;height:20px;float:left;margin-top:5px;" alt="logo" />
+                        <img src="../../img/logo_site_e.png" style="width:60px;height:20px;float:left;margin-top:5px;" alt="logo" />
+                    </a>
+                    <!--<a href="index_PBL2_J.html">乾魚/Dried fish</a>-->
+                </div>
+            </div><!--Logo名结束-->
+            <!--导航菜单-->
+            <!-- <div class="nav_menu_lang">
+                <a href="#">语言</a>
+                <div class="dropdown-content">
+                    <a href="#">English</a>
+                    <a href="#">日本語</a>
+                    <a href="#">C</a>
+                    <a href="#">D</a>
+                </div>
+            </div> -->
+            <div class="nav_menu"><a href="userHomepage_cart_PBL2.html">收藏夹</a></div>
+            <div id="user_data_frame">
+                <div class="user_data">
+                    <!-- <img class="user_head" src="../image_pbl2/icon_pbl2/noavatar_small.gif" /> -->
+                    <div class="nav_menu" id='1'><a href="#" id='login'>登录</a></div>
+                    <!-- <a href="#" id='login'>登录</a> -->
+                    <div class="dropdown-content3">
+                        <a href="#" id='logout'>退出登录</a>
+                    </div>
+
+                </div>
+            </div>
+            <!--导航菜单结束-->
+
+        </div><!--导航结束-->
+
+        <div class="blank_top_uH"></div>
+        <div id="main_function_bar">
+            <div class=" mF_leftFrame">
+                <div class="mF_functionSelect" style="border-left:0px;background-color:rgb(134, 161, 216);box-shadow:none;">全部功能</div>
+                <div class="mF_functionSelect"><a href="userHomepage_inform_PBL2.html">账号信息</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_chartLog_PBL2.html">聊天记录</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_cart_PBL2.html">收藏夹</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_history_PBL2.html">浏览记录</a></div>
+                <!--<div class="mF_functionSelect"><a href="userHomepage_friend_PBL2.html">好友[暂定]</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_target_PBL2.html">关注用户[暂定]</a></div>-->
+                <div class="mF_functionSelect"><a href="userHomepage_myGoodsList_PBL2.html">我的商品</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_upload_PBL2.html">上传商品信息</a></div>
+                <div class="mF_functionSelect"><a href="userHomepage_myGoodsList2_PBL2.html">我的募集</a></div>
+                <div class="mF_functionSelect" style="background-color: #feb17b"><a href="#">发布募集信息</a></div>
+            </div>
+            <div class="mF_rightFrame">
+                <div class="uH_detail_bar">
+                    <form action="../../php/upload_file.php" method="post" enctype="multipart/form-data">
+                        <div class="main_upload">
+                            <div class="shangpinming">
+                                <div class="left1">
+                                    <div class="wenzi1">募集品名</div>
+                                </div>
+                                <div class="right1">
+                                    <input type="text" name="goods" class="blank1" style="font-size:16px">
+                                </div>
+                            </div>
+                            <!--<div class="shangpinyuanjia">
+                                <div class="left2">
+                                    <div class="wenzi2">新品価格</div>
+                                </div>
+                                <div class="right2">
+
+                                    <input type="number" name="price1" class="blank2" style="font-size:16px">
+                                    <div class="yuan1">円</div>
+                                </div>
+                            </div>-->
+                            <div class="jiage">
+                                <div class="left3">
+                                    <div class="wenzi3">预算</div>
+
+                                </div>
+                                <div class="right3">
+                                    <input type="number" name="price2" class="blank3" style="font-size:16px;width:100px">
+                                    <div class="yuan2">円</div>
+                                </div>
+                            </div>
+                            <!--
+                               <div class="xinjiuchengdu">
+                                <div class="left7">
+                                    <div class="wenzi7">商品状態</div>
+
+                                </div>
+                                <div class="right7">
+                                    <input type="number" name="state" class="blank7" style="font-size:16px">
+                                    <div class="baifenhao">%</div>
+                                </div>
+                            </div>
+                            -->
+
+                            <div class="miaoshu">
+                                <div class="left4">
+                                    <div class="wenzi4">备注</div>
+                                </div>
+                                <div class="right4">
+                                    <textarea type="text" name="descrebe" class="blank4" style="font-size:16px"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="jiaoyididian">
+                                <div class="left5">
+                                    <div class="wenzi5">希望交易校区</div>
+                                </div>
+                                <div class="right5">
+                                    <div class="blank5">
+                                        <select name=school style="height:30px;width:200px;font-size:16px">
+                                            <option value="1">伊都校区</option>
+                                            <option value="5">箱崎校区</option>
+                                            <option value="3">筑紫校区</option>
+                                            <option value="2">大橋校区</option>
+                                            <option value="4">病院校区</option>
+                                            <option value="6">その他</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jiaoyididian">
+                                <div class="left5">
+                                    <div class="wenzi5">物品分类</div>
+                                </div>
+                                <div class="right5">
+                                    <div class="blank5">
+                                        <select name="category" style="height:30px;width:100px;font-size:16px">
+                                            <option value="1">书籍</option>
+                                            <option value="2">家具</option>
+                                            <option value="3">电器</option>
+                                            <option value="4">娱乐</option>
+                                            <option value="5">其他</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tupian">
+                                <div class="left6">
+                                    <div class="wenzi6">参考图片</div>
+                                </div>
+                                <div class="right6">
+                                    <label for="file">文件名：</label>
+                                    <input type="file" name="file1" id="file"><br>
+                                    <div class="uHd_goodPic" style="border:none;">
+                                        <img img src="../../img/1.jpg" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="final">
+                                <input type="submit" name="submit" value="提交" οnclick="window.location.href='userHomepage_inform_PBL2_J.html'">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div id="contact" style="float:right;margin-top:20px">
+        <!--联系方式-->
+        <div class="contact_address">
+            <li>联系我们</li>
+            <li>邮箱：xxx@xxx.com</li>
+            <li>电话：111-1111-1111</li>
+            <li>支付宝打款：xxxxxx</li>
+        </div>
+    </div> <!--联系方式结束-->
+</body>
+
+</html >
