@@ -271,9 +271,9 @@ $(function () {
                     date: messageDate
                 },
                 success: function (msg) {
-                    console.log("leave message");
-                    console.log(msg);
-                    //window.location.href="../../shop/Japanese/detail_PBL2_J.html?id="+item_id;
+                    //console.log("leave message");
+                    //console.log(msg);
+                    window.location.href="../../shop/Japanese/detail_PBL2_J.html?id="+item_id;
     
                 },
                 error: function () {

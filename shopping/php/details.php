@@ -34,14 +34,14 @@ if($parameter==0){
     $message = "SELECT * FROM Messages where Item_Id = '".$item_id."' order by `Time` desc";
     $message_result = $conn->query($message);
     $message_row1 = $message_result->fetch_assoc();
-    $message_M1 = array('contents'=>$message_row1['Message_Contents'],'seller'=>$message_row1['Seller'],'buyer'=>$message_row1['Buyer'],
-    'time'=>$message_row1['Time'],'item'=>$message_row1['Item']);
+    $message_M1 = array('contents'=>$message_row1['Message_Contents'],'buyer'=>$message_row1['Buyer'],
+    'time'=>$message_row1['Time'],'item'=>$message_row1['Item_Id']);
     $message_row2 = $message_result->fetch_assoc();
-    $message_M2 = array('contents'=>$message_row2['Message_Contents'],'seller'=>$message_row2['Seller'],'buyer'=>$message_row2['Buyer'],
-    'time'=>$message_row2['Time'],'item'=>$message_row2['Item']);
+    $message_M2 = array('contents'=>$message_row2['Message_Contents'],'buyer'=>$message_row2['Buyer'],
+    'time'=>$message_row2['Time'],'item'=>$message_row2['Item_Id']);
     $message_row3 = $message_result->fetch_assoc();
-    $message_M3 = array('contents'=>$message_row3['Message_Contents'],'seller'=>$message_row3['Seller'],'buyer'=>$message_row3['Buyer'],
-    'time'=>$message_row3['Time'],'item'=>$message_row3['Item']);
+    $message_M3 = array('contents'=>$message_row3['Message_Contents'],'buyer'=>$message_row3['Buyer'],
+    'time'=>$message_row3['Time'],'item'=>$message_row3['Item_Id']);
 
     $return=array
     (
@@ -61,6 +61,7 @@ if($parameter==1)
 
     $sql="INSERT INTO Messages(Item_Id,Message_Contents,Buyer,`Time`) VALUES ('".$item_id."','".$new_message."','".$_COOKIE["my_cookie"]."','".$date."')";
     mysqli_query($conn,$sql);
+
     
 }
 
