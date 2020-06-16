@@ -33,6 +33,11 @@ $(document).ready(function(){
             window.open("../../shop/Chinese/login.html");
         });
     }
+
+    function imgOnerror(img){
+        img.src="../../img/error_image.png";
+        img.οnerrοr=null;//控制不要一直跳动
+    }
     $.ajax({
         url:"../../php/wantedlist.php",
         type:"POST",
@@ -46,6 +51,9 @@ $(document).ready(function(){
             for(var i =0;i<msg.Num;i++){
                 $(".uH_detail_bar").append(
                 '<div class="uHd_goodFrame">'+
+                '<div class="uHd_goodPic">' +
+                    '<img img src="' + msg.Content[i].Picture + '" alt="图片" onerror="imgOnerror(this)"/>' +
+                '</div>' +
                     '<div class="uHd_detailFrame" >'+
                         '<div class="uHd_dataFrame">'+
                             '<div class="uHd_price">￥'+msg.Content[i].budget+'</div>'+

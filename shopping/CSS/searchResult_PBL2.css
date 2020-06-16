@@ -324,6 +324,22 @@
     color:#ffffff;
     font-weight: 600;
 }
+.pS_pagethis {
+    width: 30px;
+    height: 30px;
+    background-color: #ff6a00;
+    border: 1px solid #808080;
+    text-align: center;
+    line-height: 30px;
+    font-size: 15px;
+    float: left;
+    margin-left: 10px;
+}
+.pS_pagethis a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+}
 .pS_pageNumb {
     width: 20px;
     height: 30px;
@@ -331,9 +347,8 @@
     line-height: 30px;
     font-size: 15px;
     float: left;
-    margin-left:10px;
+    margin-left: 10px;
 }
-
 .pS_frame2 {
     width: 200px;
     height: 50px;
