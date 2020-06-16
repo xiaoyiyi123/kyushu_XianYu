@@ -34,51 +34,119 @@ $(document).ready(function(){
         });
     }
 
-    function imgOnerror(img){
-        img.src="../../img/error_image.png";
-        img.οnerrοr=null;//控制不要一直跳动
+    function dataDisplay(msg,begin,end){
+        //console.log(msg.Content);
+        
+        for(var i =begin;i<end;i++){
+            //console.log(i+msg.Content[i].img);
+            $(".uH_detail_bar").append(
+            '<div class="uHd_goodFrame">'+
+            '<div class="uHd_goodPic">' +
+                '<img img src="' + msg.Content[i].img + '"/>' +
+            '</div>' +
+                '<div class="uHd_detailFrame" >'+
+                    '<div class="uHd_dataFrame">'+
+                        '<div class="uHd_price">￥'+msg.Content[i].budget+'</div>'+
+                        '<div class="uHd_area" style="width:auto">商品名:'+msg.Content[i].goods+'</div>'+
+                        '<div class="uHd_sellerID" style="text-decoration:none;margin-right:20px;"></div>'+
+                    '</div>'+
+                    '<div class="uHd_name">'+msg.Content[i].note+'</div>'+
+                    '<div class="uHd_buttonFrame">'+
+                        '<div class="uHd_button" id="delete_button">'+
+                            '<a href="javascript:delete_button('+msg.Content[i].purchase_Id+')">削除</a>'+
+                        '</div>'+
+                        '<div class="uHd_button" >'+
+                            '<a href="javascript:edit_button('+i+','+msg.Content[i].purchase_Id+')">詳細編集</a>'+
+                        '</div>'+
+                        
+                    '</div>'+
+                '</div>'+
+            '</div>');
+        }
     }
+
+    //动态的设置页码并添加页码导航
+    
+    //分页显示
+    var num = 3;
+    var page;
+    var firstPage = 1;
+    var now_page = 1;
     $.ajax({
         url:"../../php/wantedlist.php",
         type:"POST",
         data:{"parameter":0},
         success: function(msg){
             console.log(msg);
-            // var sold= {
-            //     '0':'未出售',
-            //     '1':'已出售'
-            // }
-            for(var i =0;i<msg.Num;i++){
-                $(".uH_detail_bar").append(
-                '<div class="uHd_goodFrame">'+
-                '<div class="uHd_goodPic">' +
-                    '<img img src="' + msg.Content[i].Picture + '" alt="图片" onerror="imgOnerror(this)"/>' +
-                '</div>' +
-                    '<div class="uHd_detailFrame" >'+
-                        '<div class="uHd_dataFrame">'+
-                            '<div class="uHd_price">￥'+msg.Content[i].budget+'</div>'+
-                            '<div class="uHd_area" style="width:auto">商品名:'+msg.Content[i].goods+'</div>'+
-                            '<div class="uHd_sellerID" style="text-decoration:none;margin-right:20px;"></div>'+
-                        '</div>'+
-                        '<div class="uHd_name">'+msg.Content[i].note+'</div>'+
-                        '<div class="uHd_buttonFrame">'+
-                            // '<div class="uHd_button">'+
-                            //     '<a href="./detail_PBL2.html?id='+msg.Content[i].Id+'">Detail</a>'+
-                            // '</div>'+
-                            '<div class="uHd_button" id="delete_button">'+
-                                '<a href="javascript:delete_button('+msg.Content[i].purchase_Id+')">削除</a>'+
-                            '</div>'+
-                            '<div class="uHd_button" >'+
-                                '<a href="javascript:edit_button('+i+','+msg.Content[i].purchase_Id+')">詳細編集</a>'+
-                            '</div>'+
-                            // '<div class="uHd_data">'+
-                            // msg.Content[i].Date+
-                            // '</div>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>');
+           if(msg.Content.length%num==0){
+                page=msg.Content.length/num;
+                console.log("page1:"+page);
             }
-            
+            else{
+                page=Math.ceil(msg.Content.length/num);
+                console.log("page2:"+page);
+            }
+            var index = num;
+            //将搜索结果展示到页面上去
+            dataDisplay(msg,0,index);
+             $(".pS_nextPage").click(function(){
+                console.log("正在点击后退按钮！！！！！！！");    
+                now_page+=1;
+                $("#now").css("color","white").text(now_page);
+                if(now_page+1>page){
+                    $("#next").removeAttr("disabled");
+                    now_page = page;
+                    $("#now").css("color","white").text(now_page);
+                    console.log("now is the last page");
+                    /*如果是最后一页，就禁用a标签*/
+                }
+                else{
+                    $("#next").attr('disabled',"true");
+                     /*如果不是最后一页，就重新启用a标签*/
+                }
+    
+                if(now_page-1<firstPage){ 
+                    now_page = 1;
+                    $("#previous").removeAttr("disabled");
+                    /*如果是第一页，就禁用a标签*/
+                }
+                else{
+                    $("#previous").attr('disabled',"true");
+                    /*如果不是第一页，就重新启用a标签*/
+                }
+         
+                $(".uH_detail_bar").empty();
+                dataDisplay(msg,index,index+num);
+
+             });
+             $(".pS_prePage").click(function(){
+                console.log("正在点击向前按钮！！！！！！！");
+                now_page-=1;
+                $("#now").css("color","white").text(now_page);
+                if(now_page-1<firstPage){
+                    now_page = firstPage;
+                    $("#previous").removeAttr("disabled");
+                    $("#now").css("color","white").text(now_page);
+                    /*如果是第一页，就禁用a标签*/
+                }
+                else{
+                    $("#previous").attr('disabled',"true");
+                    /*如果不是第一页，就重新启用a标签*/
+                }
+    
+                if(now_page+1>page){
+                    $("#next").removeAttr("disabled");
+                    /*如果是最后一页，就禁用a标签*/
+                } 
+                else{
+                    $("#next").attr('disabled',"true");
+                    /*如果不是最后一页，就重新启用a标签*/
+                }
+
+                
+                $(".uH_detail_bar").empty();/*清空上一页显示的数据*/
+                dataDisplay(msg,index=index-num,index=index+num);
+             });
         },
         error: function () {console.log('error');}
     });
