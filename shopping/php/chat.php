@@ -27,9 +27,9 @@ if($parameter==0){
     $get=$result1->fetch_assoc();
     array_push($red,$get["From"]);}
   
-  $msg=array('Id'=>$row["Message_Id"],'From'=>$row["From"],'To'=>$row["To"],'Content'=>$row["Content"],'Time'=>$row["Time"],'Status'=>$row["Status"],'New'=>$red);
-  $id=$row["Message_Id"];
-  mysqli_query($conn,"UPDATE Chats SET `Status` = 1 WHERE Message_Id = $id");
+  $msg=array('Id'=>$row["Chat_Id"],'From'=>$row["From"],'To'=>$row["To"],'Content'=>$row["Content"],'Time'=>$row["Time"],'Status'=>$row["Status"],'New'=>$red);
+  $id=$row["Chat_Id"];
+  mysqli_query($conn,"UPDATE Chats SET `Status` = 1 WHERE Chat_Id = $id");
   
 }
 if($parameter==1){
