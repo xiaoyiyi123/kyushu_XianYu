@@ -20,8 +20,8 @@ if($parameter==0){
     for($i =0;$i<$num;$i++){
         $temp=$result->fetch_assoc();
         //$new=array('Id'=>$temp["Item_Id"],'Name'=>$temp["Item_Name"],'Price'=>$temp["Item_Price"],'Picture'=>$temp["Item_Picture"],'User'=>$temp["User_Name"],'Campus'=>$temp["Campus"]);
-        $newitem=$temp["Item_Id"];
-        $sql2="SELECT * from Items where Item_id='$newitem'";
+        $newitem=$temp["Item_ID"];
+        $sql2="SELECT * from Items where Item_Id='$newitem'";
         $result2 = mysqli_query($conn,$sql2);
         $temp2=$result2->fetch_assoc();
         $new=array('Id'=>$temp2["Item_Id"],'Name'=>$temp2["Item_Name"],'Price'=>$temp2["Item_Price"],'Picture'=>$temp2["Item_Picture"],'User'=>$temp2["User_Name"],'Campus'=>$temp2["Campus"],'Date'=>$temp['Date']);
