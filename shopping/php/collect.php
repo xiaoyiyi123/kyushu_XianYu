@@ -64,7 +64,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
     $conn=new mysqli($dbserver,$dbuser,$dbpwd,$database);
     if ($conn->connect_error){
         die("defeat: " . $conn->connect_error);
-        header("Location: ../shop/Japanese/userHomepage_upload2_PBL2_J.html?success=false");
+        header("Location: ../shop/Japanese/userHomepage_upload2_PBL2_J.html?success=connectionError");
     }
     else{
         $sql="INSERT INTO Purchase(goods,budget,note,place,category,img,`user_Name`) VALUES ('".$goods."',".$budget.",'".$note."','".$place."','".$category."','".$path."','".$_COOKIE["my_cookie"]."')";
@@ -78,7 +78,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
 }
 else
 {
-	echo "文件格式错误，请点击下面链接<a href=‘../shop/Chinese/userHomepage_upload_PBL2.html’>重新添加</a>";
+	header("Location: ../shop/Japanese/userHomepage_upload2_PBL2_J.html?success=fileError");
 }
 
 
