@@ -1,6 +1,3 @@
-/**
- * Created by Administrator on 2017/6/26 0026.
- */
 
 $(function (){
     var str=code();
@@ -9,27 +6,51 @@ $(function (){
     console.log(str0);
     var vcodess=document.getElementById('codeimageMobile');
     vcodess.innerHTML=str;
-    //手机号正则
+    //邮箱验证加入防抖函数
     //console.log(111);
     var imobile=$("#mobile");
     var tishi=$(".mob-error");
     var tishi2=$(".mob-i")
-    //console.log(tishi2);
-    document.getElementById('mobile').onkeyup=function (){
+    function emailTest(){
         var str=imobile.val();
-        var reg=/^([A-Za-z0-9_\-\.])+$/;
+        console.log(str);
+        var reg=/^[A-Za-z0-9]+([_\.][A-Za-z0-9]+)*@([A-Za-z0-9\-]+\.)+(kyushu-u.ac.jp)$/
         var temp1 ="<i class='fa fa-exclamation-circle iconfont mob-i mob-i01'>&#10003;</i>入力確認！"
         var temp2 ="<i class='fa fa-exclamation-circle iconfont mob-i mob-i02'>&#10007;</i>入力が間違っています！"
         if(reg.test(str)){
+            console.log("输入合法");
             tishi.html(temp1);
             tishi.css("display","block");
             tishi2.addClass("mob-i01")
         }else {
+            console.log("输入no合法");
             tishi.html(temp2);
             tishi.css("display","block");
             tishi2.addClass("mob-i02");
         }
     }
+    function debounce(fun, delay) {
+        return function (args) {
+            let that = this
+            let _args = args
+            clearTimeout(fun.id)
+            fun.id = setTimeout(function () {
+                fun.call(that, _args)
+            }, delay)
+        }
+    }
+        
+    let inputb = document.getElementById('mobile');
+    
+    let debounceET= debounce(emailTest,1000);
+    
+    inputb.addEventListener('keyup', function (e) {
+        debounceET(e.target.value);
+        })
+    
+   
+   
+
     //点击生成验证码
     $(".mycode01").on("click",function (){
         var str=code();
@@ -80,7 +101,9 @@ $(function (){
     // var vcodess2=$('#codeimageMobile02').val();
     // var vcodess2=document.getElementById('codeimageMobile02');
     // vcodess2.innerHTML=str0;
-    user = mobile + "@s.kyushu-u.ac.jp";
+    console.log("mail:"+mobile);
+    user = mobile;
+    console.log("user:"+user);
     var language = 0; //ja = 0, ch = 1, en =2
     $.ajax({
         //请求地址
@@ -108,26 +131,6 @@ $(function (){
     });
     })
 
-    
-
-    //第二步
-  
-    //生成验证码
-    // $(".mycode02").on("click",function (){
-        
-    //     var arr = ['a',
-    //         'b','c','d','e','f','g','h','i','j','k','l','m','n','o','p',
-    //         'q','r','s','t','u','v','w','x','y','z','0',
-    //         '1','2','3','4','5','6','7','8','9'];
-    //     var str = '';
-    //     for(var i = 0 ; i < 4 ; i ++ )
-    //         str += ''+arr[Math.floor(Math.random() * arr.length)];
-    //     var vcodess=document.getElementById('codeimageMobile02');
-    //     vcodess.innerHTML=str;
-    //     return str;
-    // })
-
-    // 验证码 验证
     var vcodess2=document.getElementById('codeimageMobile02');
     var vcode2=document.getElementById("captchaMobileSecond");
     var vcode2=$("#captchaMobileSecond").val();
