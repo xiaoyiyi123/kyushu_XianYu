@@ -14,7 +14,8 @@ $(function (){
     function emailTest(){
         var str=imobile.val();
         console.log(str);
-        var reg=/^[A-Za-z0-9]+([_\.][A-Za-z0-9]+)*@([A-Za-z0-9\-]+\.)+(kyushu-u.ac.jp)$/
+        //var reg=/^[A-Za-z0-9]+([_\.][A-Za-z0-9]+)*@([A-Za-z0-9\-]+\.)+(kyushu-u.ac.jp)$/
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.(kyushu-u.ac.jp)$/;
         var temp1 ="<i class='fa fa-exclamation-circle iconfont mob-i mob-i01'>&#10003;</i>入力確認！"
         var temp2 ="<i class='fa fa-exclamation-circle iconfont mob-i mob-i02'>&#10007;</i>入力が間違っています！"
         if(reg.test(str)){
