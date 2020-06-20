@@ -35,48 +35,140 @@ $(document).ready(function () {
             window.open("../../shop/Japanese/login_J.html");
         });
     }
+    function dataDisplay(msg,begin,end){
+        console.log(msg);
+        console.log(msg.Content);
+        console.log("begin="+begin);
+        console.log(msg.Content[begin]);
+            var loopnum=8;
+            if (msg.Num<=8){
+                loopnum=msg.Num;
+            }
+            for (var i =begin;i<end;i++) {
+                $(".uH_detail_bar").append(
+                    
+                    // '<div class="uHd_goodFrame">' +
+                    // '<div class="uHd_goodPic">' +
+                    // '<img img src="' + msg.Content[i].Picture + '" />' +
+                    // '</div>' +
+                    // '<div class="uHd_detailFrame">' +
+                    // '<div class="uHd_dataFrame">' +
+                    // '<div class="uHd_price">￥' + msg.Content[i].Price + '</div>' +
+                    // '<div class="uHd_area">' + camp[msg.Content[i].Campus] + '</div>' +
+                    // '<div class="uHd_sellerID" style="text-decoration:none;margin-right:20px;"></div>' +
+                    // '</div>' +
+                    // '<div class="uHd_name">' +
+                    // msg.Content[i].Name +
+                    // '</div>' +
+                    // '<div class="uHd_buttonFrame">' +
+                    // '<div class="uHd_button">' +
+                    // '<a href="./detail_PBL2_J.html?id=' + msg.Content[i].Id + '">商品詳細</a>' +
+                    // '</div>' +
+                    // '<div class="uHd_button" id="delete_button">' +
+                    // '<a href="javascript:delete_button(' + msg.Content[i].Id + ')">履歴削除</a>' +
+                    // '</div>' +
+                    // '<div class="uHd_data">' +
+                    // msg.Content[i].Date +
+                    // '</div>' +
+                    // '</div>' +
+                    // '</div>' +
+                    // '</div>'
+                    `<div class="uHd_goodFrame"> 
+                    <div class="uHd_goodPic">
+                    <img src="${msg.Content[i].Picture}"  onerror="this.src='../../img/default.jpg'"/> 
+                    </div>
+                    <div class="uHd_detailFrame"> 
+                    <div class="uHd_dataFrame">
+                    <div class="uHd_price">￥ ${msg.Content[i].Price} </div> 
+                    <div class="uHd_area"> ${camp[msg.Content[i].Campus]} </div> 
+                    <div class="uHd_sellerID" style="text-decoration:none;margin-right:20px;"></div> 
+                    </div> 
+                    <div class="uHd_name"> 
+                    ${msg.Content[i].Name} 
+                    </div> 
+                    <div class="uHd_buttonFrame">
+                    <div class="uHd_button"> 
+                    <a href="./detail_PBL2_J.html?id= ${msg.Content[i].Id} ">商品詳細</a> 
+                    </div> 
+                    <div class="uHd_button" id="delete_button">
+                    <a href="javascript:delete_button( ${msg.Content[i].Id})">履歴削除</a>
+                    </div> 
+                    <div class="uHd_data"> 
+                    ${msg.Content[i].Date }
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    `
+                    );
+            }
+
+    }
+    var num = 3;
+    var page;
+    var firstPage = 1;
+    var now_page = 1;
     $.ajax({
         url: "../../php/history.php",
         type: "POST",
         data: { "parameter": 0 },
         success: function (msg) {
-            console.log(msg);
-            var loopnum=8;
-            if (msg.Num<=8){
-                loopnum=msg.Num;
-            }
-            for (var i = 0; i < loopnum; i++) {
-                $(".uH_detail_bar").append('<div class="uHd_goodFrame">' +
-                    '<div class="uHd_goodPic">' +
-                    '<img img src="' + msg.Content[i].Picture + '" />' +
-                    '</div>' +
-                    '<div class="uHd_detailFrame">' +
-                    '<div class="uHd_dataFrame">' +
-                    '<div class="uHd_price">￥' + msg.Content[i].Price + '</div>' +
-                    '<div class="uHd_area">' + camp[msg.Content[i].Campus] + '</div>' +
-                    '<div class="uHd_sellerID" style="text-decoration:none;margin-right:20px;"></div>' +
-                    '</div>' +
-                    '<div class="uHd_name">' +
-                    msg.Content[i].Name +
-                    '</div>' +
-                    '<div class="uHd_buttonFrame">' +
-                    '<div class="uHd_button">' +
-                    '<a href="./detail_PBL2_J.html?id=' + msg.Content[i].Id + '">商品詳細</a>' +
-                    '</div>' +
-                    '<div class="uHd_button" id="delete_button">' +
-                    '<a href="javascript:delete_button(' + msg.Content[i].Id + ')">履歴削除</a>' +
-                    '</div>' +
-                    '<div class="uHd_data">' +
-                    msg.Content[i].Date +
-                    '</div>' +
-                    '</div>' +
-                    '</div>' +
-                    '</div>');
-            }
+            page=Math.ceil(msg.Content.length/num);//total pages
+            console.log("page2:"+page);
+            var index = num;
+            //将搜索结果展示到页面上去
+            dataDisplay(msg,0,num);
+             $(".pS_nextPage").click(function(e){
+                
+                console.log("正在点击下一页按钮！！！！！！！");    
+                now_page+=1;
+                console.log("current Page:"+now_page);
+                $("#now").css("color","white").text(now_page);
+                if(now_page<=page){
+                    console.log("当前不是最后一页");
+                    $(".uH_detail_bar").empty();
+                    dataDisplay(msg,index,index+num);
+                    index = index+num;
+                    console.log("当前的index："+index);
+
+                }else{
+                    console.log("当前是最后一页，index值为：" +(index-num));
+                    now_page = page;
+                    console.log("当前是最后一页，now_page值为：" +now_page);
+                    $("#now").css("color","white").text(now_page);
+                    $(".uH_detail_bar").empty();
+                    dataDisplay(msg,index-num,index);
+                    alert("最後ですよ！");
+
+                }  
+
+             });
+             $(".pS_prePage").click(function(){
+                 console.log("current index:"+index);
+                 console.log("正在点击上一页按钮！！！！！！！");
+                 console.log("上一次停留的时候page为:"+now_page);
+                 now_page-=1;
+                 if(now_page>=1){
+                    console.log("current_page:"+now_page);
+                    $("#now").css("color","white").text(now_page);
+                    $(".uH_detail_bar").empty();
+                    dataDisplay(msg,index-2*num,index-num);
+                    index = index-num;
+                    console.log("current index:"+index);
+                 }else{
+                     now_page = 1;
+                     $("#now").css("color","white").text(now_page);
+                     alert("最初ですよ！");
+                 }
+                 
+             });
+            
         },
         error: function () { console.log('error'); }
-    });
+    }
+    );
 
+    
     $("#delete_button").click(function () {
         console.log("in");
         $.ajax({
