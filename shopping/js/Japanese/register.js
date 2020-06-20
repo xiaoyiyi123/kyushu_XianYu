@@ -79,17 +79,12 @@ $(function (){
     //下一步 成功
     $("#mobileFormSecond").css({display:"none"})
 
-   
     // 手机号 验证码 不能为空 验证码需要一致
     $("#mobileSubmitFirst").click(function (){
-        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.(kyushu-u.ac.jp)$/;
-        var str=imobile.val();
-        var flag =reg.test(str);//邮箱验证的flag
-        console.log("邮箱验证的flag:"+flag);
         var mobile=$("#mobile").val();
         //console.log(vcode.value);
         //console.log(vcodess.innerHTML);
-        if(mobile!=""&&flag&&vcode!=""&&vcode.value==vcodess.innerHTML&&$("#mobileAgreeClause").attr("checked") == "checked"){
+        if(mobile!=""&&vcode!=""&&vcode.value==vcodess.innerHTML&&$("#mobileAgreeClause").attr("checked") == "checked"){
             console.log(12112);
             $("#mobileFormFirst").css({display:"none"});
             $("#mobileFormSecond").css({display:"block"});
