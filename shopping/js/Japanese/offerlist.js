@@ -23,45 +23,49 @@ $(document).ready(function(){
             console.log(get_cookie());
             if(get_cookie()==null){
                 alert("Logout successful！");
-                window.open("../../shop/Chinese/login.html");
+                window.open("../../shop/Japanese/login_J.html");
             }
             
         });
     }
     if(get_user==null){
         $("#login",".user_data","#user_data_frame").click(function(){
-            window.open("../../shop/Chinese/login.html");
+            window.open("../../shop/Japanese/login_J.html");
         });
     }
 
     function dataDisplay(msg,begin,end){
-        //console.log(msg.Content);
-        
+        console.log(msg.Content);
+        console.log("begin="+begin);
+        console.log(msg.Content[begin]);
         for(var i =begin;i<end;i++){
             //console.log(i+msg.Content[i].img);
             $(".uH_detail_bar").append(
-            '<div class="uHd_goodFrame">'+
-            '<div class="uHd_goodPic">' +
-                '<img img src="' + msg.Content[i].img + '"/>' +
-            '</div>' +
-                '<div class="uHd_detailFrame" >'+
-                    '<div class="uHd_dataFrame">'+
-                        '<div class="uHd_price">￥'+msg.Content[i].budget+'</div>'+
-                        '<div class="uHd_area" style="width:auto">商品名:'+msg.Content[i].goods+'</div>'+
-                        '<div class="uHd_sellerID" style="text-decoration:none;margin-right:20px;"></div>'+
-                    '</div>'+
-                    '<div class="uHd_name">'+msg.Content[i].note+'</div>'+
-                    '<div class="uHd_buttonFrame">'+
-                        '<div class="uHd_button" id="delete_button">'+
-                            '<a href="javascript:delete_button('+msg.Content[i].purchase_Id+')">削除</a>'+
-                        '</div>'+
-                        '<div class="uHd_button" >'+
-                            '<a href="javascript:edit_button('+i+','+msg.Content[i].purchase_Id+')">詳細編集</a>'+
-                        '</div>'+
-                        
-                    '</div>'+
-                '</div>'+
-            '</div>');
+            
+            `<div class="uHd_goodFrame">
+                <div class="uHd_goodPic">
+                    <img src = "${msg.Content[i].img}" onerror="this.src='../../img/default.jpg'" />
+                </div>
+                <div class="uHd_detailFrame">
+                    <div class="uHd_dataFrame">
+                        <div class="uHd_price"> ￥${msg.Content[i].budget} </div>
+                        <div class="uHd_area" style="width:auto">商品名: ${msg.Content[i].goods}</div>
+                        <div class="uHd_sellerID" style="text-decoration:none;margin-right:20px;"></div>
+                    </div>
+                    <div class="uHd_name">${msg.Content[i].note}</div>
+                    <div class="uHd_buttonFrame">
+                    <div class="uHd_button" id="delete_button">
+                        <a href="javascript:delete_button(${msg.Content[i].purchase_Id})">削除</a>
+                    </div>
+                    <div class="uHd_button">
+                    <a href="javascript:edit_button(${i},'${msg.Content[i].purchase_Id}')">詳細編集</a>
+                    </div>
+                </div>
+                </div>
+                </div>           
+            `
+            
+            );
         }
     }
 
@@ -78,75 +82,84 @@ $(document).ready(function(){
         data:{"parameter":0},
         success: function(msg){
             console.log(msg);
-           if(msg.Content.length%num==0){
-                page=msg.Content.length/num;
-                console.log("page1:"+page);
-            }
-            else{
-                page=Math.ceil(msg.Content.length/num);
-                console.log("page2:"+page);
-            }
+            page=Math.ceil(msg.Content.length/num);//total pages
+            var tPage = Math.floor(msg.Content.length/num);//中间变量用来做最后一页个数的判断
+            console.log("tPage:"+tPage);
+            var theLast = msg.Content.length-tPage*num;
+            console.log("the num in last page:"+theLast);
+           
             var index = num;
             //将搜索结果展示到页面上去
-            dataDisplay(msg,0,index);
-             $(".pS_nextPage").click(function(){
-                console.log("正在点击后退按钮！！！！！！！");    
+            dataDisplay(msg,0,num);
+
+            $(".pS_nextPage").click(function(e){
+                
+                console.log("正在点击下一页按钮！！！！！！！");    
                 now_page+=1;
                 $("#now").css("color","white").text(now_page);
-                if(now_page+1>page){
-                    $("#next").removeAttr("disabled");
+                if(now_page<=page){
+                    console.log("当前不是最后一页");
+                    $(".uH_detail_bar").empty();
+                    dataDisplay(msg,index,index+num);
+                    index = index+num;
+                    console.log("当前的index也就是下一次的起始："+index);
+
+                }else{
+                    // console.log("当前是最后一页，index值为：" +(index));
+                    // console.log("当前是最后一页，index-num值为：" +(index-num));
+                    // console.log("当前是最后一页，num值为：" +(num));
                     now_page = page;
+                    console.log("当前是最后一页，now_page值为：" +now_page);
                     $("#now").css("color","white").text(now_page);
-                    console.log("now is the last page");
-                    /*如果是最后一页，就禁用a标签*/
-                }
-                else{
-                    $("#next").attr('disabled',"true");
-                     /*如果不是最后一页，就重新启用a标签*/
-                }
-    
-                if(now_page-1<firstPage){ 
-                    now_page = 1;
-                    $("#previous").removeAttr("disabled");
-                    /*如果是第一页，就禁用a标签*/
-                }
-                else{
-                    $("#previous").attr('disabled',"true");
-                    /*如果不是第一页，就重新启用a标签*/
-                }
-         
-                $(".uH_detail_bar").empty();
-                dataDisplay(msg,index,index+num);
+                    $(".uH_detail_bar").empty();
+                    console.log("当前的index也就是下一次的起始："+index);
+                    if(theLast!=0){
+                        dataDisplay(msg,index,index+theLast);
+                    }else{
+                        dataDisplay(msg,index-num,index);
+                    }
+                    
+                    alert("最後ですよ！");
+
+                }  
+                console.log("pageNumber:"+now_page);
 
              });
+
              $(".pS_prePage").click(function(){
-                console.log("正在点击向前按钮！！！！！！！");
+                console.log("正在点击上一页按钮！！！！！！！");
+                console.log("上一次停留的时候page为:"+now_page);
                 now_page-=1;
-                $("#now").css("color","white").text(now_page);
-                if(now_page-1<firstPage){
-                    now_page = firstPage;
-                    $("#previous").removeAttr("disabled");
-                    $("#now").css("color","white").text(now_page);
-                    /*如果是第一页，就禁用a标签*/
-                }
-                else{
-                    $("#previous").attr('disabled',"true");
-                    /*如果不是第一页，就重新启用a标签*/
-                }
-    
-                if(now_page+1>page){
-                    $("#next").removeAttr("disabled");
-                    /*如果是最后一页，就禁用a标签*/
-                } 
-                else{
-                    $("#next").attr('disabled',"true");
-                    /*如果不是最后一页，就重新启用a标签*/
-                }
-
                 
-                $(".uH_detail_bar").empty();/*清空上一页显示的数据*/
-                dataDisplay(msg,index=index-num,index=index+num);
-             });
+                    if(now_page>=1){
+                        console.log("current index:"+index);
+                        console.log("不是第一页！！！！！！！");
+                        
+                        console.log("current_page:"+now_page);
+                        $("#now").css("color","white").text(now_page);
+                        $(".uH_detail_bar").empty();
+                        if(theLast!=0){
+                            console.log("!00000")
+                            dataDisplay(msg,index-2*theLast+1,index);
+                        }else{
+                            console.log("000000");
+                            dataDisplay(msg,index-2*num,index-num);
+                        }
+                        index = index-num;
+                        console.log("current index:"+index);
+                     }else{
+                         console.log("current index:"+index);
+                         console.log("当前是第一页别再点啦没有啦！！！！！！！");
+                         console.log("上一次停留的时候page为:"+now_page);
+                         now_page = 1;
+                         $("#now").css("color","white").text(now_page);
+                         alert("最初ですよ！");
+                     }
+                
+                
+                
+            });
+            
         },
         error: function () {console.log('error');}
     });

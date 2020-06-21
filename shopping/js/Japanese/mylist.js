@@ -77,56 +77,83 @@ $(document).ready(function(){
         data:{"parameter":0},
         success: function(msg){
             console.log(msg);
-            
             page=Math.ceil(msg.Content.length/num);//total pages
-            console.log("page2:"+page);
+            var tPage = Math.floor(msg.Content.length/num);//中间变量用来做最后一页个数的判断
+            console.log("tPage:"+tPage);
+            var theLast = msg.Content.length-tPage*num;
+            console.log("the num in last page:"+theLast);
+           
             var index = num;
             //将搜索结果展示到页面上去
             dataDisplay(msg,0,num);
-             $(".pS_nextPage").click(function(e){
+
+            $(".pS_nextPage").click(function(e){
                 
                 console.log("正在点击下一页按钮！！！！！！！");    
                 now_page+=1;
-                console.log("current Page:"+now_page);
                 $("#now").css("color","white").text(now_page);
                 if(now_page<=page){
                     console.log("当前不是最后一页");
                     $(".uH_detail_bar").empty();
                     dataDisplay(msg,index,index+num);
                     index = index+num;
-                    console.log("当前的index："+index);
+                    console.log("当前的index也就是下一次的起始："+index);
 
                 }else{
-                    console.log("当前是最后一页，index值为：" +(index-num));
+                    // console.log("当前是最后一页，index值为：" +(index));
+                    // console.log("当前是最后一页，index-num值为：" +(index-num));
+                    // console.log("当前是最后一页，num值为：" +(num));
                     now_page = page;
                     console.log("当前是最后一页，now_page值为：" +now_page);
                     $("#now").css("color","white").text(now_page);
                     $(".uH_detail_bar").empty();
-                    dataDisplay(msg,index-num,index);
+                    console.log("当前的index也就是下一次的起始："+index);
+                    if(theLast!=0){
+                        dataDisplay(msg,index,index+theLast);
+                    }else{
+                        dataDisplay(msg,index-num,index);
+                    }
+                    
                     alert("最後ですよ！");
 
                 }  
+                console.log("pageNumber:"+now_page);
 
              });
+
              $(".pS_prePage").click(function(){
-                 console.log("current index:"+index);
-                 console.log("正在点击上一页按钮！！！！！！！");
-                 console.log("上一次停留的时候page为:"+now_page);
-                 now_page-=1;
-                 if(now_page>=1){
-                    console.log("current_page:"+now_page);
-                    $("#now").css("color","white").text(now_page);
-                    $(".uH_detail_bar").empty();
-                    dataDisplay(msg,index-2*num,index-num);
-                    index = index-num;
-                    console.log("current index:"+index);
-                 }else{
-                     now_page = 1;
-                     $("#now").css("color","white").text(now_page);
-                     alert("最初ですよ！");
-                 }
-                 
-             });
+                console.log("正在点击上一页按钮！！！！！！！");
+                console.log("上一次停留的时候page为:"+now_page);
+                now_page-=1;
+                
+                    if(now_page>=1){
+                        console.log("current index:"+index);
+                        console.log("不是第一页！！！！！！！");
+                        
+                        console.log("current_page:"+now_page);
+                        $("#now").css("color","white").text(now_page);
+                        $(".uH_detail_bar").empty();
+                        if(theLast!=0){
+                            console.log("!00000")
+                            dataDisplay(msg,index-2*theLast+1,index);
+                        }else{
+                            console.log("000000");
+                            dataDisplay(msg,index-2*num,index-num);
+                        }
+                        index = index-num;
+                        console.log("current index:"+index);
+                     }else{
+                         console.log("current index:"+index);
+                         console.log("当前是第一页别再点啦没有啦！！！！！！！");
+                         console.log("上一次停留的时候page为:"+now_page);
+                         now_page = 1;
+                         $("#now").css("color","white").text(now_page);
+                         alert("最初ですよ！");
+                     }
+                
+                
+                
+            });
             
         },
         error: function () {console.log('error');}
