@@ -1,9 +1,9 @@
 
 $(function (){
     
-    $("#main_ps1").css({display:"none"});
-    $("#main_ps2").css({display:"block"});
-    $("#main_ps3").css({display:"block"});
+    $("#main_ps1").css({display:"block"});
+    $("#main_ps2").css({display:"none"});
+    $("#main_ps3").css({display:"none"});
 //输入邮箱发送验证码
 
     $("#mailSubmit").click(function (){
@@ -28,6 +28,8 @@ $(function (){
                     var codeconfirm=$("#code").val();
                     if(codeconfirm == result){
                         alert("パスワードをリセットしてください")
+                        $("#main_ps1").css({display:"none"});
+                        $("#main_ps2").css({display:"block"});
                     }
                     else{
                         alert("検証コードが間違いました")
@@ -36,23 +38,15 @@ $(function (){
 
                 } 
             });
-
-            $("#main_ps1").css({display:"none"});
-            $("#main_ps2").css({display:"block"});
-            $("#main_ps3").css({display:"block"});
     
-    });
+           });
 
     //下一步 
-    $("#main_ps1").css({display:"block"});
-    $("#main_ps2").css({display:"none"});
-    $("#main_ps3").css({display:"block"});
-
     // 确认重置
     $("#confirmPassword").click(function (){
         var pwd=$("#Pwd").val();
             //密码正则
-    document.getElementById('Pwd').onkeyup=function () {
+       document.getElementById('Pwd').onkeyup=function () {
         var str2=this.value;
         var tishi=$(".error-upwd");
         var tishi2=$(".upwd-i");
@@ -111,6 +105,7 @@ $(function (){
             console.log(b);
         if(b==1)
              alert("パスワードリセットしました！")
+             $("#main_ps3").css({display:"block"});
         if(b==0)
         {
             alert("エラー")
@@ -121,11 +116,6 @@ $(function (){
     
     });
     })
-
-
-    $("#main_ps1").css({display:"block"});
-    $("#main_ps2").css({display:"block"});
-    $("#main_ps3").css({display:"none"});
 
 })
 
