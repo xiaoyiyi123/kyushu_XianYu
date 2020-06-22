@@ -6,9 +6,11 @@
     margin-right: auto;
     width: 100%;
     height: auto;
-    /*border:1px solid #F00;box-shadow: inset 0px 0px 15px 1px #ceeaff;*/
-    min-width: 1000px;
-    max-width: 1000px;
+    /*border:1px solid #F00;box-shadow: inset 0px 0px 15px 1px #ceeaff;background-color:rgb(134, 161, 216);*/
+    min-width: 1080px;
+    max-width: 1080px;
+    min-height: 600px;
+    
     z-index: -10;
 }
 
