@@ -15,14 +15,14 @@ $(document).ready(function(){
             console.log(get_cookie());
             if(get_cookie()==null){
                 alert("ログアウト成功しました");
-                window.open("../../shop/Japanese/login_J.html");
+                window.location.href="../../shop/Japanese/login_J.html";
             }
             
         });
     }
     if(get_user==null){
         $("#login",".user_data","#user_data_frame").click(function(){
-            window.open("../../shop/Japanese/login_J.html");
+            window.location.href="../../shop/Japanese/login_J.html";
         });
     }
     function dataDisplay(msg,begin,end){
@@ -80,10 +80,16 @@ $(document).ready(function(){
             page=Math.ceil(msg.Content.length/num);//total pages
             var theLast = (msg.Content.length)%num;
             console.log("last"+theLast);
-           
-            var index = num;
             var len = msg.Content.length;
-            //将搜索结果展示到页面上去
+            //动态生成页码
+            var str = "";
+            
+            for (var i = 1; i <=page; i++) {
+                str += `<div class="pS_pageNum"><a class="now" href="#">${i}</a></div>`;
+                document.getElementById("pageChange").innerHTML = str;
+
+            }
+            //将搜索结果初始化展示到页面上去
             if(len<num){
                 console.log("len<num");
                 dataDisplay(msg,0,len+1);
@@ -91,54 +97,102 @@ $(document).ready(function(){
                 console.log("len>num");
                 dataDisplay(msg,0,num);
             }
-            
-            $(".pS_nextPage").click(function(e){
-                console.log("正在点击下一页按钮！！！！！！！");    
-                now_page+=1;
-                $("#now").css("color","white").text(now_page);
-                if(now_page < page){
-                    console.log("当前不是最后一页");
-                    $(".uH_detail_bar").empty();
-                    var start = (now_page-1) * num,
-                        end = now_page*num;
-                    dataDisplay(msg,start,end); 
-                }else{
-                    now_page = page;
-                    console.log("当前是最后一页，now_page值为：" +now_page);
-                    $("#now").css("color","white").text(now_page);
-                    $(".uH_detail_bar").empty();                    
-                    if(theLast!=0){
-                        dataDisplay(msg,len-theLast,len);
-                                
-                        }
-                    else{
-                        dataDisplay(msg,len-num,len); 
+            function lastPageShow(p){
+                // $("#now").css("color","white").text(p);
+                var temp = document.getElementsByClassName("now")[p-1];
+                console.log("lastpage"+temp);
+                temp.setAttribute('style', 'color:yellow');
+                    $(".uH_detail_bar").empty();  
+                if(theLast!=0){
+                    dataDisplay(msg,len-theLast,len);            
                     }
+                else{
+                    dataDisplay(msg,len-num,len); 
                 }
                 
-               
-            });
-            $(".pS_prePage").click(function(){
-                now_page-=1;
-                $("#now").css("color","white").text(now_page);
-                if(now_page>=1){
-                    console.log("not first page");
+            }
+           
+            function pageShow(p){
+                    //$("#now").css("color","white").text(p);
+                    console.log(p);
+                    
+                    var temp = document.getElementsByClassName("now")[p-1];
+                    console.log(temp);
+                    temp.setAttribute('style', 'color:yellow');
                     $(".uH_detail_bar").empty();
-                    var start = (now_page-1) * num,
-                        end = now_page*num;
+                    var start = (p-1) * num,
+                        end = p*num;
                     console.log("start:"+start);
                     console.log("end:"+end);
                     dataDisplay(msg,start,end); 
+            }            
+            $(".pS_nextPage").click(function(e){
+                console.log("正在点击下一页按钮！！！！！！！");   
+                var temp = document.getElementsByClassName("now")[now_page-1];
+                    //console.log(temp);
+                    temp.setAttribute('style', 'color:white'); 
+                now_page+=1;
+                if(now_page < page){
+                    pageShow(now_page);    
+                   
+                }else{
+                    
+                    now_page = page;
+                    lastPageShow(now_page);
+                }  
+            });
+            $(".pS_prePage").click(function(){
+                var temp = document.getElementsByClassName("now")[now_page-1];
+                //console.log(temp);
+                temp.setAttribute('style', 'color:white'); 
+                now_page-=1;
+                
+                if(now_page>=1){
+                    pageShow(now_page);
 
                 }else{
                     console.log("当前是第一页别再点啦没有啦！！！！！！！");
                     console.log("上一次停留的时候page为:"+now_page);
                     now_page = 1;
-                    $("#now").css("color","white").text(now_page);
-                    
+                    $("#now").css("color","white").text(now_page);                  
                 }
             });
-            
+            //点击定向跳转
+            $(".pS_frame2_button").click(function(){
+                var temp = document.getElementsByClassName("now")[now_page-1];
+                //console.log(temp);
+                temp.setAttribute('style', 'color:white'); 
+                now_page = $("#goPage").val();
+                console.log("goPage:"+now_page);
+                if(now_page != page){
+                    pageShow(now_page);
+                }else{
+                    lastPageShow(page);
+                }
+            });
+
+            //每个页面的跳转事件
+            var pageN = document.getElementsByClassName("now"),
+                len = pageN.length;
+            for(var j = 0; j < len; j++){
+                (function(n){
+                    pageN[n].onclick= function(){
+                        var temp = document.getElementsByClassName("now")[now_page-1];
+                        temp.setAttribute('style', 'color:white'); 
+                        now_page = n+1;
+                        console.log("now_page:"+(now_page));
+
+                        if(now_page!= page){
+                            pageShow(now_page);
+                        }else{
+                            lastPageShow(page);
+                        }
+                    }
+                }
+                   
+                )(j);
+
+            }
         },
         error: function () {console.log('error');}
     });
