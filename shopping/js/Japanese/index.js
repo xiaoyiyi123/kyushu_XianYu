@@ -6,7 +6,7 @@ var camp= {
     '4': '病院キャンパス',
     '5': '別府キャンパス'
 }
-
+var globalcampus = 0;
 window.onload = function(){
     var get_user=get_cookie();
     if(get_user!=null){
@@ -30,6 +30,7 @@ window.onload = function(){
     }
 }
 function serverConnection(campus){
+    globalcampus = campus;
     $.ajax({
         url:'../../php/index.php',
         type:'POST',
@@ -60,6 +61,41 @@ function fillInfo(IdName,className,msg){
                 campusPrice[2*i+1].innerHTML = msg[className][i]['Price'];
                 name[i].innerHTML = msg[className][i]['Name'];
             }
+}
+function search(key){
+    var form = document.getElementsByTagName('form')[0];
+    var searchType = document.createElement('input');
+    searchType.type = 'hidden';
+    searchType.name = 'search';
+    searchType.value = key;
+    form.appendChild(searchType);
+
+    var searchCampus = document.createElement('input');
+    searchCampus.type = 'hidden';
+    searchCampus.name = 'Campus';
+    searchCampus.value = globalcampus;
+    form.appendChild(searchCampus);
+
+    var searchMin = document.createElement('input');
+    searchMin.type = 'hidden';
+    searchMin.name = 'Min';
+    searchMin.value = 0;
+    form.appendChild(searchMin);
+
+    var searchMax = document.createElement('input');
+    searchMax.type = 'hidden';
+    searchMax.name = 'Max';
+    searchMax.value = 9999999;
+    form.appendChild(searchMax);
+    switch(key){
+        case 1:
+            form.action='./searchResult_PBL2_J';
+            break;
+        case 2:
+            form.action='./searchResult2_PBL2_J';
+    }
+    
+
 }
 function get_cookie(){
     var c_start=document.cookie.indexOf("my_cookie=");

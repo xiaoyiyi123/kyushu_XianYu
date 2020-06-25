@@ -61,10 +61,10 @@
             <!--搜索-->
             <div class="search">
                 <div class="search-top">
-                    <form class="search-form">
-                        <input type="text" class="input-text" placeholder="キーワードを入力してください" />
-                        <input type="submit" class="input-sub" value="商品検索" />
-                        <input type="submit" class="input-sub2" value="募集品検索" />
+                    <form class="search-form" method="GET">
+                        <input type="text" class="input-text" placeholder="キーワードを入力してください" name="Text"/>
+                        <input type="submit" class="input-sub" value="商品検索" onclick="javascript:search(1)"/>
+                        <input type="submit" class="input-sub2" value="募集品検索" onclick="javascript:search(2)"/>
                     </form>
                 </div>
                 <div style="width:40px;height:40px;z-index:3;position:relative;display:inline;">

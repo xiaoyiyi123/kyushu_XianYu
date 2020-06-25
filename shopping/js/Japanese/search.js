@@ -9,15 +9,61 @@ var Campus= {
 }
 $(document).ready(function(){
     var obj=JSON.parse(localStorage.getItem("temp_info"));
-    console.log(obj);
+    var url = window.location.search;
+    var obj ={};
+    var gets = url.split('?')[1];
+    if(gets){
+        
+        gets = gets.split('&');
+        gets.forEach(get=>{
+            get = get.split('=');
+            obj[get[0]]=get[1];
+        });
+    }
+
     //localStorage.removeItem("temp_info");
+    connection(obj);
+    var get_user=get_cookie();
+    //console.log(get_user);
+    if(get_user!=null){
+        $("a","#1","#nav_bar").text(get_user);
+        $("a","#1","#nav_bar").click(function(){
+            window.open("../../shop/Japanese/userHomepage_inform_PBL2_J.html");
+        });
+    }
+    if(get_user==null){
+        $("a","#1","#nav_bar").click(function(){
+            window.open("../../shop/Japanese/login_J.html");
+        });
+    }
+    $('.rS_buttonFrame').click(function(){
+        console.log(123);
+        var down = $('.rS_inputPrice input')[0].value;
+        var up = $('.rS_inputPrice input')[1].value;
+        if(down != ''){
+            obj['Min']=parseInt(down);
+        }
+        else{
+            obj['Min']=0;
+        }
+        if(up != ''){
+            obj['Max']=parseInt(up);
+        }
+        else{
+            obj['Max']=9999999;
+        }
+        connection(obj);
+    });
+});
+function connection(obj){
+    $('#searchResult_bar').empty();
     $.ajax({
         url:"../../php/search.php",
-        type:"POST",
+        type:"GET",
         dataType:'JSON',
         data:{parameter:obj},
         success: function(msg){
-            console.log(msg);
+            //console.log(msg);
             var length = msg.length;
             for(var i =0;i<length;i++){
                 $('#searchResult_bar').append(
@@ -37,23 +83,8 @@ $(document).ready(function(){
 
         },
         error: function () {console.log('error');}
-    })
-    var get_user=get_cookie();
-    //console.log(get_user);
-    if(get_user!=null){
-        $("a","#1","#nav_bar").text(get_user);
-        $("a","#1","#nav_bar").click(function(){
-            window.open("../../shop/Japanese/userHomepage_inform_PBL2_J.html");
-        });
-    }
-    if(get_user==null){
-        $("a","#1","#nav_bar").click(function(){
-            window.open("../../shop/Japanese/login_J.html");
-        });
-    }
-    
-});
-
+    });
+}
 function get_cookie(){
     var c_start=document.cookie.indexOf("my_cookie=");
     if(c_start == -1){
