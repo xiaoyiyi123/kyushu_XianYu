@@ -39,17 +39,31 @@ $(function (){
     //图片加载并显示
     var uPicture = document.getElementById('uHd_goodPic'),
         div,
+        picName,
         file = document.getElementById('file');
         file.onchange = function(){//当用户点击时触发
-            readFile(this);
+            picName = readFile(this);
+            console.log(picName);
+            //判断用户输入的图片是否合法
+            var regImg = /.+\.(jpg|jpeg|gif|bmp|png)$/;
+            var p = document.getElementsByClassName("showMessage")[0];
+            console.log("p:"+p);
+            if(typeof(picName)!="undefined"){
+                if(!regImg.test(picName)){
+                    p.style.display = 'block';
+                }
+
+            }
         }
     //处理图片并添加dom中的函数
     var readFile = function(obj){
         //获取输入框中所有的文件数组
         var fileList = obj.files;
+        console.log("fileList"+fileList);
+        var imgName;
         for(var i=0; i<fileList.length; i++){
             var reader = new FileReader();//实例化一个FileReader接口
-            var imgName = fileList[i].name;
+            imgName = fileList[i].name;
             console.log("img:"+imgName);
             reader.readAsDataURL(fileList[i]);
             reader.onload = function(e){
@@ -59,29 +73,15 @@ $(function (){
                 div.style.width = "140px";
                 div.style.height = "140px";   
                 uPicture.appendChild(div);
-            }
-
-            //判断用户输入的图片是否合法
-            var regImg = /.+\.(jpg|jpeg|gif|bmp|png)$/;
-            var p = document.getElementsByClassName("showMessage")[0];
-            console.log("p:"+p);
-            if(typeof(fileList[i])!="undefined"){
-                if(!regImg.test(fileList[i])){
-                    p.style.display = 'block';
-                }
-
-            }
+            }  
         }
+        return imgName;
         
     }
 
-    
-
-    
-
     $("#btn").click(function(){
-
-       console.log("picture"+picture);
+        picture = picName;
+       console.log("picture:"+picture);
         var userName = get_cookie();
         var goodName = $("#goodName").val();	
         var budget = $("#budget").val();	
