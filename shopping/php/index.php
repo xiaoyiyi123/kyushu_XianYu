@@ -36,7 +36,7 @@ $result = mysqli_query($conn,$sql2);
 $collect=array();
 for($i=0;$i<8;$i++){
     $row=$result->fetch_assoc();
-    array_push($collect,array('Id'=>$row["purchase_Id"],'Name'=>$row["goods"],'Price'=>$row["budget"],'Campus'=>$row["campus"],'Picture'=>$row["img"]));
+    array_push($collect,array('Id'=>$row["purchase_Id"],'Name'=>$row["goods"],'Price'=>$row["budget"],'Campus'=>$row["place"],'Picture'=>$row["img"]));
 }
 
 $sql="select * from History where User_Name = '".$_COOKIE["my_cookie"]."' order by Date desc";

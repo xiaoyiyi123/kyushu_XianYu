@@ -55,7 +55,7 @@ function fillInfo(IdName,className,msg){
             let campusPrice = wrapper.getElementsByTagName('Li');
             let name = wrapper.getElementsByClassName('com_name');
             for(let i = 0; i < 8; i++){
-                TagA[i].href = 'detail_PBL2_J.html?id='+msg[className][i]['Id'];
+                TagA[i].href = 'detail_PBL2_J.html?id='+msg[className][i]['Id']+'&classname='+className;
                 pictures[i].src = msg[className][i]['Picture'];
                 campusPrice[2*i].innerHTML = camp[msg[className][i]['Campus']];
                 campusPrice[2*i+1].innerHTML = msg[className][i]['Price'];
