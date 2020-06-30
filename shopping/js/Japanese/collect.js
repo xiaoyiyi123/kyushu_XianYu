@@ -37,22 +37,47 @@ $(function (){
     }
 
     //图片加载并显示
-    var uPicture = document.getElementById('upload');
-    var img = document.createElement('img');
-    var file = document.getElementById('file');
-    var picture = "";
-    file.onchange = function(){
-        console.log("111111111");
-        var fileReader = new FileReader();
-        fileReader.readAsDataURL(this.files[0]);
-        fileReader.onload = function (){
-            img.src = fileReader.result;
-            img.style.width = "140px";
-            img.style.height = "140px";
-            uPicture.appendChild(img);
-            picture = fileReader.result;
+    var uPicture = document.getElementById('uHd_goodPic'),
+        div,
+        file = document.getElementById('file');
+        file.onchange = function(){//当用户点击时触发
+            readFile(this);
         }
+    //处理图片并添加dom中的函数
+    var readFile = function(obj){
+        //获取输入框中所有的文件数组
+        var fileList = obj.files;
+        for(var i=0; i<fileList.length; i++){
+            var reader = new FileReader();//实例化一个FileReader接口
+            var imgName = fileList[i].name;
+            console.log("img:"+imgName);
+            reader.readAsDataURL(fileList[i]);
+            reader.onload = function(e){
+                console.log("111111111")
+                div = document.createElement('div');
+                div.innerHTML = `<img src="${this.result}" />`;
+                div.style.width = "140px";
+                div.style.height = "140px";   
+                uPicture.appendChild(div);
+            }
+
+            //判断用户输入的图片是否合法
+            var regImg = /.+\.(jpg|jpeg|gif|bmp|png)$/;
+            var p = document.getElementsByClassName("showMessage")[0];
+            console.log("p:"+p);
+            if(typeof(fileList[i])!="undefined"){
+                if(!regImg.test(fileList[i])){
+                    p.style.display = 'block';
+                }
+
+            }
+        }
+        
     }
+
+    
+
+    
 
     $("#btn").click(function(){
 
