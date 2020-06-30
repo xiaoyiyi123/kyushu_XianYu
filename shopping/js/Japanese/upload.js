@@ -26,6 +26,48 @@ $(function (){
             window.open("../../shop/Japanese/login_J.html");
         });
     }
+
+    //图片加载并显示
+    var uPicture = document.getElementById('uHd_goodPic'),
+        div;
+        //file = document.getElementById('file1');
+    var upFile = document.getElementsByClassName("file");
+    var len = upFile.length;
+    for(var i=0;i<len;i++){
+        (function(n){
+            upFile[n].onchange = function(){
+                var name = readFile(this);               
+               
+                //判断用户输入的图片是否合法
+                var regImg = /.+\.(jpg|jpeg|gif|bmp|png)$/;
+                var msg = document.getElementsByClassName("showMessage")[n];
+                //console.log(msg);
+                if(typeof(name)!="undefined"){
+                    if(!regImg.test(name)){
+                        msg.style.display = 'inline';
+                    }
+                
+                 }
+            }
+        })(i); 
+    }
+    //处理图片并添加dom中的函数
+    var readFile = function(obj){
+        var fileList = obj.files;
+        for(var i=0; i<fileList.length; i++){
+            var reader = new FileReader();
+            var imgName = fileList[i].name;
+            reader.readAsDataURL(fileList[i]);
+            reader.onload = function(e){
+                div = document.createElement('div');
+                div.innerHTML = `<img src="${this.result}" width ="115px" height="115px" />`; 
+                div.style.float = "left"; 
+                uPicture.appendChild(div);
+            }
+    }
+    return imgName;
+}    
+
 })
 
 function get_cookie(){
