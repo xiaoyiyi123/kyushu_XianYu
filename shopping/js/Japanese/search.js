@@ -13,7 +13,6 @@ $(document).ready(function(){
     var obj ={};
     var gets = url.split('?')[1];
     if(gets){
-        
         gets = gets.split('&');
         gets.forEach(get=>{
             get = get.split('=');
