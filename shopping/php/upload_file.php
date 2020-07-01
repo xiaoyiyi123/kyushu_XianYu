@@ -65,7 +65,7 @@ if ((($_FILES["file1"]["type"] == "image/gif")
 }
 else
 {
-	echo "文件格式错误，请点击下面链接<a href=‘../shop/Chinese/userHomepage_upload_PBL2.html’>重新添加</a>";
+	echo "ファイルエラー。<a href=‘../shop/Chinese/userHomepage_upload_PBL2.html’>こちら</a>でやり直してください\n";
 }
 $temp2 = explode(".", $_FILES["file2"]["name"]);
 //echo $_FILES["file"]["size"];
@@ -116,9 +116,7 @@ if ((($_FILES["file2"]["type"] == "image/gif")
 }
 else
 {
-	echo "文件格式错误，请点击下面链接<a href=‘../shop/Chinese/userHomepage_upload_PBL2.html’>重新添加</a>\n";
 	echo "ファイルエラー。<a href=‘../shop/Chinese/userHomepage_upload_PBL2.html’>こちら</a>でやり直してください\n";
-	echo "Fileformat error, please click <a href=‘../shop/Chinese/userHomepage_upload_PBL2.html’ > here </a> to add it again";
 }
 $temp3 = explode(".", $_FILES["file3"]["name"]);
 //echo $_FILES["file"]["size"];
@@ -169,9 +167,7 @@ if ((($_FILES["file3"]["type"] == "image/gif")
 }
 else
 {
-	echo "文件格式错误，请点击下面链接<a href=upload1.html>重新添加</a>\n";
 	echo "ファイルエラー。<a href=‘../shop/Chinese/userHomepage_upload_PBL2.html’>こちら</a>でやり直してください\n";
-	echo "Fileformat error, please click <a href=‘../shop/Chinese/userHomepage_upload_PBL2.html’ > here </a> to add it again";
 }
 $temp4 = explode(".", $_FILES["file4"]["name"]);
 //echo $_FILES["file"]["size"];
@@ -224,9 +220,7 @@ if ((($_FILES["file4"]["type"] == "image/gif")
 }
 else
 {
-	echo "文件格式错误，请点击下面链接<a href=‘../shop/Chinese/userHomepage_upload_PBL2.html’>重新添加</a>\n";
 	echo "ファイルエラー。<a href=‘../shop/Chinese/userHomepage_upload_PBL2.html’>こちら</a>でやり直してください\n";
-	echo "Fileformat error, please click <a href=‘../shop/Chinese/userHomepage_upload_PBL2.html’ > here </a> to add it again";
 }
 $time=date("Y-m-d H:i:s");
 //$user=$_COOKIE["user"];
@@ -246,10 +240,6 @@ $graph3="../../php/".$graph3;
 $graph4="../../php/".$graph4;
 $sql2 ="INSERT INTO Items(Item_Name,Item_Price,Item_Description,Item_Picture,User_Name,Campus,Latest_Update,Original_Price,Item_Picture1,Item_Picture2,Item_Picture3,Status,If_Sold,Category) VALUES('$name',$price2,'$describe','$graph1','".$_COOKIE['my_cookie']."',$school,'$time',$price1,'$graph2','$graph3','$graph4','$state',0,'$category')";
 $num=$pdo->exec($sql2);
-echo "添加成功，如需继续添加请点击下面链接<a href='../shop/Chinese/userHomepage_upload_PBL2.html'>继续添加</a> \n";
-echo "如无需继续添加，请点击下面链接<a href='../shop/Chinese/index_PBL2.html'>返回主页</a>\n";
 echo "アップロード終わったら、<a href='../shop/Japanese/index_PBL2_J.html'>ホームページ</a>に戻ります。\n";
-echo "Add successfully, if you want to continue adding, please click <a href='../shop/English/userHomepage_upload_PBL2_E.html'>here</a> to continue";
-echo "Add successfully, if you don't want to continue adding, please click <a href='../shop/English/index_PBL2_E.html'>here</a> to continue";
 
 ?>
