@@ -132,10 +132,6 @@ $(function () {
         id: res.information.userName,
       });
       $("img", ".mPavater").attr({ src: res.photo });
-      // $("#1", "#smallPicture").attr({ "src": res.information.Picture });
-      // $("#2", "#smallPicture").attr({ "src": res.information.smallPicture1 });
-      // $("#3", "#smallPicture").attr({ "src": res.information.smallPicture2 });
-      // $("#4", "#smallPicture").attr({ "src": res.information.smallPicture3 });
       //小图区域显示
       var img = [
         res.information.Picture,
@@ -152,7 +148,7 @@ $(function () {
         if (img[i] != null) {
           str += `<li> <img id = ${i + 1} class = minpic src = '${
             img[i]
-          }' /></li>`;
+          }' onerror="this.src='../../img/default.jpg'"/></li>`;
           document.getElementById("smallPicture").innerHTML = str;
         }
       }
