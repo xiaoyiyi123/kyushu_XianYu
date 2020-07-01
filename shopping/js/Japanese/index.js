@@ -16,9 +16,14 @@ window.onload = function(){
         });
     }
     if(get_user==null){
+        console.log("null");
         $("a","#1","#nav_bar").click(function(){
             window.location.href = "../../shop/Japanese/login_J.html";
         });
+        var secondHandShow = document.getElementById("secondhand");
+        secondHandShow.style.display = "none";
+        var lookShow = document.getElementById("look");
+        lookShow.style.display = "none";
     }
     serverConnection(0);
     var dropDown = document.getElementsByClassName('dropdown-area')[0].getElementsByTagName('a');
