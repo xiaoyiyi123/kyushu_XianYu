@@ -16,16 +16,15 @@ $(document).ready(function(){
             window.open("../../shop/Japanese/userHomepage_inform_PBL2_J.html");
         });
         $("#logout",".user_data","#user_data_frame").click(function(){
-            
-            //setCookie("my_cookie", "", -1);
-            //delCookie("my_cookie");
             var exp  = new Date();
             exp.setTime(exp.getTime() - 1);
             document.cookie="my_cookie="+get_user+";expires="+exp.toGMTString()+";path=/";
             console.log(get_cookie());
             if(get_cookie()==null){
                 alert("ログアウト");
-                window.open("../../shop/Japanese/login_J.html");
+                window.location.href="../../shop/Japanese/login_J.html";
+                
+                
             }
             
         });
@@ -134,13 +133,6 @@ function get_cookie(){
       return arr[1];
     }
   }
-function delCookie(name)
-{
-var exp = new Date();
-exp.setTime(exp.getTime() - 1);
-var cval=getCookie(name);
-if(cval!=null)
-document.cookie= name + "="+cval+";expires="+exp.toGMTString();
-}
+
 
 
