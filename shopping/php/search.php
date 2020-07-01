@@ -25,11 +25,19 @@ else if($parameter['search']==2){
         $sql="SELECT * from Puechase where place='".$parameter["Campus"]."' and goods LIKE '%".$parameter["Text"]."%' AND budget BETWEEN ".$parameter["Min"]." AND ".$parameter["Max"]."";
     }
 }
+else if($parameter['search']==3){
+    if($parameter["Campus"]=='0'){
+        $sql="SELECT * from Items where Item_Price BETWEEN ".$parameter["Min"]." AND ".$parameter["Max"]." AND Category = '".$parameter["Category"]."'";
+    }
+    else if($parameter["Campus"]!='0'){
+        $sql="SELECT * from Items where Campus='".$parameter["Campus"]."' and Item_Price BETWEEN ".$parameter["Min"]." AND ".$parameter["Max"]." AND Category = '".$parameter["Category"]."'";
+    }
+}
 
 $result = mysqli_query($conn,$sql);
 $num=$result->num_rows;
 $row=array();
-if($parameter['search']==1){
+if($parameter['search']==1 || $parameter['search']==3){
     for($i =0;$i<$num;$i++){
         $temp=$result->fetch_assoc();
         $new=array('Id'=>$temp["Item_Id"],'Name'=>$temp["Item_Name"],'Price'=>$temp["Item_Price"],'Picture'=>$temp["Item_Picture"],'User'=>$temp["User_Name"],'Campus'=>$temp["Campus"]);

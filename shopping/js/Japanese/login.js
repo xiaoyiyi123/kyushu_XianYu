@@ -37,8 +37,6 @@ $(function (){
         var username=$("#loginName").val();
         var userpwd=$("#memberPwd").val();
         if(username!=""&&userpwd!=""&&vcode!=""&&vcode.value==vcodess.innerHTML){
-
-            //从数据库请求 数据， 校检 用户名和密码
             $.ajax({
                 url:"../../php/login.php",
                 type:"post",
@@ -46,30 +44,26 @@ $(function (){
                     "u_name":username,
                     "u_pwd":userpwd
                 },
-                //成功的时候执行
+
                 success: function (msg) {
                     var types = msg;
                     console.log(msg);
-//                console.log(types);
-//                console.log(types.toString());
-                   console.log(eval("("+msg+")"));
+
                     var data='';
                     if(msg!=''){
-//                    data=JSON.parse(msg)
+
                         data = eval("("+msg+")");
                         console.log(data.status);
+                        if(data.status==1){
+                            window.location.href="../../shop/Japanese/index_PBL2_J.html";
+                        }
                     }
-                    if(data.status==1){
-                        alert("ログイン成功しました")
-                        window.location.href="../../shop/Japanese/index_PBL2_J.html";
-                    }else{
-                        alert("ログイン失敗した。ユーザー名とパスワードをチェックしてください")
-                        //window.location.href="login.html";
+                    else{
+                        alert("ログイン失敗した。ユーザー名とパスワードをチェックしてください");
                     }
                 },
                 error: function () { alert("ユーザー名やパスワードが間違っています") }
             })
-            //window.location.href="cart.html";
         }else {
             alert("正しいユーザー名、パスワード、キャプチャを入れてください");
         }
