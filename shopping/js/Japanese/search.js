@@ -19,7 +19,15 @@ $(document).ready(function(){
             obj[get[0]]=get[1];
         });
     }
-
+    $(".area_select").contents()[0].textContent = Campus[obj['Campus']];
+    var dropDown = document.getElementsByClassName('dropdown-area')[0].getElementsByTagName('a');
+    for(let i=0;i<=5;i++){
+        dropDown[i].addEventListener('click',function(){
+            $(".area_select").contents()[0].textContent = Campus[i];
+            obj['Campus'] = i.toString();
+            connection(obj);
+        },false);
+    }
     //localStorage.removeItem("temp_info");
     connection(obj);
     var get_user=get_cookie();
@@ -35,6 +43,15 @@ $(document).ready(function(){
             window.open("../../shop/Japanese/login_J.html");
         });
     }
+
+    $('.input-sub').click(function(){
+        var text = $('.input-text').val();
+        window.location.href = '../../shop/Japanese/searchResult_PBL2_J?Text='+text+'&search=1&Campus='+obj['Campus']+'&Min=0&Max=9999999'
+    });
+    $('.input-sub2').click(function(){
+        var text = $('.input-text').val();
+        window.location.href = '../../shop/Japanese/searchResult2_PBL2_J?Text='+text+'&search=2&Campus='+obj['Campus']+'&Min=0&Max=9999999'
+    });
     $('.rS_buttonFrame').click(function(){
         console.log(123);
         var down = $('.rS_inputPrice input')[0].value;
@@ -55,6 +72,7 @@ $(document).ready(function(){
     });
 });
 function connection(obj){
+    console.log(obj);
     $('#searchResult_bar').empty();
     $.ajax({
         url:"../../php/search.php",
@@ -62,7 +80,7 @@ function connection(obj){
         dataType:'JSON',
         data:{parameter:obj},
         success: function(msg){
-            //console.log(msg);
+            console.log(msg);
             var length = msg.length;
             for(var i =0;i<length;i++){
                 $('#searchResult_bar').append(
