@@ -1,13 +1,14 @@
 
-$(function (){
-    
+$(document).ready(function (){
+
+    var mail;
     $("#main_ps1").css({display:"block"});
     $("#main_ps2").css({display:"none"});
     $("#main_ps3").css({display:"none"});
 //输入邮箱发送验证码
     
     $("#mailSubmit").click(function (){
-        var mail;
+        
         mail=$("#mail").val();
         //alert("メール送りました！")
         //console.log(mail.value);
@@ -36,6 +37,7 @@ $(function (){
                     }
                     else
                     {
+                        alert("コード送りました！")
                         var code;
                         code=str;
                         //console.log(code);
@@ -84,7 +86,7 @@ $(function (){
     };
     
         //二次密码验证
-        var pwd=$("#Pwd");
+       // var pwd=$("#Pwd");
         var rpwd=$("#RepeatMPwd");
         document.getElementById('RepeatPwd').onkeyup=function (){
             var tishi=$(".error-rpwd");
@@ -109,6 +111,8 @@ $(function (){
 
     //console.log("password:"+pwd);
     var flag=2;
+    console.log(mail);
+    console.log(pwd);
     $.ajax({
         //请求地址
         url:"../../php/password_reset.php",
@@ -127,10 +131,12 @@ $(function (){
              $("#main_ps3").css({display:"block"});
         if(b==0)
         {
-            alert("エラー")
-            window.location.href="../../shop/Japanese/password_reset_J.html";
+            //alert("エラー")
+            //window.location.href="../../shop/Japanese/password_reset_J.html";
+
         }    
-            
+            alert("パスワードリセットしました！")
+            $("#main_ps3").css({display:"block"});
         }
     
     });
