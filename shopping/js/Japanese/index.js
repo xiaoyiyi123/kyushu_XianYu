@@ -45,7 +45,7 @@ function serverConnection(campus){
         success:(msg)=>{
             console.log(msg);
             fillInfo('recom_bar','item',msg);
-            fillInfo('need_bar','collect',msg);
+            fillInfo2('need_bar','collect',msg);
             fillInfo('record_bar','history',msg);
         },
         error:(msg)=>{
@@ -61,6 +61,20 @@ function fillInfo(IdName,className,msg){
             let name = wrapper.getElementsByClassName('com_name');
             for(let i = 0; i < 8; i++){
                 TagA[i].href = 'detail_PBL2_J.html?id='+msg[className][i]['Id']+'&classname='+className;
+                pictures[i].src = msg[className][i]['Picture'];
+                campusPrice[2*i].innerHTML = camp[msg[className][i]['Campus']];
+                campusPrice[2*i+1].innerHTML = msg[className][i]['Price'];
+                name[i].innerHTML = msg[className][i]['Name'];
+            }
+}
+function fillInfo2(IdName,className,msg){
+    let wrapper = document.getElementById(IdName);
+            let TagA = wrapper.getElementsByTagName('a');
+            let pictures = wrapper.getElementsByTagName('img');
+            let campusPrice = wrapper.getElementsByTagName('Li');
+            let name = wrapper.getElementsByClassName('com_name');
+            for(let i = 0; i < 8; i++){
+                TagA[i].href = 'detail2_PBL2_J.html?id='+msg[className][i]['Id']+'&classname='+className;
                 pictures[i].src = msg[className][i]['Picture'];
                 campusPrice[2*i].innerHTML = camp[msg[className][i]['Campus']];
                 campusPrice[2*i+1].innerHTML = msg[className][i]['Price'];
