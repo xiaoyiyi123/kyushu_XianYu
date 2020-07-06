@@ -132,6 +132,14 @@ $(function () {
         id: res.information.userName,
       });
       $("img", ".mPavater").attr({ src: res.photo });
+      if(res.photo == null ){
+        console.log("head picture null")
+        $("img", ".mPavater").attr("src","../../img/head.jpg");
+      }
+      $("img", ".mPavater").on("error",function(){
+        console.log("head picture wrong")
+        $(this).attr("src","../../img/head.jpg");
+      });
       //小图区域显示
       var img = [
         res.information.Picture,
@@ -172,7 +180,7 @@ $(function () {
         $("#mDbar_frame").append(
           '<div class="messageDetail">' +
             '<div class="mDdetails">' +
-            '<img src="../../image_pbl2/icon_pbl2/noavatar_small.gif" />' +
+            '<img src="../../img/head.jpg" />' +
             '<div id="buyer2" style="text-align: center;">' +
             res.message1.buyer +
             "</div>" +

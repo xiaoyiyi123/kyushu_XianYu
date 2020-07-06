@@ -84,6 +84,14 @@ $(document).ready(function () {
     success: function (msg) {
       console.log(msg);
       $("img", "#0", ".uH_upHead").attr({ src: msg.Photo });
+      if(msg.Photo == null ){
+        console.log("head picture null")
+        $("img", "#0", ".uH_upHead").attr("src","../../img/head.jpg");
+      }
+      $("img", "#0", ".uH_upHead").on("error",function(){
+        console.log("head picture wrong")
+        $(this).attr("src","../../img/head.jpg");
+      });
       $(".uH_fIsUnchange", "#username", "#uH_inform").text(msg.Name);
       $(".uH_fIsUnchange", "#email", "#uH_inform").text(msg.Email);
       if (msg.Gender == 0) {

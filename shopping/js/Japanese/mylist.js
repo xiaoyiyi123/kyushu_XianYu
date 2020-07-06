@@ -81,6 +81,16 @@ $(document).ready(function(){
             var theLast = (msg.Content.length)%num;
             console.log("last"+theLast);
             var len = msg.Content.length;
+            console.log(len)
+            if(theLast!=0){
+                var lastStart = len - theLast;
+                var end = len;
+                console.log(lastStart,end);
+            }else{
+                var lastStart = len-num;
+                var end = len;
+                console.log(lastStart);
+            }
             //动态生成页码
             var str = "";
             
@@ -102,13 +112,14 @@ $(document).ready(function(){
                 var temp = document.getElementsByClassName("now")[p-1];
                 console.log("lastpage"+temp);
                 temp.setAttribute('style', 'color:yellow');
-                    $(".uH_detail_bar").empty();  
-                if(theLast!=0){
-                    dataDisplay(msg,len-theLast,len);            
-                    }
-                else{
-                    dataDisplay(msg,len-num,len); 
-                }
+                    $(".uH_detail_bar").empty(); 
+                    dataDisplay(msg,lastStart,end);  
+                // if(theLast!=0){
+                //     dataDisplay(msg,lastStart,end);            
+                //     }
+                // else{
+                //     dataDisplay(msg,lastStart,end); 
+                // }
                 
             }
            
