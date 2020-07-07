@@ -86,21 +86,7 @@ var camp = {
     var item_id = getParameter("id");
     var cllDate = getNowFormatDate();
     console.log(item_id + "     " + cllDate);
-    // $.ajax({
-    //   url: "../../php/details2.php",
-    //   type: "post",
-    //   data: {
-    //     item_id: item_id,
-    //     parameter: 3,
-    //     cllDate: cllDate,
-    //   },
-    //   success: function () {
-    //     console.log("Success");
-    //   },
-    //   error: function () {
-    //     alert("error!");
-    //   },
-    // });
+    
     //获取 url值 的方法
     var item_id = getParameter("id"); //通过getParameter获取
     console.log(item_id);
@@ -134,100 +120,19 @@ var camp = {
           id: res.information.userName,
         });
         $("img", ".mPavater").attr({ src: res.photo });
-        // $("#1", "#smallPicture").attr({ "src": res.information.Picture });
-        // $("#2", "#smallPicture").attr({ "src": res.information.smallPicture1 });
-        // $("#3", "#smallPicture").attr({ "src": res.information.smallPicture2 });
-        // $("#4", "#smallPicture").attr({ "src": res.information.smallPicture3 });
-        //小图区域显示
-        var img = [
-          res.information.Picture,
-          res.information.smallPicture1,
-          res.information.smallPicture2,
-          res.information.smallPicture3,
-        ];
-        console.log("数据库返回的信息：");
-        console.log(res.photo);
-        console.log(img);
-        var str = "";
-        var len = img.length;
-        for (var i = 0; i < len; i++) {
-          if (img[i] != null) {
-            str += `<li> <img id = ${i + 1} class = minpic src = '${
-              img[i]
-            }' /></li>`;
-            document.getElementById("smallPicture").innerHTML = str;
-          }
+        if(res.photo == null ){
+          console.log("head picture null")
+          $("img", ".mPavater").attr("src","../../img/head.jpg");
         }
-        //点击小图显示在大图区域功能
-        $("#smallPicture").click(function (e) {
-          console.log("现在正在点击小图区域");
-          console.log("当前点击的目标是");
-          console.log(e.target.src);
-          $("#bigImg").attr({ src: e.target.src });
-  
+        $("img", ".mPavater").on("error",function(){
+          console.log("head picture wrong")
+          $(this).attr("src","../../img/head.jpg");
         });
-  
+        
         $("a", ".mPpro_button", ".mPbutton_frame", "#merchantPro").attr({
           href: "homepage3to3_PBL2_J.html?user=" + res.information.userName,
         });
-        //console.log('123555');
-        //console.log(res);
-  
-        // if (res.message1.contents != null) {
-        //   console.log(res.message1.contents);
-        //   $("#mDbar_frame").append(
-        //     '<div class="messageDetail">' +
-        //       '<div class="mDdetails">' +
-        //       '<img src="../../image_pbl2/icon_pbl2/noavatar_small.gif" />' +
-        //       '<div id="buyer2" style="text-align: center;">' +
-        //       res.message1.buyer +
-        //       "</div>" +
-        //       "</div>" +
-        //       '<div class="mDtime" id="time2">' +
-        //       res.message1.time +
-        //       "</div>" +
-        //       '<div class="mDcontent" id="content2">' +
-        //       res.message1.contents +
-        //       "</div>" +
-        //       "</div>"
-        //   );
-        // }
-      //   if (res.message2.contents != null) {
-      //     $("#mDbar_frame").append(
-      //       '<div class="messageDetail">' +
-      //         '<div class="mDdetails">' +
-      //         '<img src="../../image_pbl2/icon_pbl2/noavatar_small.gif" />' +
-      //         '<div id="buyer2" style="text-align: center;">' +
-      //         res.message2.buyer +
-      //         "</div>" +
-      //         "</div>" +
-      //         '<div class="mDtime" id="time2">' +
-      //         res.message2.time +
-      //         "</div>" +
-      //         '<div class="mDcontent" id="content2">' +
-      //         res.message2.contents +
-      //         "</div>" +
-      //         "</div>"
-      //     );
-      //   }
-      //   if (res.message3.contents != null) {
-      //     $("#mDbar_frame").append(
-      //       '<div class="messageDetail">' +
-      //         '<div class="mDdetails">' +
-      //         '<img src="../../image_pbl2/icon_pbl2/noavatar_small.gif" />' +
-      //         '<div id="buyer2" style="text-align: center;">' +
-      //         res.message3.buyer +
-      //         "</div>" +
-      //         "</div>" +
-      //         '<div class="mDtime" id="time2">' +
-      //         res.message3.time +
-      //         "</div>" +
-      //         '<div class="mDcontent" id="content2">' +
-      //         res.message3.contents +
-      //         "</div>" +
-      //         "</div>"
-      //     );
-      //   }
+        
       },
       error: function () {
         console.log("error!");
