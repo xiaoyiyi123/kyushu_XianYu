@@ -7,7 +7,7 @@ var camp= {
     '6': 'その他'
 }
 
-$(function (){
+$(document).ready(function (){
     var get_user=get_cookie();
     //console.log(get_user);
     if(get_user!=null){
@@ -36,21 +36,44 @@ $(function (){
         });
     }
 
+    var url = window.location.search;
+    var obj ={};
+    var gets = url.split('?')[1];
+    if(gets){
+        gets = gets.split('&');
+        gets.forEach(get=>{
+            get = get.split('=');
+            obj[get[0]]=get[1];
+        });
+    }
+    console.log(obj);
+    if(/(Error)/.test(obj['success'])){
+        alert('エラーが発生しました');
+    }
+
     //图片加载并显示
     var uPicture = document.getElementById('uHd_goodPic'),
         div,
         picName,
         file = document.getElementById('file');
         file.onchange = function(){//当用户点击时触发
+            var picdiv = uPicture.getElementsByClassName('picdiv')[0];
+            var p = document.getElementsByClassName("showMessage")[0];
+            if(picdiv){
+                uPicture.removeChild(picdiv);
+            }
+            
             picName = readFile(this);
             console.log(picName);
             //判断用户输入的图片是否合法
             var regImg = /.+\.(jpg|jpeg|gif|bmp|png)$/;
-            var p = document.getElementsByClassName("showMessage")[0];
             console.log("p:"+p);
             if(typeof(picName)!="undefined"){
                 if(!regImg.test(picName)){
                     p.style.display = 'block';
+                }
+                else{
+                    p.style.display = 'none';
                 }
 
             }
@@ -67,9 +90,9 @@ $(function (){
             console.log("img:"+imgName);
             reader.readAsDataURL(fileList[i]);
             reader.onload = function(e){
-                console.log("111111111")
                 div = document.createElement('div');
                 div.innerHTML = `<img src="${this.result}" />`;
+                div.className = 'picdiv';
                 div.style.width = "140px";
                 div.style.height = "140px";   
                 uPicture.appendChild(div);
@@ -103,8 +126,9 @@ $(function (){
                 picture: picture
             },
             success: function(msg){
-                alert("成功！");
-                console.log(msg);
+                //console.log(msg);
+                //alert("成功！");
+                
             },
             error: function () {
                 console.log('error');
