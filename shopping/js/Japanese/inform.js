@@ -41,7 +41,7 @@ $(document).ready(function () {
       file.onchange = function () {
       //当用户点击时触发
       picName = readFile(this);
-      console.log(picName);
+      console.log("picName:"+picName);
       //判断用户输入的图片是否合法
       var regImg = /.+\.(jpg|jpeg|gif|bmp|png)$/;
       var msg = document.getElementById("showMessage");
@@ -62,7 +62,7 @@ $(document).ready(function () {
       for (var i = 0; i < fileList.length; i++) {
         var reader = new FileReader(); //实例化一个FileReader接口
         imgName = fileList[i].name;
-        console.log("img:" + imgName);
+       
         reader.readAsDataURL(fileList[i]);
         reader.onload = function (e) {
           console.log("111111111");
@@ -137,9 +137,9 @@ $(document).ready(function () {
   });
   $("#confirm_button").click(function () {
     //alert ("ssss");
-    if(!flag){
-        alert("形式が間違っています！");
-    }else{
+    
+        
+    
         var sexual = $("#gender option:selected").val();
         var campus = $("#campus option:selected").val();
         var profile = $("#personal").val();
@@ -150,16 +150,18 @@ $(document).ready(function () {
         } else {
           sexual = 2;
         }
-        console.log(profile);
+        var img = "../../php/upload/collect/"+picName;
+        console.log("img"+img);
         $.ajax({
           url: "../../php/change.php",
           type: "POST",
           data: {
             // "parameter":1,
             // "id":this.id
-            Gender: sexual,
-            Campus: campus,
-            Introduction: profile,
+            "Gender": sexual,
+            "Campus": campus,
+            "Introduction": profile,
+            "img": img,
           },
           success: function (msg) {
             //console.log("qwert");
@@ -170,7 +172,7 @@ $(document).ready(function () {
             console.log("error");
           },
         }); 
-    }
+    
     
   });
 });
