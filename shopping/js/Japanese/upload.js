@@ -16,14 +16,14 @@ $(function (){
             console.log(get_cookie());
             if(get_cookie()==null){
                 alert("ログアウト成功しました");
-                window.open("../../shop/Japanese/login_J.html");
+                window.location.href="../../shop/Japanese/login_J.html";
             }
             
         });
     }
     if(get_user==null){
         $("a","#1","#nav_bar").click(function(){
-            window.open("../../shop/Japanese/login_J.html");
+            window.location.href="../../shop/Japanese/login_J.html";
         });
     }
 

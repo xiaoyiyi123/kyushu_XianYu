@@ -5,7 +5,8 @@ $(document).ready(function(){
   if (get_user==null)
   {
     $("#login",".user_data","#user_data_frame").click(function(){
-      window.open("../../shop/Japanese/login_J.html");});
+      window.location.href="../../shop/Japanese/login_J.html";
+    });
     //alert('Please log in');
     //window.location.href="./login_test.html";
     console.log(document.cookie);
@@ -25,7 +26,7 @@ $(document).ready(function(){
       console.log(get_cookie());
       if(get_cookie()==null){
           alert("ログアウト成功しました");
-        window.open("../../shop/Japanese/login_J.html");
+          window.location.href="../../shop/Japanese/login_J.html";
       }
     });
     //alert('welcome');
