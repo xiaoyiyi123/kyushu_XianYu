@@ -53,38 +53,20 @@ $(document).ready(function(){
         
             // $("#userId").attr({"href":"homepage3to3_PBL2_J.html?userId="+res.information.userName});
             $("img",".h3h_blank").attr({"src":msg.User[0].photo});
+            if(msg.User[0].photo == null ){
+                console.log("head picture null")
+                $("img",".h3h_blank").attr("src","../../img/head.jpg");
+              }
+              $("img",".h3h_blank").on("error",function(){
+                console.log("head picture wrong")
+                $(this).attr("src","../../img/head.jpg");
+              });
             $(".h3h2f_name",".h3h2_frame").text(user);
 
             $(".h3h2f_area",".h3h2_frame").text(camp[msg.User[0].campus]);
             $(".h3h2f_sign",".h3h2_frame").text(msg.User[0].introduction);
 
             for(var i =0;i<msg.Sell_Num;i++){
-            //     $("#h3_left_bar").append('<div class="uHd_goodFrame">'+
-            //     '<div class="uHd_goodPic">'+
-            //         '<img img src="'+msg.Content[i].Picture+'" />'+
-            //     '</div>'+
-            //     '<div class="uHd_detailFrame">'+
-            //         '<div class="uHd_dataFrame">'+
-            //             '<div class="uHd_price">￥'+msg.Content[i].Price+'</div>'+
-            //             '<div class="uHd_area" style="width:auto">商品状态:'+sold[msg.Content[i].Sold]+'</div>'+
-            //             '<div class="uHd_sellerID" style="text-decoration:none;margin-right:20px;"></div>'+
-            //         '</div>'+
-            //         '<div class="uHd_name">'+
-            //             msg.Content[i].Name+
-            //         '</div>'+
-            //         '<div class="uHd_buttonFrame">'+
-            //             '<div class="uHd_button">'+
-            //                 '<a href="./detail_PBL2.html?id='+msg.Content[i].Id+'">查看详情</a>'+
-            //             '</div>'+
-            //             '<div class="uHd_button" id="delete_button">'+
-            //                 '<a id="'+msg.Content[i].Id+'" href="#">删除商品</a>'+
-            //             '</div>'+
-            //             '<div class="uHd_data">'+
-            //             msg.Content[i].Date+
-            //             '</div>'+
-            //         '</div>'+
-            //     '</div>'+
-            // '</div>');
                 $("#h3_left_bar").append('<div class="h3l_itemframe">'+
                 '<div class="h3li_pic">'+'<img src="'+msg.Sell[i].Picture+'"/>'+'</div>'+
                 '<div class="h3li_detail">'+
@@ -95,7 +77,10 @@ $(document).ready(function(){
             for(var j =0;j<msg.Buy_Num;j++){
             
             $("#h3_right_bar").append('<div class="h3r_commendframe">'+'<div class="h3rc_frame1">'+
-            '<div class="h3rcf_head">'+'<img src="'+msg.User[0].photo+'"/>'+'</div>'+
+            
+            '<div class="h3rcf_head">'+`<img src = "${msg.User[0].photo}" onerror="this.src='../../img/head.jpg'" />`
+            // '<img src="'+msg.User[0].photo+'"/>'
+            +'</div>'+
             '<div class="h3rcf_name">'+user+'</div>'+
             '<div class="h3rcf_time">'+msg.Buy[j].Time+'</div>'+
         '</div>'+
