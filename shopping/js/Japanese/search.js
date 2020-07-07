@@ -46,11 +46,11 @@ $(document).ready(function(){
 
     $('.input-sub').click(function(){
         var text = $('.input-text').val();
-        window.location.href = '../../shop/Japanese/searchResult_PBL2_J?Text='+text+'&search=1&Campus='+obj['Campus']+'&Min=0&Max=9999999'
+        window.location.href = '../../shop/Japanese/searchResult_PBL2_J.html?Text='+text+'&search=1&Campus='+obj['Campus']+'&Min=0&Max=9999999'
     });
     $('.input-sub2').click(function(){
         var text = $('.input-text').val();
-        window.location.href = '../../shop/Japanese/searchResult2_PBL2_J?Text='+text+'&search=2&Campus='+obj['Campus']+'&Min=0&Max=9999999'
+        window.location.href = '../../shop/Japanese/searchResult2_PBL2_J.html?Text='+text+'&search=2&Campus='+obj['Campus']+'&Min=0&Max=9999999'
     });
     $('.rS_buttonFrame').click(function(){
         console.log(123);

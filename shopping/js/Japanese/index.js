@@ -108,10 +108,10 @@ function search(key){
     form.appendChild(searchMax);
     switch(key){
         case 1:
-            form.action='./searchResult_PBL2_J';
+            form.action='./searchResult_PBL2_J.html';
             break;
         case 2:
-            form.action='./searchResult2_PBL2_J';
+            form.action='./searchResult2_PBL2_J.html';
     }
     
 
