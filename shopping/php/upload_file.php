@@ -10,10 +10,14 @@ print_r($con->connect_error);
 $sql="SELECT * FROM Items";
 $result = mysqli_query($db,$sql);
 $rownum = mysqli_num_rows($result);//获取result的数据数量
-$picturenum = $rownum*4;
-$picturenum2 = $picturenum+1;
-$picturenum3 = $picturenum2+1;
-$picturenum4 = $picturenum3+1;
+// $picturenum = $rownum*4;
+// $picturenum2 = $picturenum+1;
+// $picturenum3 = $picturenum2+1;
+// $picturenum4 = $picturenum3+1;
+$picturenum = date("Ymdhis").'n1';
+$picturenum2 = date("Ymdhis").'n2';
+$picturenum3 = date("Ymdhis").'n3';
+$picturenum4 = date("Ymdhis").'n4';
 // 允许上传的图片后缀
 $allowedExts = array("gif", "jpeg", "jpg", "png");
 $temp = explode(".", $_FILES["file1"]["name"]);
@@ -232,14 +236,24 @@ $state=$_POST['state'];
 $school=$_POST['school'];
 $category=$_POST['category'];
 $item_id=$rownum+1;
-$pdo=new PDO($dsn,$mysql_username,$mysql_password);
-print_r($con->connect_error);
-$graph1="../../php/".$graph1;
-$graph2="../../php/".$graph2;
-$graph3="../../php/".$graph3;
-$graph4="../../php/".$graph4;
-$sql2 ="INSERT INTO Items(Item_Name,Item_Price,Item_Description,Item_Picture,User_Name,Campus,Latest_Update,Original_Price,Item_Picture1,Item_Picture2,Item_Picture3,Status,If_Sold,Category) VALUES('$name',$price2,'$describe','$graph1','".$_COOKIE['my_cookie']."',$school,'$time',$price1,'$graph2','$graph3','$graph4','$state',0,'$category')";
-$num=$pdo->exec($sql2);
-echo "アップロード終わったら、<a href='../shop/Japanese/index_PBL2_J.html'>ホームページ</a>に戻ります。\n";
+//$pdo=new PDO($dsn,$mysql_username,$mysql_password);
+$conn=new mysqli($mysql_server_name,$mysql_username,$mysql_password,$mysql_database);
+if ($conn->connect_error){
+	die("defeat: " . $conn->connect_error);
+	header("Location: ../shop/Japanese/userHomepage_upload_PBL2_J.html?success=connectionError");
+}
+else{
+	$graph1="../../php/".$graph1;
+	$graph2="../../php/".$graph2;
+	$graph3="../../php/".$graph3;
+	$graph4="../../php/".$graph4;
+	$sql2 ="INSERT INTO Items(Item_Name,Item_Price,Item_Description,Item_Picture,User_Name,Campus,Latest_Update,Original_Price,Item_Picture1,Item_Picture2,Item_Picture3,Status,If_Sold,Category) VALUES('$name',$price2,'$describe','$graph1','".$_COOKIE['my_cookie']."',$school,'$time',$price1,'$graph2','$graph3','$graph4','$state',0,'$category')";
+	echo $sql2;
+	mysqli_query($conn,$sql2);
+    $conn->close();
+	echo "アップロード終わったら、<a href='../shop/Japanese/index_PBL2_J.html'>ホームページ</a>に戻ります。\n";
+	header("Location: ../shop/Japanese/userHomepage_myGoodsList_PBL2_J.html");
+}
+//print_r($con->connect_error);
 
 ?>
