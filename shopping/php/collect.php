@@ -73,6 +73,9 @@ if ((($_FILES["file"]["type"] == "image/gif")
         if($i){
             header("Location: ../shop/Japanese/userHomepage_myGoodsList2_PBL2_J.html");
         }
+        else{
+            header("Location: ../shop/Japanese/userHomepage_upload2_PBL2_J.html?success=fileError");
+        }
     }
     
 }
