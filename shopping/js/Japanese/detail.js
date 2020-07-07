@@ -120,7 +120,7 @@ $(function () {
       //console.log(res);
       //console.log(33);
       $(".goodsName").text(res.information.Name);
-      $("#rmPrice").text(res.information.Price);
+      $("#rmPrice").text(res.information.Price + '円');
       $("#bigImg").attr({ src: res.information.Picture });
       $("#newPrice").text(res.information.newPrice);
       $("#status").text(res.information.status);
