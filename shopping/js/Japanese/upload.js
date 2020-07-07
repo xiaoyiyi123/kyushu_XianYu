@@ -61,7 +61,8 @@ $(function (){
             reader.onload = function(e){
                 div = document.createElement('div');
                 div.innerHTML = `<img src="${this.result}" width ="115px" height="115px" />`; 
-                div.style.float = "left"; 
+                div.style.float = "left";
+                $("#uHd_goodPic").empty(); 
                 uPicture.appendChild(div);
             }
     }
