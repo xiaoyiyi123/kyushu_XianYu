@@ -46,7 +46,7 @@ $(document).ready(function(){
         success: function(msg){
             console.log(msg);
             var sold= {
-                '0':'取引中',
+                '0':'取引可能',
                 '1':'取引完成'
             }
 
