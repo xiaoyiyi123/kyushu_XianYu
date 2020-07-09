@@ -44,7 +44,7 @@ $(document).ready(function(){
             
             `<div class="uHd_goodFrame">
                 <div class="uHd_goodPic">
-                    <img src = "../../php/${msg.Content[i].img}" onerror="this.src='../../img/default.jpg'" />
+                    <img src = "${msg.Content[i].img}" onerror="this.src='../../img/default.jpg'" />
                 </div>
                 <div class="uHd_detailFrame">
                     <div class="uHd_dataFrame">

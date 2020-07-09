@@ -45,34 +45,10 @@ $(document).ready(function () {
                 loopnum=msg.Num;
             }
             for (var i =begin;i<end;i++) {
+                console.log("test id:" +msg.Content[i].Id);
                 $(".uH_detail_bar").append(
                     
-                    // '<div class="uHd_goodFrame">' +
-                    // '<div class="uHd_goodPic">' +
-                    // '<img img src="' + msg.Content[i].Picture + '" />' +
-                    // '</div>' +
-                    // '<div class="uHd_detailFrame">' +
-                    // '<div class="uHd_dataFrame">' +
-                    // '<div class="uHd_price">￥' + msg.Content[i].Price + '</div>' +
-                    // '<div class="uHd_area">' + camp[msg.Content[i].Campus] + '</div>' +
-                    // '<div class="uHd_sellerID" style="text-decoration:none;margin-right:20px;"></div>' +
-                    // '</div>' +
-                    // '<div class="uHd_name">' +
-                    // msg.Content[i].Name +
-                    // '</div>' +
-                    // '<div class="uHd_buttonFrame">' +
-                    // '<div class="uHd_button">' +
-                    // '<a href="./detail_PBL2_J.html?id=' + msg.Content[i].Id + '">商品詳細</a>' +
-                    // '</div>' +
-                    // '<div class="uHd_button" id="delete_button">' +
-                    // '<a href="javascript:delete_button(' + msg.Content[i].Id + ')">履歴削除</a>' +
-                    // '</div>' +
-                    // '<div class="uHd_data">' +
-                    // msg.Content[i].Date +
-                    // '</div>' +
-                    // '</div>' +
-                    // '</div>' +
-                    // '</div>'
+                    
                     `<div class="uHd_goodFrame"> 
                     <div class="uHd_goodPic">
                     <img src="${msg.Content[i].Picture}"  onerror="this.src='../../img/default.jpg'"/> 
@@ -88,10 +64,10 @@ $(document).ready(function () {
                     </div> 
                     <div class="uHd_buttonFrame">
                     <div class="uHd_button"> 
-                    <a href="./detail_PBL2_J.html?id= ${msg.Content[i].Id} ">商品詳細</a> 
+                    <a href="./detail_PBL2_J.html?id=${msg.Content[i].Id}">商品詳細</a> 
                     </div> 
                     <div class="uHd_button" id="delete_button">
-                    <a href="javascript:delete_button( ${msg.Content[i].Id})">履歴削除</a>
+                    <a href="javascript:delete_button(${msg.Content[i].Id})">履歴削除</a>
                     </div> 
                     <div class="uHd_data"> 
                     ${msg.Content[i].Date }
@@ -118,6 +94,15 @@ $(document).ready(function () {
             var theLast = (msg.Content.length)%num;
             console.log("last"+theLast);
             var len = msg.Content.length;
+            if(theLast!=0){
+                var lastStart = len - theLast;
+                var end = len;
+                console.log(lastStart,end);
+            }else{
+                var lastStart = len-num;
+                var end = len;
+                console.log(lastStart);
+            }
             //动态生成页码
             var str = "";
             
@@ -140,12 +125,7 @@ $(document).ready(function () {
                 console.log("lastpage"+temp);
                 temp.setAttribute('style', 'color:yellow');
                     $(".uH_detail_bar").empty();  
-                if(theLast!=0){
-                    dataDisplay(msg,len-theLast,len);            
-                    }
-                else{
-                    dataDisplay(msg,len-num,len); 
-                }
+                    dataDisplay(msg,lastStart,end); 
                 
             }
            
