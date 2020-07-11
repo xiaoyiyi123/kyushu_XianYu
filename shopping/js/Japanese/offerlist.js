@@ -44,7 +44,7 @@ $(document).ready(function(){
             
             `<div class="uHd_goodFrame">
                 <div class="uHd_goodPic">
-                    <img src = "${msg.Content[i].img}" onerror="this.src='../../img/default.jpg'" />
+                    <img src = "../../php/${msg.Content[i].img}" onerror="this.src='../../img/default.jpg'" />
                 </div>
                 <div class="uHd_detailFrame">
                     <div class="uHd_dataFrame">
@@ -294,7 +294,7 @@ function edit_button(i,id){
     <br>\
     予算:<input type="text" name="budget" value='+result.budget+'>\
     <br>\
-    備考:<input type="text" name="note" value='+result.note+'>\
+    備考:<input type="text" name="note" value="'+result.note+'">\
     <br>\
     取引希望場所:<select name="place" id="float_place">\
     <option value="0">'+camp['0']+'</option>\
@@ -305,7 +305,7 @@ function edit_button(i,id){
     <option value="5">'+camp['5']+'</option>\
     </select>\
     <br>\
-    分類:<input type="text" name="category" value='+result.category+'>\
+    分類:<input type="text" name="category" value="'+result.category+'">\
     <br>\
     募集状態:<select name="status">\
     <option>募集中</option>\

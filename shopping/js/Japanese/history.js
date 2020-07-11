@@ -275,3 +275,4 @@ function get_cookie() {
         return arr[1];
     }
 }
+

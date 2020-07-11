@@ -142,4 +142,3 @@ function get_cookie(){
     }
   }
 
-  

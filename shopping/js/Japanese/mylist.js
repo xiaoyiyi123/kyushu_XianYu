@@ -1,5 +1,6 @@
 $(document).ready(function(){
     var get_user=get_cookie();
+	console.log(get_user);
     if(get_user!=null){
         $("#login",".user_data","#user_data_frame").text(get_user);
         $("#login",".user_data","#user_data_frame").click(function(){
@@ -27,7 +28,7 @@ $(document).ready(function(){
     }
     function dataDisplay(msg,begin,end){
         var sold= {
-            '0':'取引可能',
+            '0':'取引中',
             '1':'取引完成'
         }
         console.log(msg.Content);
@@ -97,7 +98,6 @@ $(document).ready(function(){
             for (var i = 1; i <=page; i++) {
                 str += `<div class="pS_pageNum"><a class="now" href="#">${i}</a></div>`;
                 document.getElementById("pageChange").innerHTML = str;
-
             }
             //将搜索结果初始化展示到页面上去
             if(len<num){

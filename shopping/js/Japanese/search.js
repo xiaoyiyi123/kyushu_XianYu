@@ -82,10 +82,11 @@ function connection(obj){
         success: function(msg){
             console.log(msg);
             var length = msg.length;
+	    if(obj['search']==2){
             for(var i =0;i<length;i++){
                 $('#searchResult_bar').append(
                 '<div class="resultDetail_frame">'+
-                    '<div class="rD_image"><a href="../../shop/Japanese/detail_PBL2_J.html?id='+msg[i].Id+'"><img src="'+msg[i].Picture+'" /></a></div>'+
+                    '<div class="rD_image"><a href="../../shop/Japanese/detail2_PBL2_J.html?id='+msg[i].Id+'"><img src="../../php/'+msg[i].Picture+'" /></a></div>'+
                     '<div class="rD_price">￥'+msg[i].Price+'</div>'+
                     '<div class="rD_area">'+Campus[msg[i].Campus]+'</div>'+
                     '<div class="rD_name">'+
@@ -97,7 +98,24 @@ function connection(obj){
                     '<div class="rD_blank"></div>'+
                 '</div>');
             }
-
+	}
+	else{
+		for(var i =0;i<length;i++){
+                    $('#searchResult_bar').append(
+                    '<div class="resultDetail_frame">'+
+                        '<div class="rD_image"><a href="../../shop/Japanese/detail_PBL2_J.html?id='+msg[i].Id+'"><img src="'+msg[i].Picture+'" /></a></div>'+
+                        '<div class="rD_price">￥'+msg[i].Price+'</div>'+
+                        '<div class="rD_area">'+Campus[msg[i].Campus]+'</div>'+
+                        '<div class="rD_name">'+
+                            '<a href="#">'+
+                                msg[i].Name+
+                            '</a>'+
+                        '</div>'+
+                        '<div class="rD_saler"><a href="#">販売者id:'+msg[i].User+'</a></div>'+
+                        '<div class="rD_blank"></div>'+
+                    '</div>');
+                }
+	}
         },
         error: function () {console.log('error');}
     });
