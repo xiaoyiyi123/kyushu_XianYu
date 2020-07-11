@@ -43,15 +43,77 @@ function serverConnection(campus){
             campus:campus,
         },
         success:(msg)=>{
-            console.log(msg);
+            console.log(msg.history);
             fillInfo('recom_bar','item',msg);
             fillInfo2('need_bar','collect',msg);
-            fillInfo('record_bar','history',msg);
+            var flag=0;
+            for(var i = 0; i<msg.history.length;i++){
+                //console.log("id: "+msg.history[i].Id);
+                if(msg.history[i].Id != null){
+                    //console.log(msg.history[i]);
+                    fillHistoryInfo('record_bar',i,msg.history[i]);
+                }else{
+                    flag+=1;
+                }
+            }
+            console.log("flag:"+flag);
+            if(flag==8){
+                console.log("history is null");
+                $("#historyRecord").append(`
+                <div id="show"><h2 style="margin:100px">表示する商品はまだありますんです。気に入った物を探してください！</h2></div>
+               `);
+              
+            }        
         },
         error:(msg)=>{
             console.log('error:'+msg);
         }
     });
+}
+
+function fillHistoryInfo(IdName,index,msg){
+    console.log(msg);
+    console.log(index+1);
+    $("#historyRecord").append(`
+    <div class="commodity">
+    <a href="detail_PBL2_J.html?id=${msg.Id}" target="_blank" id='history${index+1}_a'>
+        <div class="com_pic">
+            <img src="${msg.Picture}" onerror="this.src='../../img/default.jpg'">
+            <span>
+                <div class="teye"></div>
+                <li style="font-size:12px">${camp[msg.Campus]}</li>
+                <div class="price"><li style="font-size:12px">$${msg.Price}</li></div>
+            </span>
+        </div>
+        <div class="com_con">
+            <div class="com_name">${msg.Name}</div>
+        </div>
+    </a>
+    </div>`);
+    var str ='';
+    
+    for(var i=0; i<msg.length;i++){
+        console.log('11111');
+        $("#historyRecord").append(`
+        <div class="commodity">
+        <a href="detail_PBL2_J.html?id=${msg.Id}" target="_blank" id='history${i+1}_a'>
+            <div class="com_pic">
+                <img src="${msg.Picture}" onerror="this.src='../../img/default.jpg'">
+                <span>
+                    <div class="teye"></div>
+                    <li style="font-size:12px">${cam[msg.Campus]}</li>
+                    <div class="price"><li style="font-size:12px">$${msg.Price}</li></div>
+                </span>
+            </div>
+            <div class="com_con">
+                <div class="com_name">${msg.Name}</div>
+            </div>
+        </a>
+        </div>`);
+        
+    
+    }
+    
 }
 function fillInfo(IdName,className,msg){
     let wrapper = document.getElementById(IdName);
@@ -108,10 +170,10 @@ function search(key){
     form.appendChild(searchMax);
     switch(key){
         case 1:
-            form.action='./searchResult_PBL2_J.html';
+            form.action='./searchResult_PBL2_J';
             break;
         case 2:
-            form.action='./searchResult2_PBL2_J.html';
+            form.action='./searchResult2_PBL2_J';
     }
     
 
